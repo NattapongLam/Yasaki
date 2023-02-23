@@ -51,7 +51,7 @@ class MachineSystemForm extends Component
         $this->resetInput();
         $this->emit("refreshMachineSystem");
         $this->dispatchBrowserEvent('swal',[
-            'title' => 'บันทึกข้อมูลประเภทแจ้งซ่อมเรียบร้อย',
+            'title' => 'บันทึกข้อมูลเรียบร้อย',
             'timer' => 3000,
             'icon' => 'success'
         ]);

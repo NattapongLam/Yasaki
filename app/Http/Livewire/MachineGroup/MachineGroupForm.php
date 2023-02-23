@@ -56,7 +56,7 @@ class MachineGroupForm extends Component
         $this->resetInput();
         $this->emit("refreshMachineGroup");
         $this->dispatchBrowserEvent('swal',[
-            'title' => 'บันทึกข้อมูลบริการแจ้งซ่อมเรียบร้อย',
+            'title' => 'บันทึกข้อมูลเรียบร้อย',
             'timer' => 3000,
             'icon' => 'success'
         ]);
