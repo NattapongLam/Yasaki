@@ -11,6 +11,7 @@
         <link href="{{URL::asset('assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
         <link href="{{URL::asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{URL::asset('assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
+        <link href="{{URL::asset('assets/libs/select2/css/select2.min.css')}}" rel="stylesheet" type="text/css" />
         @livewireStyles
     </head>
     <body data-sidebar="dark" data-layout-mode="light">
@@ -44,6 +45,7 @@
         <script src="{{URL::asset('assets/libs/simplebar/simplebar.min.js')}}"></script>
         <script src="{{URL::asset('assets/libs/node-waves/waves.min.js')}}"></script>
         <script src="{{URL::asset('assets/js/app.js')}}"></script>
+        <script src="{{URL::asset('assets/libs/select2/js/select2.min.js')}}"></script>
         @livewireScripts
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>

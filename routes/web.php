@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Machine\MachineFormPage;
+use App\Http\Livewire\Machine\MachineListPage;
 use App\Http\Livewire\MachineGroup\MachineGroupListPage;
 use App\Http\Livewire\MachineSystem\MachineSystemListPage;
 use App\Http\Livewire\MachineService\MachineServiceListPage;
@@ -45,4 +47,13 @@ Route::group([
     'as' => 'machinegroup.'
 ],function(){
     Route::get('/', MachineGroupListPage::class)->name('list');
+});
+
+Route::group([
+    'prefix' => 'machines',
+    'as' => 'machine.'
+],function(){
+    Route::get('/', MachineListPage::class)->name('list');
+    Route::get('/create', MachineFormPage::class)->name('create');
+    Route::get('/update/{id}', MachineFormPage::class)->name('update');
 });

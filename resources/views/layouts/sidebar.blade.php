@@ -32,7 +32,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{route('machinegroup.list')}}" key="t-default">กลุ่มเครื่องจักร</a></li>
-                        <li><a href="#" key="t-default">เครื่องจักร</a></li>
+                        <li><a href="{{route('machine.list')}}" key="t-default">เครื่องจักร</a></li>
                         <li><a href="{{route('machinesystem.list')}}" key="t-default">ประเภทแจ้งซ่อม</a></li>     
                         <li><a href="{{route('machineservice.list')}}" key="t-default">บริการแจ้งซ่อม</a></li>      
                     </ul>
