@@ -37,6 +37,15 @@
                         <li><a href="{{route('machineservice.list')}}" key="t-default">บริการแจ้งซ่อม</a></li>      
                     </ul>
                 </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="dripicons-list"></i>
+                        <span key="t-dashboards">ตั้งค่าระบบ</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{route('employee.list')}}" key="t-default">ผู้ใช้งานระบบ</a></li>    
+                    </ul>
+                </li>
                 <li class="menu-title" key="t-components">BI Analytics</li>                                   
             </ul>
         </div>

@@ -4,10 +4,10 @@
             <div class="navbar-brand-box">
                 <a href="#" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="{{URL::asset('assets/images/logo-light.svg')}}" alt="" height="22">
+                        <img src="{{URL::asset('assets/images/logo_yasaki.png')}}" alt="" height="33">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{URL::asset('assets/images/logo-light.png')}}" alt="" height="19">
+                        <img src="{{URL::asset('assets/images/logo_yasaki.png')}}" alt="" height="114">
                     </span>
                 </a>
             </div>
