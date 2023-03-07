@@ -98,7 +98,7 @@ Route::group([
 Route::group([
     'prefix' => 'machinerylists',
     'as' => 'machinerylist.',
-    //'middleware' =>  ['auth','permission:machinerylists'],
+    'middleware' =>  ['auth','permission:machinerylists'],
 ],function(){
     Route::get('/', MachineryListPage::class)->name('list');
 });
