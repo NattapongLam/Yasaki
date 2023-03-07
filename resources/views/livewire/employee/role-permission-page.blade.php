@@ -20,12 +20,14 @@
                     <div class="col-12 col-md-12">
                         <div class="form-group">
                             <label for="permission" class="col-form-label">เมนู</label>
-                            @foreach ($permissions as $key => $item)
-                                <div class="form-check mb-3">
+                            <div class="row">
+                                @foreach ($permissions as $key => $item)
+                                <div class="col-2 form-check mb-2">
                                     <input class="form-check-input" type="checkbox" wire:model="permission.{{$key}}" id="formCheck1 {{$item->id}}" value="{{$item->name}}">
                                     <label class="form-check-label" for="formCheck1 {{$item->id}}">{{$item->name}}</label>
                                 </div>                           
-                            @endforeach                           
+                            @endforeach 
+                            </div>                                                     
                         </div>
                     </div><hr>
                     <button type="submit" class="btn btn-primary btn-lg waves-effect waves-light">บันทึกข้อมูล</button>    

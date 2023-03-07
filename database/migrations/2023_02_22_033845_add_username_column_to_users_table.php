@@ -19,6 +19,7 @@ class AddUsernameColumnToUsersTable extends Migration
             $table->string('username')->after('email_verified_at')->unique();
             $table->string('avatar')->nullable()->comment('รูป')->after('password');
             $table->string('type')->nullable()->comment('ประเภท')->after('avatar');
+            $table->string('employee_id')->nullable()->after('type');
         });
     }
 
@@ -34,6 +35,7 @@ class AddUsernameColumnToUsersTable extends Migration
             $table->dropColumn('username');
             $table->dropColumn('avatar');
             $table->dropColumn('type');
+            $table->dropColumn('employee_id');
         });
     }
 }

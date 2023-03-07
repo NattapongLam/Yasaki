@@ -30,7 +30,7 @@
                                         </div>
                                     </div>
                                     <div class="col-5 align-self-end">
-                                        <img src="assets/images/profile-img.png" alt="" class="img-fluid">
+                                        {{-- <img src="{{URL::asset('assets/images/logo_yasaki.png')}}" alt="" class="img-fluid"> --}}
                                     </div>
                                 </div>
                             </div>
@@ -39,7 +39,7 @@
                                     <a href="index.html" class="auth-logo-light">
                                         <div class="avatar-md profile-user-wid mb-4">
                                             <span class="avatar-title rounded-circle bg-light">
-                                                <img src="assets/images/logo-light.svg" alt="" class="rounded-circle" height="34">
+                                                <img src="{{URL::asset('assets/images/logo_yasaki.png')}}"alt="" class="rounded-circle" height="68">
                                             </span>
                                         </div>
                                     </a>
@@ -47,7 +47,7 @@
                                     <a href="index.html" class="auth-logo-dark">
                                         <div class="avatar-md profile-user-wid mb-4">
                                             <span class="avatar-title rounded-circle bg-light">
-                                                <img src="assets/images/logo.svg" alt="" class="rounded-circle" height="34">
+                                                <img src="{{URL::asset('assets/images/logo_yasaki.png')}}" alt="" class="rounded-circle" height="68">
                                             </span>
                                         </div>
                                     </a>
@@ -56,8 +56,8 @@
                                     <form method="POST" action="{{ route('login') }}">
                                         @csrf
                                         <div class="mb-3">
-                                            <label for="username" class="form-label">อีเมล</label>
-                                            <input id="email" class="form-control" type="email" name="email" :value="old('email')" required autofocus />
+                                            <label for="" class="form-label">ชื่อผู้ใช้</label>
+                                            <input id="username" class="form-control" type="text" name="username" :value="old('username')" required autofocus />
                                         </div>
                 
                                         <div class="mb-3">

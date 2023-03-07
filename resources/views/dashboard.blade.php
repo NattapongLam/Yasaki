@@ -1,3 +1,160 @@
-@extends('layouts.head')
-@section('content')
-@endsection
+
+<!doctype html>
+<html lang="en">
+    <head>      
+        <meta charset="utf-8" />
+        <title>@yield('title','YASAKI')</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+        <meta content="Themesbrand" name="author" />
+        <link rel="shortcut icon" href="{{URL::asset('assets/images/favicon.ico')}}">
+        <link href="{{URL::asset('assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <link href="{{URL::asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{URL::asset('assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
+        <link href="{{URL::asset('assets/libs/select2/css/select2.min.css')}}" rel="stylesheet" type="text/css" />
+        @livewireStyles
+    </head>
+    <body data-sidebar="dark" data-layout-mode="light">
+        <div id="layout-wrapper">
+            @include('layouts.head')                  
+            <!-- ========== Left Sidebar Start ========== -->
+            @include('layouts.sidebar')
+            <!-- Left Sidebar End -->
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+                <div class="page-content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <center>
+                                            <h2>นโยบายคุณภาพ</h2>
+                                            <h3>ผลิตสินค้าที่มีคุณภาพ ได้มาตรฐาน บริหารต้นทุนอย่างมีประสิทธิภาพ ส่งมอบสินค้าถูกต้อง ทันเวลา พัฒนาต่อเนื่อง เพื่อความพึงพอใจของลูกค้า</h3>
+                                        </center> <hr>
+                                        <h4 class="card-title">วันหยุดประจำปี 2566</h4>
+                                        <div class="table-responsive">
+                                            <table class="table mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>รายละเอียด</th>
+                                                        <th>จำนวน</th>
+                                                        <th>เพิ่มเติม</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>วันขึ้นปีใหม่ (2 มกราคม)</td>
+                                                        <td>1 วัน</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>วันมาฆบูชา เลื่อนมาหยุด (3 มกราคม)</td>
+                                                        <td>1 วัน</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>วันเข้าพรรษา เลื่อนมาหยุด (4 มกราคม)</td>
+                                                        <td>1 วัน</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>วันสงกรานต์ (13-15 เมษายน)</td>
+                                                        <td>3 วัน</td>
+                                                        <td>10,11,12 เมษายน ใช้พักร้อน</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>5</td>
+                                                        <td>วันแรงงาน (1 พฤษภาคม)</td>
+                                                        <td>1 วัน</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6</td>
+                                                        <td>วันเฉลิมฯสมเด็จพระนางเจ้าสุธิดา (3 มิถุนายน)</td>
+                                                        <td>1 วัน</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>7</td>
+                                                        <td>วันเฉลิมฯในหลวงรัชกาลที่ 10 (28 กรกฎาคม)</td>
+                                                        <td>1 วัน</td>
+                                                        <td>29 กรกฎาคม ใช้พักร้อน</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>8</td>
+                                                        <td>วันเฉลิมฯสมเด็จพระนางเจ้าสิริกิตต์ (12 สิงหาคม)</td>
+                                                        <td>1 วัน</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>9</td>
+                                                        <td>วันสวรรคตในหลวงรัชกาลที่ 9 (13 ตุลาคม)</td>
+                                                        <td>1 วัน</td>
+                                                        <td>14 ตุลาคม ใช้พักร้อน</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>10</td>
+                                                        <td>วันเฉลิมฯในหลวงรัชกาลที่ 9 (5 ธันวาคม)</td>
+                                                        <td>1 วัน</td>
+                                                        <td>4 ธันวาคม ใช้พักร้อน</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>11</td>
+                                                        <td>วันสิ้นปี (30 ธันวาคม)</td>
+                                                        <td>1 วัน</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                                        
+                    </div> <!-- container-fluid -->
+                </div>
+                <!-- End Page-content -->               
+                @include('layouts.footer')
+            </div>
+            <!-- end main content-->
+
+        </div>
+        <!-- END layout-wrapper -->
+        <!-- Right bar overlay-->
+        <div class="rightbar-overlay"></div>       
+        <!-- JAVASCRIPT -->
+        <script src="{{URL::asset('assets/libs/jquery/jquery.min.js')}}"></script>
+        <script src="{{URL::asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{URL::asset('assets/libs/metismenu/metisMenu.min.js')}}"></script>
+        <script src="{{URL::asset('assets/libs/simplebar/simplebar.min.js')}}"></script>
+        <script src="{{URL::asset('assets/libs/node-waves/waves.min.js')}}"></script>
+        <script src="{{URL::asset('assets/js/app.js')}}"></script>
+        <script src="{{URL::asset('assets/libs/select2/js/select2.min.js')}}"></script>
+        @livewireScripts
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            window.addEventListener('swal',function(e){
+              Swal.fire({
+                title: e.detail.title,
+                timer: e.detail.timer,
+                icon: e.detail.icon
+              }).then(function(){
+                if(e.detail.url){
+                  window.location = e.detail.url;
+                }
+              })
+            })
+            window.livewire.on("modalHide",() => {
+              $("#exampleModal").modal("hide");
+            })
+          </script>
+    </body>
+</html>

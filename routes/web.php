@@ -1,12 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 use App\Http\Livewire\Machine\MachineFormPage;
 use App\Http\Livewire\Machine\MachineListPage;
 use App\Http\Livewire\Employee\EmployeeFormPage;
 use App\Http\Livewire\Employee\EmployeeListPage;
 use App\Http\Livewire\Employee\RolePermissionPage;
+use App\Http\Livewire\EmployeeList\EmployeeListReport;
+use App\Http\Livewire\MachineryList\MachineryListPage;
 use App\Http\Livewire\MachineGroup\MachineGroupListPage;
+use App\Http\Livewire\DepartmentList\DepartmentListReport;
 use App\Http\Livewire\MachineSystem\MachineSystemListPage;
 use App\Http\Livewire\MachineService\MachineServiceListPage;
 
@@ -21,10 +25,7 @@ use App\Http\Livewire\MachineService\MachineServiceListPage;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.main');
-    //return view('auth.login');
-});
+Route::get('/',[DashboardController::class,'index'] );
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -75,4 +76,29 @@ Route::group([
     Route::get('/create', EmployeeFormPage::class)->name('create');
     Route::get('/update/{id}', EmployeeFormPage::class)->name('update');
     Route::get('/rloe-permission/{id}', RolePermissionPage::class)->name('rloe.permission');
+});
+
+Route::group([
+    'prefix' => 'departmentlists',
+    'as' => 'departmentlist.',
+    'middleware' =>  ['auth','permission:departmentlists'],
+],function(){
+    Route::get('/', DepartmentListReport::class)->name('list');
+});
+
+Route::group([
+    'prefix' => 'employeelists',
+    'as' => 'employeelist.',
+    'middleware' =>  ['auth','permission:employeelists'],
+],function(){
+    Route::get('/', EmployeeListReport::class)->name('list');
+});
+
+
+Route::group([
+    'prefix' => 'machinerylists',
+    'as' => 'machinerylist.',
+    //'middleware' =>  ['auth','permission:machinerylists'],
+],function(){
+    Route::get('/', MachineryListPage::class)->name('list');
 });

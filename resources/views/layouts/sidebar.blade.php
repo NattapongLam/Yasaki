@@ -11,7 +11,7 @@
                         <span key="t-dashboards">ฝ่ายซ่อมบำรุง</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="#" key="t-default">แจ้งซ่อมเครื่องจักร</a></li>                        
+                        <li><a href="{{route('machinerylist.list')}}" key="t-default">แจ้งซ่อมเครื่องจักร</a></li>                        
                     </ul>
                 </li>
                 <li class="menu-title" key="t-apps">Report</li>  
@@ -35,6 +35,16 @@
                         <li><a href="{{route('machine.list')}}" key="t-default">เครื่องจักร</a></li>
                         <li><a href="{{route('machinesystem.list')}}" key="t-default">ประเภทแจ้งซ่อม</a></li>     
                         <li><a href="{{route('machineservice.list')}}" key="t-default">บริการแจ้งซ่อม</a></li>      
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="dripicons-list"></i>
+                        <span key="t-dashboards">ตั้งค่าพนักงาน</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{route('departmentlist.list')}}" key="t-default">รายชื่อแผนก</a></li>  
+                        <li><a href="{{route('employeelist.list')}}" key="t-default">รายชื่อพนักงาน</a></li>    
                     </ul>
                 </li>
                 <li>

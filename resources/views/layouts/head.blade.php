@@ -2,7 +2,7 @@
     <div class="navbar-header">
         <div class="d-flex">
             <div class="navbar-brand-box">
-                <a href="#" class="logo logo-light">
+                <a href="{{route('dashboard')}}" class="logo logo-light">
                     <span class="logo-sm">
                         <img src="{{URL::asset('assets/images/logo_yasaki.png')}}" alt="" height="33">
                     </span>
@@ -25,9 +25,14 @@
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle header-profile-user" src="{{URL::asset('assets/images/users/avatar-1.jpg')}}"
+                    <img class="rounded-circle header-profile-user" src="{{ isset(auth()->user()->avatar) ? URL::asset('images/employees/'.auth()->user()->avatar) : URL::asset('assets/images/logo_yasaki.png')}}"
                         alt="Header Avatar">
-                    <span class="d-none d-xl-inline-block ms-1" key="t-henry">Henry</span>
+                        @auth
+                        <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{auth()->user()->name}}</span>                          
+                        @else
+                        <a href="{{route('login')}}" class="d-none d-xl-inline-block ms-1">Login</a>
+                        @endauth
+                   
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
@@ -37,7 +42,13 @@
                     <a class="dropdown-item d-block" href="#"><span class="badge bg-success float-end">11</span><i class="bx bx-wrench font-size-16 align-middle me-1"></i> <span key="t-settings">Settings</span></a>
                     <a class="dropdown-item" href="#"><i class="bx bx-lock-open font-size-16 align-middle me-1"></i> <span key="t-lock-screen">Lock screen</span></a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-danger" href="#"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">Logout</span></a>
+                    <a class="dropdown-item text-danger" href="javascript:void();" 
+                    onclick="event.preventDefault(); document.getElementById('form-logout').submit();">
+                    <i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i>
+                    <span key="t-logout">Logout</span></a>
+                    <form id="form-logout" action="{{route('logout')}}" method="post" style="display: none;">
+                        @csrf          
+                    </form>  
                 </div>
             </div>
         </div>

@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Employee;
 use App\Models\User;
 use Livewire\Component;
 use Illuminate\Support\Str;
+use App\Models\EmployeeList;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
@@ -21,13 +22,14 @@ class EmployeeFormPage extends Component
     public $username;
     public $avatar;
     public $type;
+    public $employee_id;
 
     public function rulesValidate()
     {
         if($this->idKey)
         {
             return[
-                'name'=> "required",
+                'employee_id'=> "required",
                 'username'=> "required|unique:users,username,".$this->idKey,
                 'type'=> "required",
             ];
@@ -35,8 +37,8 @@ class EmployeeFormPage extends Component
         else
         {
             return[
-                'name'=> "required",
-                'email'=> "required|unique:users,email",
+                'employee_id'=> "required",
+                // 'email'=> "required|unique:users,email",
                 'password'=> "required|min:8",
                 'username'=> "required|unique:users,username",
                 'type'=> "required",
@@ -45,9 +47,9 @@ class EmployeeFormPage extends Component
     }
 
     protected $messages =[
-        'name.required' => 'กรุณาระบุชื่อพนักงาน',
-        'email.required' => 'กรุณาระบุอีเมล์',
-        'email.unique' => 'อีเมล์นี้มีอยู่ในระบบแล้ว',
+        'employee_id.required' => 'กรุณาระบุชื่อพนักงาน',
+        // 'email.required' => 'กรุณาระบุอีเมล์',
+        // 'email.unique' => 'อีเมล์นี้มีอยู่ในระบบแล้ว',
         'username.required' => 'กรุณาระบุชื่อผู้ใช้',
         'username.unique' => 'ชื่อผู้ใช้นี้มีอยู่ในระบบแล้ว',
         'password.required' => 'กรุณาระบุรหัสผ่าน',
@@ -61,14 +63,16 @@ class EmployeeFormPage extends Component
         $employee = new User();
         if($this->idKey > 0){
             $employee = User::findOrfail($this->idKey);     
-            $employee->password = $this->password ? Hash::make($this->password) : $employee->password;    
+            $employee->password = $this->password ? Hash::make($this->password) : $employee->password;   
+            $employee->avatar = $this->avatar ? $this->storeImage() : $employee->avatar;
         }else{           
             $employee->password= Hash::make($this->password);
+            $employee->avatar= $this->storeImage();
         }
+        $employee->employee_id = $this->employee_id;
         $employee->name = $this->name;
         $employee->email= $this->email;          
-        $employee->username= $this->username;
-        $employee->avatar= $this->storeImage();
+        $employee->username= $this->username;       
         $employee->type= $this->type;
         $employee->save();
         $this->dispatchBrowserEvent('swal',[
@@ -96,6 +100,7 @@ class EmployeeFormPage extends Component
         {
             $employee = User::findOrfail($id);
             $this->idKey = $employee->id;
+            $this->employee_id = $employee->employee_id;
             $this->name = $employee->name;
             $this->email = $employee->email;
             $this->username= $employee->username;
@@ -105,6 +110,13 @@ class EmployeeFormPage extends Component
 
     public function render()
     {
-        return view('livewire.employee.employee-form-page')->extends('layouts.main');
+        if($this->employee_id){
+            $emp = EmployeeList::findOrFail($this->employee_id);
+            $this->username = $emp->employee_code;
+            $this->name = $emp->employee_fullname;
+        }
+        return view('livewire.employee.employee-form-page',[
+            'emplist' => EmployeeList::where('employee_status',true)->get()
+        ])->extends('layouts.main');
     }
 }

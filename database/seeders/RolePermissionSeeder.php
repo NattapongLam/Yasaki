@@ -19,10 +19,12 @@ class RolePermissionSeeder extends Seeder
         // Role::create(['name' => 'admin']);     
         // Role::create(['name' => 'employee']);        
 
-        Permission::create(['name' => 'machinegroups']);
-        Permission::create(['name' => 'machines']);
-        Permission::create(['name' => 'employees']);
-        Permission::create(['name' => 'machineservices']);
-        Permission::create(['name' => 'machinesystems']);
+        // Permission::create(['name' => 'machinegroups']);
+        // Permission::create(['name' => 'machines']);
+        // Permission::create(['name' => 'employees']);
+        // Permission::create(['name' => 'machineservices']);
+        // Permission::create(['name' => 'machinesystems']);
+        Permission::create(['name' => 'departmentlists']);
+        Permission::create(['name' => 'employeelists']);
     }
 }

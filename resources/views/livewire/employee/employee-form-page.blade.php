@@ -6,10 +6,16 @@
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <div class="form-group">
-                        <label for="name" class="col-form-label">ชื่อ - นามสกุล</label>
-                        <input type="text" name="name" id="name" placeholder="ชื่อ - นามสกุล" wire:model="name"
-                        class="form-control @error('name') is-invalid @enderror">
-                        @error('name')
+                        <label for="employee_id" class="col-form-label">ชื่อ - นามสกุล</label>
+                        <select name="employee_id" id="employee_id" wire:model="employee_id"
+                        class="form-control select2-search-disable @error('employee_id') is-invalid @enderror">                       
+                        <option value="">-- กรุณาเลือกพนักงาน --</option>
+                        @foreach ($emplist as $item)
+                        <option value="{{$item->id}}">{{$item->employee_code}}/{{$item->employee_fullname}}</option>
+                        @endforeach
+                        </select>
+                        <input wire:model="name" name="name" id="name" readonly hidden type="text">
+                        @error('employee_id')
                         <div id="name_validation" class="invalid-feedback">
                         {{$message}}
                         </div>
