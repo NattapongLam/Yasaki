@@ -13,6 +13,10 @@ use App\Http\Livewire\MachineGroup\MachineGroupListPage;
 use App\Http\Livewire\DepartmentList\DepartmentListReport;
 use App\Http\Livewire\MachineSystem\MachineSystemListPage;
 use App\Http\Livewire\MachineService\MachineServiceListPage;
+use App\Http\Livewire\IsoDocumentControl\DocumentControlTypeList;
+use App\Http\Livewire\IsoDocumentControl\DocumentControlGroupList;
+use App\Http\Livewire\IsoDocumentControlIct\DocumentControlIctList;
+use App\Http\Livewire\IsoDocumentControlIct\DocumentControlIctBackupList;
 
 /*
 |--------------------------------------------------------------------------
@@ -102,3 +106,37 @@ Route::group([
 ],function(){
     Route::get('/', MachineryListPage::class)->name('list');
 });
+
+Route::group([
+    'prefix' => 'documentcontrolgroups',
+    'as' => 'documentcontrolgroup.',
+    'middleware' =>  ['auth','permission:documentcontrolgroups'],
+],function(){
+    Route::get('/', DocumentControlGroupList::class)->name('list');
+});
+
+Route::group([
+    'prefix' => 'documentcontroltypes',
+    'as' => 'documentcontroltype.',
+    'middleware' =>  ['auth','permission:documentcontroltypes'],
+],function(){
+    Route::get('/', DocumentControlTypeList::class)->name('list');
+});
+
+
+Route::group([
+    'prefix' => 'documentcontrolictcomlists',
+    'as' => 'documentcontrolictcomlist.',
+    'middleware' =>  ['auth','permission:documentcontrolictcomlists'],
+],function(){
+    Route::get('/', DocumentControlIctList::class)->name('list');
+});
+
+Route::group([
+    'prefix' => 'documentcontrolictbackups',
+    'as' => 'documentcontrolictbackup.',
+    'middleware' =>  ['auth','permission:documentcontrolictbackups'],
+],function(){
+    Route::get('/', DocumentControlIctBackupList::class)->name('list');
+});
+

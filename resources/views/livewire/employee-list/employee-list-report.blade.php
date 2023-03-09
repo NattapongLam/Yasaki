@@ -12,8 +12,12 @@
                             <div class="hstack gap-3">
                                 <input class="form-control float-right" type="text" placeholder="ค้นหา"
                                     aria-label="ค้นหา" wire:model="searchTerm">
-                                <div class="vr"></div>
-                                <a href="#" class="btn btn-primary w-sm waves-effect waves-light"><i class="fas fa-plus"></i> เพิ่ม</a>                             
+                                    <div class="vr"></div>
+                                    @livewire('employee-list.employee-list-form')
+                                    <button type="button" class="btn btn-primary w-sm waves-effect waves-light"
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal"data-bs-whatever="@mdo" wire:click="$emit('btnCreateEmployeeList')">
+                                    <i class="fas fa-plus"></i> เพิ่ม</button>                             
+                                </div>                         
                             </div>     
                         </div>                
                     </div><hr>                                                      
@@ -58,10 +62,9 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="{{route('machine.update',$item->id)}}"
-                                        class="btn btn-sm btn-warning">
-                                        <i class="fas fa-edit"></i>
-                                        </a>                                      
+                                        <button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"data-bs-whatever="@mdo" wire:click="$emit('editEmployeeList',{{$item->id}})">
+                                            <i class="fas fa-edit"></i>
+                                        </button>                                      
                                     </td>
                                 </tr>     
                                 @endforeach                                                        

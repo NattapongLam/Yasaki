@@ -59,8 +59,7 @@
                                             <div class="invalid-feedback">
                                                กรุณาระบุข้อมูล
                                             </div>      
-                                        </div>
-                
+                                        </div>               
                                         <div class="mb-3">
                                             <label for="username" class="form-label">ชื่อ - นามสกุล</label>
                                             <input id="name" class="form-control" type="text" name="name" :value="old('name')" required autofocus />
@@ -68,7 +67,13 @@
                                                 กรุณาระบุข้อมูล
                                             </div>  
                                         </div>
-                
+                                        <div class="mb-3">
+                                            <label for="username" class="form-label">รหัสพนักงาน</label>
+                                            <input id="username" class="form-control" type="text" name="username" :value="old('username')" required />
+                                            <div class="invalid-feedback">
+                                               กรุณาระบุข้อมูล
+                                            </div>      
+                                        </div>
                                         <div class="mb-3">
                                             <label for="userpassword" class="form-label">รหัสผ่าน</label>
                                             <input id="password" class="form-control" type="password" name="password" required autocomplete="new-password" />

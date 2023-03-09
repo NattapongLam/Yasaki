@@ -21,6 +21,10 @@ class EmployeeList extends Model
         'department_code',
         'approval_id',
         'employee_status',
-        'employee_save'   
+        'employee_save',
+        'employee_id',
+        'employee_date',
+        'employee_tel',
+        'department_name'
     ];
 }

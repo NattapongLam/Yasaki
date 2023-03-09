@@ -43,6 +43,7 @@ class MachineGroupForm extends Component
         $this->reset('gruo_name');
         $this->reset('gruo_status');
     }
+    
     public function save()
     {
         $this->validate($this->rules,$this->messages);

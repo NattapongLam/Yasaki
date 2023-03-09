@@ -7,6 +7,36 @@
                 <li class="menu-title" key="t-menu">Menu</li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-layout"></i>
+                        <span key="t-layouts">ฝ่ายระบบควบคุมคุณภาพ</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow" key="t-vertical">DCC</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li><a href="#" key="t-default">Master List</a></li>   
+                                <li><a href="#" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow" key="t-vertical">ICT</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li><a href="{{route('documentcontrolictcomlist.list')}}" key="t-default">ทะเบียนอุปกรณ์ICT01</a></li>
+                                <li><a href="#" key="t-default">แผนบำรุงรักษาICT02</a></li>
+                                <li><a href="#" key="t-default">ใบขอใช้บริการICT03</a></li>
+                                <li><a href="#" key="t-default">ใบเช็คการบำรุงรักษาICT04</a></li>
+                                <li><a href="#" key="t-default">ใบแก้ไขอุปกรณ์ICT05</a></li>
+                                <li><a href="#" key="t-default">ประวัติอุปกรณ์ICT06</a></li>
+                                <li><a href="{{route('documentcontrolictbackup.list')}}" key="t-default">LogBackupICT07</a></li>
+                                <li><a href="#" key="t-default">KPI-ICT</a></li>
+                                
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="dripicons-gear"></i>
                         <span key="t-dashboards">ฝ่ายซ่อมบำรุง</span>
                     </a>
@@ -35,6 +65,16 @@
                         <li><a href="{{route('machine.list')}}" key="t-default">เครื่องจักร</a></li>
                         <li><a href="{{route('machinesystem.list')}}" key="t-default">ประเภทแจ้งซ่อม</a></li>     
                         <li><a href="{{route('machineservice.list')}}" key="t-default">บริการแจ้งซ่อม</a></li>      
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="dripicons-list"></i>
+                        <span key="t-dashboards">ตั้งค่าระบบควบคุมคุณภาพ</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{route('documentcontrolgroup.list')}}" key="t-default">มาตราฐานระบบ</a></li>  
+                        <li><a href="{{route('documentcontroltype.list')}}" key="t-default">ประเภทเอกสารควบคุม</a></li>    
                     </ul>
                 </li>
                 <li>
