@@ -45,31 +45,17 @@
                                     <a href="index.html">
                                         <div class="avatar-md profile-user-wid mb-4">
                                             <span class="avatar-title rounded-circle bg-light">
-                                                <img src="assets/images/logo.svg" alt="" class="rounded-circle" height="34">
+                                                <img src="{{URL::asset('assets/images/logo_yasaki.png')}}" alt="" class="rounded-circle" height="68">
                                             </span>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="p-2">
                                     <form method="POST" action="{{ route('register') }}">
-                                        @csrf           
-                                        <div class="mb-3">
-                                            <label for="useremail" class="form-label">อีเมล</label>
-                                            <input id="email" class="form-control" type="email" name="email" :value="old('email')" required />
-                                            <div class="invalid-feedback">
-                                               กรุณาระบุข้อมูล
-                                            </div>      
-                                        </div>               
-                                        <div class="mb-3">
-                                            <label for="username" class="form-label">ชื่อ - นามสกุล</label>
-                                            <input id="name" class="form-control" type="text" name="name" :value="old('name')" required autofocus />
-                                            <div class="invalid-feedback">
-                                                กรุณาระบุข้อมูล
-                                            </div>  
-                                        </div>
+                                        @csrf   
                                         <div class="mb-3">
                                             <label for="username" class="form-label">รหัสพนักงาน</label>
-                                            <input id="username" class="form-control" type="text" name="username" :value="old('username')" required />
+                                            <input id="username" class="form-control" type="text" name="username" :value="old('username')" required autofocus/>
                                             <div class="invalid-feedback">
                                                กรุณาระบุข้อมูล
                                             </div>      
@@ -87,6 +73,20 @@
                                             <div class="invalid-feedback">
                                                 กรุณาระบุข้อมูล
                                             </div>       
+                                        </div>        
+                                        <div class="mb-3">
+                                            <label for="useremail" class="form-label">อีเมล</label>
+                                            <input id="email" class="form-control" type="email" name="email" :value="old('email')" required />
+                                            <div class="invalid-feedback">
+                                               กรุณาระบุข้อมูล
+                                            </div>      
+                                        </div>               
+                                        <div class="mb-3">
+                                            <label for="username" class="form-label">ชื่อ - นามสกุล</label>
+                                            <input id="name" class="form-control" type="text" name="name" :value="old('name')" required />
+                                            <div class="invalid-feedback">
+                                                กรุณาระบุข้อมูล
+                                            </div>  
                                         </div>                    
                                         <div class="mt-4 d-grid">
                                             <button class="btn btn-primary waves-effect waves-light" type="submit">สมัคร</button>

@@ -64,6 +64,7 @@
                                         <option value="Printer">Printer</option>
                                         <option value="NAS">NAS</option>
                                         <option value="SERVER">SERVER</option>
+                                        <option value="">ว่าง</option>
                                     </select>
                                 </div>
                                 <div class="col-6">

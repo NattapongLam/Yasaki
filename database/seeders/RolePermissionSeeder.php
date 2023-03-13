@@ -31,5 +31,9 @@ class RolePermissionSeeder extends Seeder
         // Permission::create(['name' => 'documentcontroltypes']);
         // Permission::create(['name' => 'documentcontrolictcomlists']);
         // Permission::create(['name' => 'documentcontrolictbackups']);
+        // Permission::create(['name' => 'leaveconfigs']);
+        // Permission::create(['name' => 'leaveapprovals']);
+        // Permission::create(['name' => 'documentcontrolmasterlists']);
+        // Permission::create(['name' => 'documentcontrolictplans']);
     }
 }

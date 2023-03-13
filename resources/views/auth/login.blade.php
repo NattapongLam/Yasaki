@@ -79,7 +79,7 @@
                                             <button class="btn btn-primary waves-effect waves-light" type="submit">เข้าสู่ระบบ</button>
                                         </div>       
                                         <div class="mt-4 text-center">
-                                            <a href="{{ route('register') }}" class="text-muted"><i class="mdi mdi-lock me-1"></i>Register</a>
+                                            <a href="{{ route('register') }}" class="text-muted"><i class="mdi mdi-lock me-1"></i>สมัครสมาชิก</a>
                                         </div>
                                     </form>
                                 </div>

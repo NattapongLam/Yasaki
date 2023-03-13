@@ -9,10 +9,10 @@ class MachineryList extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "machinery_hd_date"
-        ,"machinery_hd_docuno"
-        ,"machinery_hd_type"
-        ,"ms_machine_code"
+      "machinery_hd_date"
+      ,"machinery_hd_docuno"
+      ,"machinery_hd_type"
+      ,"ms_machine_code"
       ,"ms_machine_name"
       ,"department_name"
       ,"machinery_hd_lcaol"

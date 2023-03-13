@@ -10,6 +10,8 @@ class MachineListPage extends Component
 {
     use WithPagination;
 
+    protected $paginationTheme = "bootstrap";
+    
     public $searchTerm;
     
     public function render()

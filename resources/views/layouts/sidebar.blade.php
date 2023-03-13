@@ -14,7 +14,7 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">DCC</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="#" key="t-default">Master List</a></li>   
+                                <li><a href="{{route('documentcontrolmasterlist.list')}}" key="t-default">บัญชีแม่บทเอกสาร</a></li>   
                                 <li><a href="#" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
                             </ul>
                         </li>
@@ -23,7 +23,7 @@
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">ICT</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li><a href="{{route('documentcontrolictcomlist.list')}}" key="t-default">ทะเบียนอุปกรณ์ICT01</a></li>
-                                <li><a href="#" key="t-default">แผนบำรุงรักษาICT02</a></li>
+                                <li><a href="{{route('documentcontrolictplan.list')}}" key="t-default">แผนบำรุงรักษาICT02</a></li>
                                 <li><a href="#" key="t-default">ใบขอใช้บริการICT03</a></li>
                                 <li><a href="#" key="t-default">ใบเช็คการบำรุงรักษาICT04</a></li>
                                 <li><a href="#" key="t-default">ใบแก้ไขอุปกรณ์ICT05</a></li>
@@ -58,18 +58,6 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="dripicons-list"></i>
-                        <span key="t-dashboards">ตั้งค่าเครื่องจักร</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{route('machinegroup.list')}}" key="t-default">กลุ่มเครื่องจักร</a></li>
-                        <li><a href="{{route('machine.list')}}" key="t-default">เครื่องจักร</a></li>
-                        <li><a href="{{route('machinesystem.list')}}" key="t-default">ประเภทแจ้งซ่อม</a></li>     
-                        <li><a href="{{route('machineservice.list')}}" key="t-default">บริการแจ้งซ่อม</a></li>      
-                    </ul>
-                </li>
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="dripicons-list"></i>
                         <span key="t-dashboards">ตั้งค่าระบบควบคุมคุณภาพ</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -80,11 +68,25 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="dripicons-list"></i>
+                        <span key="t-dashboards">ตั้งค่าเครื่องจักร</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{route('machinegroup.list')}}" key="t-default">กลุ่มเครื่องจักร</a></li>
+                        <li><a href="{{route('machine.list')}}" key="t-default">เครื่องจักร</a></li>
+                        <li><a href="{{route('machinesystem.list')}}" key="t-default">ประเภทแจ้งซ่อม</a></li>     
+                        <li><a href="{{route('machineservice.list')}}" key="t-default">บริการแจ้งซ่อม</a></li>      
+                    </ul>
+                </li>               
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="dripicons-list"></i>
                         <span key="t-dashboards">ตั้งค่าพนักงาน</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{route('departmentlist.list')}}" key="t-default">รายชื่อแผนก</a></li>  
                         <li><a href="{{route('employeelist.list')}}" key="t-default">รายชื่อพนักงาน</a></li>    
+                        <li><a href="{{route('leaveconfig.list')}}" key="t-default">ตั้งค่าการลา</a></li>
+                        <li><a href="{{route('leaveapproval.list')}}" key="t-default">ตั้งค่าสายอนุมัติ</a></li>   
                     </ul>
                 </li>
                 <li>
@@ -93,6 +95,7 @@
                         <span key="t-dashboards">ตั้งค่าระบบ</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
+                        {{-- <li><a href="{{route('menulist.list')}}" key="t-default">กำหนดเมนู</a></li>    --}}
                         <li><a href="{{route('employee.list')}}" key="t-default">ผู้ใช้งานระบบ</a></li>    
                     </ul>
                 </li>

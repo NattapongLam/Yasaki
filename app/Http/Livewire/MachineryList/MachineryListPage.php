@@ -16,8 +16,7 @@ class MachineryListPage extends Component
     {
         if(auth()->user()->type == "Admin")
         {
-            $this->mcdoculist = MachineryList::where('machinery_hd_status_id',1)
-            ->join('machinery_list_statuses','machinery_lists.machinery_hd_status_id','=','machinery_list_statuses.id')->get();          
+            $this->mcdoculist = MachineryList::where('machinery_hd_status_id',1)->get();          
         }
         return view('livewire.machinery-list.machinery-list-page')->extends('layouts.main');
     }

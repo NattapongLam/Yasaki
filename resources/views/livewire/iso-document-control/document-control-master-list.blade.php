@@ -5,7 +5,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-3">
-                            <h3 class="card-title">เครื่องจักร</h3>
+                            <h3 class="card-title">บัญชีแม่บทเอกสาร (YSK1-FM-DCC-02)</h3>
                         </div>
                         <div class="col-3"></div>
                         <div class="col-6">   
@@ -22,35 +22,31 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>รหัสเครื่อง</th>
-                                    <th>ชื่อเครื่อง</th>
-                                    <th class="text-center">สถานะ</th>
-                                    <th class="text-center">ใช้ผลิต</th>
+                                    <th>วันที่ขึ้นทะเบียน</th>
+                                    <th>วันที่บังคับใช้</th>
+                                    <th>ระบบมาตรฐาน</th>
+                                    <th>ประเภทเอกสาร</th>
+                                    <th>ชื่อเอกสาร</th>
+                                    <th>ผู้รับผิดชอบ</th>
+                                    <th>หมายเหตุ</th>
                                     <th>แก้ไข</th>                               
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($machines as $item)
+                                @foreach ($isodocs as $key => $item)
                                 <tr>
-                                    <th>{{$item->id}}</th>
-                                    <td>{{$item->mc_code}}</td>
-                                    <td>{{$item->mc_name}} ({{$item->machinegroup->gruo_name}})</td>
-                                    <td class="text-center">
-                                        @if($item->mc_status)
-                                        <span class="badge bg-success">ใช้งาน</span>
-                                        @else
-                                        <span class="badge bg-danger">ยกเลิก</span>
-                                        @endif
-                                    </td>
-                                    <td class="text-center">
-                                        @if($item->mc_pdt)
-                                        <span class="badge bg-success">ใช้</span>
-                                        @else
-                                        <span class="badge bg-danger">ไม่ใช้</span>
-                                        @endif
-                                    </td>
+                                    <th>{{$key+1}}</th>
+                                    <td>{{$item->iso_doculist_date}}</td>
+                                    <td>{{$item->iso_doculist_forcedate}}</td>
+                                    <td>{{$item->iso_docugroup_name}}</td>
+                                    <td>{{$item->iso_docutype_code}}</td>
                                     <td>
-                                        <a href="{{route('machine.update',$item->id)}}"
+                                        <a href="images/isodocuments/{{$item->iso_doculist_filename}}">{{$item->iso_doculist_code}}/{{$item->iso_doculist_name}}</a>
+                                    </td>
+                                    <td>{{$item->emp_department_refcode}}</td>
+                                    <td>{{$item->iso_docustatus_reamrk}}</td>
+                                    <td>
+                                        <a href="#"
                                         class="btn btn-sm btn-warning">
                                         <i class="fas fa-edit"></i>
                                         </a>                                      
@@ -61,7 +57,8 @@
                         </table>
                     </div><hr>
                     <div class="row">
-                        {{$machines->links()}}
+                        <div class="col-9">{{$isodocs->links()}}</div>
+                        <div class="col-3" style="text-align:right;">R.02.20230313</div>
                     </div>
                 </div>                
             </div>

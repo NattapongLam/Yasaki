@@ -5,7 +5,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-9">
-                            <h3 class="card-title">รายการตรวจสอบอุปกรณ์ TAP Backup ภายในห้อง SERVER (YSK1-FM-ICT-07 R.01-20230311) ป=ปกติ ผ=ผิดปกติ ก=แก้ไข</h3>
+                            <h3 class="card-title">รายการตรวจสอบอุปกรณ์ TAP Backup ภายในห้อง SERVER (YSK1-FM-ICT-07) ป=ปกติ ผ=ผิดปกติ ก=แก้ไข</h3>
                         </div>
                         <div class="col-3">   
                             <div class="hstack gap-3">
@@ -107,6 +107,10 @@
                     </div><hr>
                     <div class="row">
                         {{$ictbackup->links()}}
+                    </div>
+                    <div class="row">
+                        <div class="col-11"></div>
+                        <div class="col-1"><p>R.01-20230311</p></div>
                     </div>
                 </div>                
             </div>

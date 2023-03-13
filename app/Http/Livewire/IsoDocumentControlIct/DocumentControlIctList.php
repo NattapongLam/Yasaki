@@ -27,7 +27,7 @@ class DocumentControlIctList extends Component
             ->orWhere('com_ip','LIKE',"%{$this->searchTerm}%")
             ->orWhere('com_locat','LIKE',"%{$this->searchTerm}%");
         }
-        $ictcomlist = $ictcomlist->paginate(20);
+        $ictcomlist = $ictcomlist->paginate(15);
         return view('livewire.iso-document-control-ict.document-control-ict-list',[
             'ictcomlist' => $ictcomlist
         ])->extends('layouts.main');

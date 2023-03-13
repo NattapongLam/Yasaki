@@ -23,32 +23,30 @@
                 </button>
             </div>
             <div class="dropdown d-inline-block">
+                @auth
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img class="rounded-circle header-profile-user" src="{{ isset(auth()->user()->avatar) ? URL::asset('images/employees/'.auth()->user()->avatar) : URL::asset('assets/images/logo_yasaki.png')}}"
-                        alt="Header Avatar">
-                        @auth
-                        <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{auth()->user()->name}}</span>                          
-                        @else
-                        <a href="{{route('login')}}" class="d-none d-xl-inline-block ms-1">Login</a>
-                        @endauth
-                   
+                        alt="Header Avatar">          
+                        <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{auth()->user()->name}}</span>                                    
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
-                    <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle me-1"></i> <span key="t-profile">Profile</span></a>
-                    <a class="dropdown-item" href="#"><i class="bx bx-wallet font-size-16 align-middle me-1"></i> <span key="t-my-wallet">My Wallet</span></a>
-                    <a class="dropdown-item d-block" href="#"><span class="badge bg-success float-end">11</span><i class="bx bx-wrench font-size-16 align-middle me-1"></i> <span key="t-settings">Settings</span></a>
-                    <a class="dropdown-item" href="#"><i class="bx bx-lock-open font-size-16 align-middle me-1"></i> <span key="t-lock-screen">Lock screen</span></a>
+                    <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle me-1"></i> <span key="t-profile">ประวัติส่วนตัว</span></a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-danger" href="javascript:void();" 
                     onclick="event.preventDefault(); document.getElementById('form-logout').submit();">
                     <i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i>
-                    <span key="t-logout">Logout</span></a>
+                    <span key="t-logout">ออกจากระบบ</span></a>
                     <form id="form-logout" action="{{route('logout')}}" method="post" style="display: none;">
                         @csrf          
-                    </form>  
+                    </form>
+                    @else
+                    <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"aria-expanded="false">
+                    <a href="{{route('login')}}" class="d-none d-xl-inline-block ms-1">เข้าสู่ระบบ</a>
+                    </button>
+                    @endauth  
                 </div>
             </div>
         </div>

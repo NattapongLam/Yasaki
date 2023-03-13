@@ -5,7 +5,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-3">
-                            <h3 class="card-title">เครื่องจักร</h3>
+                            <h3 class="card-title">ตั้งค่าการลา</h3>
                         </div>
                         <div class="col-3"></div>
                         <div class="col-6">   
@@ -13,7 +13,10 @@
                                 <input class="form-control float-right" type="text" placeholder="ค้นหา"
                                     aria-label="ค้นหา" wire:model="searchTerm">
                             <div class="vr"></div>
-                                <a href="{{route('machine.create')}}" class="btn btn-primary w-sm waves-effect waves-light"><i class="fas fa-plus"></i> เพิ่ม</a>                             
+                                @livewire('leave-config.leave-config-list-form')
+                                <button type="button" class="btn btn-primary w-sm waves-effect waves-light"
+                                data-bs-toggle="modal" data-bs-target="#exampleModal"data-bs-whatever="@mdo" wire:click="$emit('btnCreateLeaveConfig')">
+                                <i class="fas fa-plus"></i> เพิ่ม</button>                             
                             </div>     
                         </div>                
                     </div><hr>                                                      
@@ -22,38 +25,29 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>รหัสเครื่อง</th>
-                                    <th>ชื่อเครื่อง</th>
+                                    <th>รหัสการลา</th>
+                                    <th>ชื่อการลา</th>
                                     <th class="text-center">สถานะ</th>
-                                    <th class="text-center">ใช้ผลิต</th>
-                                    <th>แก้ไข</th>                               
+                                    <th>แก้ไข</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($machines as $item)
+                                @foreach ($leav as $item)
                                 <tr>
                                     <th>{{$item->id}}</th>
-                                    <td>{{$item->mc_code}}</td>
-                                    <td>{{$item->mc_name}} ({{$item->machinegroup->gruo_name}})</td>
+                                    <td>{{$item->leav_code}}</td>
+                                    <td>{{$item->leav_name}}</td>
                                     <td class="text-center">
-                                        @if($item->mc_status)
+                                        @if($item->leav_status)
                                         <span class="badge bg-success">ใช้งาน</span>
                                         @else
                                         <span class="badge bg-danger">ยกเลิก</span>
                                         @endif
                                     </td>
-                                    <td class="text-center">
-                                        @if($item->mc_pdt)
-                                        <span class="badge bg-success">ใช้</span>
-                                        @else
-                                        <span class="badge bg-danger">ไม่ใช้</span>
-                                        @endif
-                                    </td>
                                     <td>
-                                        <a href="{{route('machine.update',$item->id)}}"
-                                        class="btn btn-sm btn-warning">
-                                        <i class="fas fa-edit"></i>
-                                        </a>                                      
+                                        <button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"data-bs-whatever="@mdo" wire:click="$emit('editLeaveConfig',{{$item->id}})">
+                                            <i class="fas fa-edit"></i>
+                                        </button>                                      
                                     </td>
                                 </tr>     
                                 @endforeach                                                        
@@ -61,9 +55,9 @@
                         </table>
                     </div><hr>
                     <div class="row">
-                        {{$machines->links()}}
+                        {{$leav->links()}}
                     </div>
-                </div>                
+                </div>
             </div>
         </div>
     </div>

@@ -27,14 +27,14 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="employee_fullname" class="col-form-label">แผนก</label>
-                            <select name="mcgroup_id" id="mcgroup_id" wire:model="mcgroup_id"
-                        class="form-control select2-search-disable @error('mcgroup_id') is-invalid @enderror">                       
-                        <option value="">-- กรุณาเลือกกลุ่มเครื่องจักร --</option>
-                        @foreach ($mcgroup as $item)
-                        <option value="{{$item->id}}">{{$item->gruo_code}}/{{$item->gruo_name}}</option>
+                            <label for="department_id" class="col-form-label">แผนก</label>
+                            <select name="department_id" id="department_id" wire:model="department_id"
+                        class="form-control select2-search-disable @error('department_id') is-invalid @enderror">                       
+                        <option value="">-- กรุณาเลือกแผนก --</option>
+                        @foreach ($dep as $item)
+                        <option value="{{$item->id}}">{{$item->department_code}}/{{$item->department_name}}</option>
                         @endforeach
-                        </select>_
+                        </select>
                         </div>
                         <div class="mb-3">
                             <label for="employee_job" class="col-form-label">ตำแหน่ง</label>

@@ -4,6 +4,7 @@ namespace App\Http\Livewire\EmployeeList;
 
 use Livewire\Component;
 use App\Models\EmployeeList;
+use App\Models\DepartmentList;
 
 class EmployeeListForm extends Component
 {
@@ -79,6 +80,9 @@ class EmployeeListForm extends Component
 
     public function render()
     {
-        return view('livewire.employee-list.employee-list-form');
+        $dep = DepartmentList::get();
+        return view('livewire.employee-list.employee-list-form',[
+            'dep' => $dep 
+        ]);
     }
 }

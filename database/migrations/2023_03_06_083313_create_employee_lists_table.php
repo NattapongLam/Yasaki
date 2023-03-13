@@ -31,6 +31,9 @@ class CreateEmployeeListsTable extends Migration
             $table->bigInteger('employee_id')->nullable(); 
             $table->date('employee_date')->nullable();    
             $table->string('employee_tel')->nullable();
+            $table->decimal('sickleave')->nullable();
+            $table->decimal('businessleave')->nullable();
+            $table->decimal('vacation')->nullable();
             $table->timestamps();
         });
     }

@@ -39,7 +39,7 @@ class RolePermissionPage extends Component
     {
         return view('livewire.employee.role-permission-page',[
             'roles' => Role::all(),
-            'permissions' => Permission::all()
+            'permissions' => Permission::join('menus','permissions.name','=','menus.permission_name')->get()
         ])->extends('layouts.main');
     }
 }
