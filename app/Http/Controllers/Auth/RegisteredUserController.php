@@ -47,7 +47,8 @@ class RegisteredUserController extends Controller
                 'email' => $request->email,
                 'username' => $request->username,
                 'password' => Hash::make($request->password),
-                'employee_id' => $hd->employee_id
+                'employee_id' => $hd->employee_id,
+                'type' => "Employee"
             ]);
             event(new Registered($user));
             Auth::login($user);

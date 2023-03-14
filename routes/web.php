@@ -189,5 +189,6 @@ Route::group([
 ],function(){
     Route::get('/', DocumentControlIctPlanList::class)->name('list');
     Route::get('/create', DocumentControlIctPlanForm::class)->name('create');
+    Route::get('/update/{id}', DocumentControlIctPlanForm::class)->name('update');
 });
 // ISO ICT END //

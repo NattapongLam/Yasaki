@@ -39,10 +39,10 @@
                                     <td>{{$item->planhd_save}}</td>
                                     <td>{{$item->approval_save}}</td>
                                     <td>
-                                        {{-- <a href="{{route('documentcontrolictplan.update',$item->id)}}"
+                                        <a href="{{route('documentcontrolictplan.update',$item->id)}}"
                                             class="btn btn-sm btn-warning">
                                         <i class="fas fa-edit"></i>
-                                        </a>                                       --}}
+                                        </a>                                      
                                     </td>
                                 </tr>     
                                 @endforeach                                                        

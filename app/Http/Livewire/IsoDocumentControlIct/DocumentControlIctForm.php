@@ -15,7 +15,7 @@ class DocumentControlIctForm extends Component
     public $com_users;
     public $com_locat;
     public $com_type;
-    public $com_status;
+    public $com_status="ใช้งาน";
     public $com_os;
     public $com_ramrk;
 
@@ -37,6 +37,7 @@ class DocumentControlIctForm extends Component
         $this->com_status = $comlist->com_status;
         $this->com_os = $comlist->com_os;
         $this->com_desc = $comlist->com_desc;
+        $this->com_ramrk = $comlist->com_ramrk;
     }
 
     public function resetInput()

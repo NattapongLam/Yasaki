@@ -13,7 +13,7 @@
                                 <input class="form-control float-right" type="text" placeholder="ค้นหา"
                                     aria-label="ค้นหา" wire:model="searchTerm">
                             <div class="vr"></div>
-                                <a href="{{route('machine.create')}}" class="btn btn-primary w-sm waves-effect waves-light"><i class="fas fa-plus"></i> เพิ่ม</a>                             
+                                <a href="#" class="btn btn-primary w-sm waves-effect waves-light"><i class="fas fa-plus"></i> เพิ่ม</a>                             
                             </div>     
                         </div>                
                     </div><hr>                                                      
@@ -22,6 +22,7 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
+                                    <th>สถานะ</th>
                                     <th>วันที่ขึ้นทะเบียน</th>
                                     <th>วันที่บังคับใช้</th>
                                     <th>ระบบมาตรฐาน</th>
@@ -35,19 +36,28 @@
                             <tbody>
                                 @foreach ($isodocs as $key => $item)
                                 <tr>
-                                    <th>{{$key+1}}</th>
-                                    <td>{{$item->iso_doculist_date}}</td>
-                                    <td>{{$item->iso_doculist_forcedate}}</td>
-                                    <td>{{$item->iso_docugroup_name}}</td>
-                                    <td>{{$item->iso_docutype_code}}</td>
+                                    <th>{{$item->iso_doculist_listno}}</th>
+                                    <td class="text-center">
+                                        @if($item->iso_docustatus_name == "ใหม่")
+                                        <span class="badge bg-success">ใหม่</span>
+                                        @elseif($item->iso_docustatus_name == "แก้ไข")
+                                        <span class="badge bg-warning">แก้ไข</span>
+                                        @else
+                                        <span class="badge bg-danger">ยกเลิก</span>
+                                        @endif
+                                    </td>
+                                    <td class="text-center">{{$item->iso_doculist_date}}</td>
+                                    <td class="text-center">{{$item->iso_doculist_forcedate}}</td>
+                                    <td class="text-center">{{$item->iso_docugroup_name}}</td>
+                                    <td class="text-center">{{$item->iso_docutype_code}}</td>
                                     <td>
                                         <a href="images/isodocuments/{{$item->iso_doculist_filename}}">{{$item->iso_doculist_code}}/{{$item->iso_doculist_name}}</a>
                                     </td>
-                                    <td>{{$item->emp_department_refcode}}</td>
+                                    <td class="text-center">{{$item->emp_department_refcode}}</td>
                                     <td>{{$item->iso_docustatus_reamrk}}</td>
                                     <td>
                                         <a href="#"
-                                        class="btn btn-sm btn-warning">
+                                        class="btn btn-sm btn-info">
                                         <i class="fas fa-edit"></i>
                                         </a>                                      
                                     </td>

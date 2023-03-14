@@ -93,6 +93,7 @@ class DocumentControlIctPlanForm extends Component
                 'created_at' => 1,
                 'updated_at' => 1
             ]);
+            DB::table('iso_ict_plan_dts')->where('planhd_id',$paln->id)->delete();
             foreach($this->coms as $key => $value)
             {
                 $item = IsoIctPlanDt::Create([
@@ -140,8 +141,52 @@ class DocumentControlIctPlanForm extends Component
         } catch (\Exception $e) {
             DB::rollBack();
             return $e;
+        }        
+    }
+
+    public function mount($id =0)
+    {
+        if($id)
+        {
+            $paln = IsoIctPlanHd::findOrFail($id);
+            $this->idKey = $paln->id;
+            $this->year_name = $paln->year_name;
+            $this->planhd_remark = $paln->planhd_remark;
+            $this->planhd_type = $paln->planhd_type;
+            
+            foreach ($paln->coms as $key => $value) {
+                $this->coms[] = [
+                    'com_id' => $value->com_id,
+                    'plandt_comname' => $value->plandt_comname,
+                    'plandt_comlocat' => $value->plandt_comlocat,
+                    'plandt_reamrk' => $value->plandt_reamrk,
+                    'plandt_check01' => $value->plandt_check01,
+                    'plandt_check02' => $value->plandt_check02,
+                    'plandt_check03' => $value->plandt_check03,
+                    'plandt_check04' => $value->plandt_check04,
+                    'plandt_check05' => $value->plandt_check05,
+                    'plandt_check06' => $value->plandt_check06,
+                    'plandt_check07' => $value->plandt_check07,
+                    'plandt_check08' => $value->plandt_check08,
+                    'plandt_check09' => $value->plandt_check09,
+                    'plandt_check10' => $value->plandt_check10,
+                    'plandt_check11' => $value->plandt_check11,
+                    'plandt_check12' => $value->plandt_check12,
+                    'plandt_action01' => $value->plandt_action01,
+                    'plandt_action02' => $value->plandt_action02,
+                    'plandt_action03' => $value->plandt_action03,
+                    'plandt_action04' => $value->plandt_action04,
+                    'plandt_action05' => $value->plandt_action05,
+                    'plandt_action06' => $value->plandt_action06,
+                    'plandt_action07' => $value->plandt_action07,
+                    'plandt_action08' => $value->plandt_action08,
+                    'plandt_action09' => $value->plandt_action09,
+                    'plandt_action10' => $value->plandt_action10,
+                    'plandt_action11' => $value->plandt_action11,
+                    'plandt_action12' => $value->plandt_action12,
+                ];
+            }    
         }
-        
     }
 
     public function render()

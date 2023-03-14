@@ -58,7 +58,7 @@
                         <div class="form-group">
                         <label for="mcgroup_id" class="col-form-label">กลุ่มเครื่องจักร</label>
                         <select name="mcgroup_id" id="mcgroup_id" wire:model="mcgroup_id"
-                        class="form-control select2-search-disable @error('mcgroup_id') is-invalid @enderror">                       
+                        class="form-control @error('mcgroup_id') is-invalid @enderror">                       
                         <option value="">-- กรุณาเลือกกลุ่มเครื่องจักร --</option>
                         @foreach ($mcgroup as $item)
                         <option value="{{$item->id}}">{{$item->gruo_code}}/{{$item->gruo_name}}</option>

@@ -16,4 +16,8 @@ class IsoIctPlanHd extends Model
         'approval_date',
         'planhd_type',
     ];
+    public function coms()
+    {
+        return $this->hasMany(IsoIctPlanDt::class,'planhd_id');
+    }
 }

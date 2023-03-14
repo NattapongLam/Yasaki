@@ -224,7 +224,7 @@
                         </div>
                     </div>
                 </div><hr>
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-3">
                         <a href="{{route('machinerylist.end',$doc)}}" class="btn btn-primary w-sm waves-effect waves-light"><i class="fas fa-plus"></i> เพิ่ม</a>
                     </div>
@@ -260,7 +260,52 @@
                             </table>
                         </div>
                     </div>
-                </div> 
+                </div>  --}}
+                <div class="row">
+                    <div class="col-3">
+                        <button type="button" class="btn btn-info w-sm waves-effect waves-light" wire:click="addSublist">
+                        <i class="fas fa-plus"></i> เพิ่ม</button>
+                    </div>
+                    <div class="col-3"></div>
+                    <div class="col-3"></div>
+                    <div class="col-3"></div><hr>
+                    <div class="col-12">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>วันที่เสร็จ</th>
+                                        <th>จำนวนชั่วโมง</th>
+                                        <th>รายละเอียด</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($sublists as $key => $item)
+                                        <tr>
+                                            <td>
+                                                <input type="date" name="machinery_dt_date[]" id="machinery_dt_date.{{$key}}" 
+                                                class="form-control" wire:model="machinery_dt_date.{{$key}}">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="machinery_dt_hour[]" id="machinery_dt_hour.{{$key}}" 
+                                                class="form-control" wire:model="machinery_dt_hour.{{$key}}">
+                                                </td>
+                                            <td>
+                                                <input type="text" name="machinery_dt_remark[]" id="machinery_dt_remark.{{$key}}" 
+                                                class="form-control" wire:model="machinery_dt_remark.{{$key}}">
+                                            </td>
+                                            <td class="text-center">
+                                                <button type="button" wire:click="deleteSublistRow({{$key}})" class="btn btn-danger">
+                                                <i class="fas fa-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-12" >
                         <div class="form-group">

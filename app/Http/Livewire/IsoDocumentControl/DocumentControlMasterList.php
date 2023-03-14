@@ -16,11 +16,13 @@ class DocumentControlMasterList extends Component
     
     public function render()
     {
-        $isodocs = IsoMasterList::where('iso_docustatus_name','<>','ยกเลิก');
+        $isodocs = IsoMasterList::query();
         if($this->searchTerm){
             $isodocs = $isodocs
             ->where('iso_docugroup_name','LIKE',"%{$this->searchTerm}%")
             ->orwhere('iso_docutype_code','LIKE',"%{$this->searchTerm}%")
+            ->orwhere('iso_docustatus_name','LIKE',"%{$this->searchTerm}%")
+            ->orwhere('emp_department_refcode','LIKE',"%{$this->searchTerm}%")
             ->orwhere('iso_doculist_code','LIKE',"%{$this->searchTerm}%")
             ->orwhere('iso_doculist_name','LIKE',"%{$this->searchTerm}%");
         }

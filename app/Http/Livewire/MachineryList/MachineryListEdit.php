@@ -36,6 +36,28 @@ class MachineryListEdit extends Component
     public $machinery_hd_pic1;
     public $machinery_hd_pic2;
 
+    public $sublists = [];
+    public $machinery_dt_remark = [];
+    public $machinery_dt_hour =[];
+    public $machinery_dt_date =[];
+
+    public function deleteSublistRow($index)
+    {
+        unset($this->sublists[$index]);
+    }
+
+    public function addSublist()
+    {
+        $this->sublists[] = [
+            'machinery_dt_remark' => "",
+            'machinery_dt_hour' => 0.00,
+            'machinery_dt_date' => date('Y-m-d')
+        ];
+        $this->machinery_dt_remark[] = '';
+        $this->machinery_dt_hour[] = 0.00;
+        $this->machinery_dt_date[] = date('Y-m-d');
+    }
+
     protected $rules = [
         'machinery_hd_date' => "required",
         'machinery_hd_docuno' => "required",

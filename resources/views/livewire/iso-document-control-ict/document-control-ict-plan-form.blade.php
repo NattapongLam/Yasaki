@@ -20,7 +20,7 @@
                         <div class="form-group">
                         <label for="planhd_type" class="col-form-label">ประเภท</label>
                         <select name="planhd_type" id="planhd_type" wire:model="planhd_type"
-                        class="form-control select2-search-disable @error('planhd_type') is-invalid @enderror">                       
+                        class="form-control  @error('planhd_type') is-invalid @enderror">                       
                         <option value="">-- กรุณาเลือกประเภท --</option>
                         <option value="Server">Server</option>
                         <option value="Computer">Computer</option>
