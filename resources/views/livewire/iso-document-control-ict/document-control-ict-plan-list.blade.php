@@ -27,7 +27,7 @@
                                     <th>หมายเหตุ</th>
                                     <th>ผู้บันทึก</th>
                                     <th>ผู้ตรวจสอบ</th>
-                                    <th>แก้ไข</th>                               
+                                    <th></th>                             
                                 </tr>
                             </thead>
                             <tbody>
@@ -42,7 +42,13 @@
                                         <a href="{{route('documentcontrolictplan.update',$item->id)}}"
                                             class="btn btn-sm btn-warning">
                                         <i class="fas fa-edit"></i>
-                                        </a>                                      
+                                        </a> 
+                                        @livewire('iso-document-control-ict.document-control-ict-plan-appr')
+                                        <button type="button" class="btn btn-sm btn-success" 
+                                        data-bs-toggle="modal" data-bs-target="#exampleModal"data-bs-whatever="@mdo" 
+                                        wire:click="$emit('editControlIctPlanAppr',{{$item->id}})">
+                                        <i class="fas fa-check"></i>
+                                        </button>                                                                           
                                     </td>
                                 </tr>     
                                 @endforeach                                                        

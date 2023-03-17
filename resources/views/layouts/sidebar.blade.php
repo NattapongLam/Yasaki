@@ -51,7 +51,7 @@
                         <span key="t-dashboards">รายงานซ่อมบำรุง</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="#" key="t-default">รายงานแจ้งซ่อมเครื่องจักร</a></li>     
+                        <li><a href="{{route('machineryreport.list')}}" key="t-default">รายงานแจ้งซ่อมเครื่องจักร</a></li>     
                     </ul>
                 </li>                                                      
                 <li class="menu-title" key="t-pages">Setting</li>

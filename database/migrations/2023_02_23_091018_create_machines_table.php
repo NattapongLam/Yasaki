@@ -24,6 +24,14 @@ class CreateMachinesTable extends Migration
             $table->boolean('mc_status')->default(true)->comment('สถานะ True-ใช้งาน False-ยกเลิก');
             $table->boolean('mc_pdt')->default(true)->comment('สถานะ True-ใช้ผลิต False-ไม่ใช้ผลิต');
             $table->foreignId('mcgroup_id')->references('id')->on('machine_groups')->onDelete('cascade');
+            $table->integer('mc_no')->nullable();
+            $table->string('mc_save')->nullable();
+            $table->string('mc_subname')->nullable();
+            $table->string('mc_pic1')->nullable();
+            $table->string('mc_pic2')->nullable();
+            $table->string('mc_pic3')->nullable();
+            $table->string('mc_pic4')->nullable();
+            $table->decimal('mc_power',20,4)->nullable();
             $table->timestamps();
         });
     }

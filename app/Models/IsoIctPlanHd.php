@@ -15,6 +15,7 @@ class IsoIctPlanHd extends Model
         'approval_save',
         'approval_date',
         'planhd_type',
+        'approval_note'
     ];
     public function coms()
     {

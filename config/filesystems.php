@@ -54,6 +54,12 @@ return [
             'url' => env('APP_URL').'/images',
             'visibility' => 'public',
         ],
+        'machinerylist' => [
+            'driver' => 'local',
+            'root' => public_path('images/machinerylists'),
+            'url' => env('APP_URL').'/images',
+            'visibility' => 'public',
+        ],
 
         's3' => [
             'driver' => 's3',

@@ -21,6 +21,7 @@ class CreateIsoIctPlanHdsTable extends Migration
             $table->string('approval_save')->nullable();
             $table->date('approval_date')->nullable();
             $table->string('planhd_type')->nullable();
+            $table->string('approval_note')->nullable();
             $table->timestamps();
         });
     }

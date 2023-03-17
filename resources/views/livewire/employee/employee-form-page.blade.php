@@ -8,7 +8,7 @@
                         <div class="form-group">
                         <label for="employee_id" class="col-form-label">ชื่อ - นามสกุล</label>
                         <select name="employee_id" id="employee_id" wire:model="employee_id"
-                        class="form-control select2-search-disable @error('employee_id') is-invalid @enderror">                       
+                        class="form-control @error('employee_id') is-invalid @enderror">                       
                         <option value="">-- กรุณาเลือกพนักงาน --</option>
                         @foreach ($emplist as $item)
                         <option value="{{$item->id}}">{{$item->employee_code}}/{{$item->employee_fullname}}</option>
@@ -77,5 +77,28 @@
                 </div>
             </form>           
         </div>      
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">สิทธิ์การเข้าถึงระบบ</h3>
+            <table class="table table-bordered dt-responsive nowrap w-100">
+                <thead>
+                    <tr>
+                        <th style="text-align: center">สถานะ</th>
+                        <th>รหัส</th>
+                        <th>ชื่อ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($useper as $item)
+                        <tr>
+                            <td ><span class="badge bg-success">ใช้งาน</span></td>
+                            <td>{{$item->permission_name}}</td>
+                            <td>{{$item->menu_name}}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

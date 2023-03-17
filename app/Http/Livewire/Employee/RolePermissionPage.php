@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Employee;
 
 use App\Models\User;
 use Livewire\Component;
+use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 
@@ -13,12 +14,13 @@ class RolePermissionPage extends Component
     public $permission = [];
     public $employee;
 
+
     public function mount($id)
     {
         $employee = User::findOrFail($id);
         if($employee){
             $this->role = !empty($employee->getRoleNames()[0]) ? $employee->getRoleNames()[0] : '';
-            $this->employee = $employee;
+            $this->employee = $employee;     
         }
     }
 
@@ -31,7 +33,7 @@ class RolePermissionPage extends Component
             'title' => 'บันทึกข้อมูลเรียบร้อย',
             'timer' => 3000,
             'icon' => 'success',
-            // 'url' => route('employee.list')
+            'url' => route('employee.list')
         ]);
     }
 
@@ -39,7 +41,7 @@ class RolePermissionPage extends Component
     {
         return view('livewire.employee.role-permission-page',[
             'roles' => Role::all(),
-            'permissions' => Permission::join('menus','permissions.name','=','menus.permission_name')->get()
+            'permissions' => Permission::join('menus','permissions.name','=','menus.permission_name')->get(),
         ])->extends('layouts.main');
     }
 }

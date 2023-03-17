@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\MachineryListSub;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class MachineryList extends Model
 {
@@ -32,4 +33,8 @@ class MachineryList extends Model
       ,"machinery_hd_pic1"
       ,"machinery_hd_pic2"  
     ];
+    public function MachineryListSubs()
+    {
+      return $this->hasMany(MachineryListSub::class,'mclist_id');
+    }
 }

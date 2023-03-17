@@ -97,175 +97,175 @@
                                     <td>
                                         <div class="input-group">
                                             <input class="form-check-input" type="checkbox" id="formCheck2"
-                                            name="plandt_check01[]" value="1" checked 
+                                            name="plandt_check01[]"
                                             wire:model="coms.{{$key}}.plandt_check01">
                                         </div>                                   
                                     </td>
                                     <td>
                                         <div class="input-group">
                                             <input class="form-check-input" type="checkbox" id="formCheck2"
-                                            name="plandt_action01[]" value="1" checked 
+                                            name="plandt_action01[]"
                                             wire:model="coms.{{$key}}.plandt_action01">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">
                                             <input class="form-check-input" type="checkbox" id="formCheck2"
-                                            name="plandt_check02[]" value="1" checked 
+                                            name="plandt_check02[]"
                                             wire:model="coms.{{$key}}.plandt_check02">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">
                                             <input class="form-check-input" type="checkbox" id="formCheck2"
-                                            name="plandt_action02[]" value="1" checked 
+                                            name="plandt_action02[]"
                                             wire:model="coms.{{$key}}.plandt_action02">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">
                                             <input class="form-check-input" type="checkbox" id="formCheck2"
-                                            name="plandt_check03[]" value="1" checked 
+                                            name="plandt_check03[]"
                                             wire:model="coms.{{$key}}.plandt_check03">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">
                                             <input class="form-check-input" type="checkbox" id="formCheck2"
-                                            name="plandt_action03[]" value="1" checked 
+                                            name="plandt_action03[]"
                                             wire:model="coms.{{$key}}.plandt_action03">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">
                                             <input class="form-check-input" type="checkbox" id="formCheck2"
-                                            name="plandt_check04[]" value="1" checked 
+                                            name="plandt_check04[]"
                                             wire:model="coms.{{$key}}.plandt_check04">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">
                                             <input class="form-check-input" type="checkbox" id="formCheck2"
-                                            name="plandt_action04[]" value="1" checked 
+                                            name="plandt_action04[]"
                                             wire:model="coms.{{$key}}.plandt_action04">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">
                                             <input class="form-check-input" type="checkbox" id="formCheck2"
-                                            name="plandt_check05[]" value="1" checked 
+                                            name="plandt_check05[]"
                                             wire:model="coms.{{$key}}.plandt_check05">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">
                                             <input class="form-check-input" type="checkbox" id="formCheck2"
-                                            name="plandt_action05[]" value="1" checked 
+                                            name="plandt_action05[]"
                                             wire:model="coms.{{$key}}.plandt_action05">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">
                                             <input class="form-check-input" type="checkbox" id="formCheck2"
-                                            name="plandt_check06[]" value="1" checked 
+                                            name="plandt_check06[]"
                                             wire:model="coms.{{$key}}.plandt_check06">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">
                                             <input class="form-check-input" type="checkbox" id="formCheck2"
-                                            name="plandt_action06[]" value="1" checked 
+                                            name="plandt_action06[]"
                                             wire:model="coms.{{$key}}.plandt_action06">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">
                                             <input class="form-check-input" type="checkbox" id="formCheck2"
-                                            name="plandt_check07[]" value="1" checked 
+                                            name="plandt_check07[]"
                                             wire:model="coms.{{$key}}.plandt_check07">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">
                                             <input class="form-check-input" type="checkbox" id="formCheck2"
-                                            name="plandt_action07[]" value="1" checked 
+                                            name="plandt_action07[]"
                                             wire:model="coms.{{$key}}.plandt_action07">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">
                                             <input class="form-check-input" type="checkbox" id="formCheck2"
-                                            name="plandt_check08[]" value="1" checked 
+                                            name="plandt_check08[]"
                                             wire:model="coms.{{$key}}.plandt_check08">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">
                                             <input class="form-check-input" type="checkbox" id="formCheck2"
-                                            name="plandt_action08[]" value="1" checked 
+                                            name="plandt_action08[]"
                                             wire:model="coms.{{$key}}.plandt_action08">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">
                                             <input class="form-check-input" type="checkbox" id="formCheck2"
-                                            name="plandt_check09[]" value="1" checked 
+                                            name="plandt_check09[]"
                                             wire:model="coms.{{$key}}.plandt_check09">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">
                                             <input class="form-check-input" type="checkbox" id="formCheck2"
-                                            name="plandt_action09[]" value="1" checked 
+                                            name="plandt_action09[]"
                                             wire:model="coms.{{$key}}.plandt_action09">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">
                                             <input class="form-check-input" type="checkbox" id="formCheck2"
-                                            name="plandt_check10[]" value="1" checked 
+                                            name="plandt_check10[]"
                                             wire:model="coms.{{$key}}.plandt_check10">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">
                                             <input class="form-check-input" type="checkbox" id="formCheck2"
-                                            name="plandt_action10[]" value="1" checked 
+                                            name="plandt_action10[]"
                                             wire:model="coms.{{$key}}.plandt_action10">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">
                                             <input class="form-check-input" type="checkbox" id="formCheck2"
-                                            name="plandt_check11[]" value="1" checked 
+                                            name="plandt_check11[]" 
                                             wire:model="coms.{{$key}}.plandt_check11">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">
                                             <input class="form-check-input" type="checkbox" id="formCheck2"
-                                            name="plandt_action11[]" value="1" checked 
+                                            name="plandt_action11[]"
                                             wire:model="coms.{{$key}}.plandt_action11">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">
                                             <input class="form-check-input" type="checkbox" id="formCheck2"
-                                            name="plandt_check12[]" value="1" checked 
+                                            name="plandt_check12[]"
                                             wire:model="coms.{{$key}}.plandt_check12">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">
                                             <input class="form-check-input" type="checkbox" id="formCheck2"
-                                            name="plandt_action12[]" value="1" checked 
+                                            name="plandt_action12[]"
                                             wire:model="coms.{{$key}}.plandt_action12">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">
                                             <input class="form-control" type="text"
-                                            name="plandt_reamrk[]"  value=""
+                                            name="plandt_reamrk[]"
                                             wire:model="coms.{{$key}}.plandt_reamrk">
                                         </div>
                                     </td>

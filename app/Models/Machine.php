@@ -18,6 +18,14 @@ class Machine extends Model
         'mc_status',
         'mc_pdt',
         'mcgroup_id',
+        'mc_no',
+        'mc_save',
+        'mc_subname',
+        'mc_pic1',
+        'mc_pic2',
+        'mc_pic3',
+        'mc_pic4',
+        'mc_power'
     ];
 
     public function machinegroup()

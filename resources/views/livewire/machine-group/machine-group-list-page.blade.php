@@ -44,7 +44,7 @@
                                         <span class="badge bg-danger">ยกเลิก</span>
                                         @endif
                                     </td>
-                                    <td>
+                                    <td>                                        
                                         <button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"data-bs-whatever="@mdo" wire:click="$emit('editMachineGroup',{{$item->id}})">
                                             <i class="fas fa-edit"></i>
                                         </button>                                      

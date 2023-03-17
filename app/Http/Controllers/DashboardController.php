@@ -3,16 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use App\Models\EmployeeDatetime;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+        // $times = EmployeeDatetime::whereMonth('emp_times_date',Carbon::now()->month)
+        // ->whereYear('emp_times_date',Carbon::now()->year)
+        // ->where('emp_times_empcode',auth()->user()->username)
+        // ->get();
         return view('dashboard');
     }
 

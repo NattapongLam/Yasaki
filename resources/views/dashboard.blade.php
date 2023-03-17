@@ -12,6 +12,9 @@
         <link href="{{URL::asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{URL::asset('assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
         <link href="{{URL::asset('assets/libs/select2/css/select2.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{URL::asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{URL::asset('assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{URL::asset('assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />   
         @livewireStyles
     </head>
     <body data-sidebar="dark" data-layout-mode="light">
@@ -114,11 +117,37 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
+                                        </div><hr>
+                                        {{-- @if($times)
+                                        <div class="col-lg-12">
+                                            <h4 class="card-title">เวลาเข้า - ออกประจำเดือน</h4>
+                                            <div class="table-responsive">
+                                                <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap w-100">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>วันที่</th>
+                                                            <th>เวลา</th>
+                                                            <th>หมายเหตุ</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach ($times as $key => $item)
+                                                            <tr>
+                                                                <td>{{$item->emp_times_date}}</td>
+                                                                <td>{{$item->emp_times_result}}</td>
+                                                                <td>{{$item->emp_times_remark}}</td>
+                                                            </tr>
+                                                        @endforeach
+                                                    </tbody>
+                                                </table>
                                             </div>
+                                        </div>
+                                        @endif                                      --}}
                                     </div>
                                 </div>
-                            </div>
-                        </div>                                        
+                            </div>                          
+                        </div> 
+                                                               
                     </div> <!-- container-fluid -->
                 </div>
                 <!-- End Page-content -->               
@@ -138,6 +167,19 @@
         <script src="{{URL::asset('assets/libs/node-waves/waves.min.js')}}"></script>
         <script src="{{URL::asset('assets/js/app.js')}}"></script>
         <script src="{{URL::asset('assets/libs/select2/js/select2.min.js')}}"></script>
+        <script src="{{URL::asset('assets/libs/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+        <script src="{{URL::asset('assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+        <script src="{{URL::asset('assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js')}}"></script>
+        <script src="{{URL::asset('assets/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js')}}"></script>
+        <script src="{{URL::asset('assets/libs/jszip/jszip.min.js')}}"></script>
+        <script src="{{URL::asset('assets/libs/pdfmake/build/pdfmake.min.js')}}"></script>
+        <script src="{{URL::asset('assets/libs/pdfmake/build/vfs_fonts.js')}}"></script>
+        <script src="{{URL::asset('assets/libs/datatables.net-buttons/js/buttons.html5.min.js')}}"></script>
+        <script src="{{URL::asset('assets/libs/datatables.net-buttons/js/buttons.print.min.js')}}"></script>
+        <script src="{{URL::asset('assets/libs/datatables.net-buttons/js/buttons.colVis.min.js')}}"></script>
+        <script src="{{URL::asset('assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
+        <script src="{{URL::asset('assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')}}"></script>
+        <script src="{{URL::asset('assets/js/pages/datatables.init.js')}}"></script>      
         @livewireScripts
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>

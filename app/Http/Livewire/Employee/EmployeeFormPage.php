@@ -7,6 +7,7 @@ use Livewire\Component;
 use Illuminate\Support\Str;
 use App\Models\EmployeeList;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic;
@@ -21,8 +22,9 @@ class EmployeeFormPage extends Component
     public $password;
     public $username;
     public $avatar;
-    public $type;
+    public $type="Employee";
     public $employee_id;
+    public $useper =[];
 
     public function rulesValidate()
     {
@@ -105,6 +107,7 @@ class EmployeeFormPage extends Component
             $this->email = $employee->email;
             $this->username= $employee->username;
             $this->type= $employee->type;
+           
         }
     }
 
@@ -114,6 +117,14 @@ class EmployeeFormPage extends Component
             $emp = EmployeeList::findOrFail($this->employee_id);
             $this->username = $emp->employee_code;
             $this->name = $emp->employee_fullname;
+            $use = DB::table('users')->where('employee_id',$this->employee_id)->first();
+            if($use){
+                $this->useper = DB::table('model_has_permissions')
+                ->join('permissions','permissions.id','=','model_has_permissions.permission_id')
+                ->join('menus','permissions.name','=','menus.permission_name')
+                ->where('model_id',$use->id)
+                ->get();
+            }            
         }
         return view('livewire.employee.employee-form-page',[
             'emplist' => EmployeeList::where('employee_status',true)->get()

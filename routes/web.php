@@ -17,6 +17,7 @@ use App\Http\Livewire\MachineryList\MachineryListPage;
 use App\Http\Livewire\MachineGroup\MachineGroupListPage;
 use App\Http\Livewire\DepartmentList\DepartmentListReport;
 use App\Http\Livewire\LeaveApproval\LeaveApprovalListPage;
+use App\Http\Livewire\MachineryReport\MachineryReportPage;
 use App\Http\Livewire\MachineSystem\MachineSystemListPage;
 use App\Http\Livewire\MachineService\MachineServiceListPage;
 use App\Http\Livewire\IsoDocumentControl\DocumentControlTypeList;
@@ -101,7 +102,13 @@ Route::group([
     Route::get('/create', MachineryListForm::class)->name('create');
     Route::get('/update/{id}', MachineryListForm::class)->name('update');
     Route::get('/edit/{id}', MachineryListEdit::class)->name('edit');
-    Route::get('/end/{id}', MachineryListEnd::class)->name('end');
+});
+Route::group([
+    'prefix' => 'machineryreports',
+    'as' => 'machineryreport.',
+    'middleware' =>  ['auth','permission:machineryreports'],
+],function(){
+    Route::get('/', MachineryReportPage::class)->name('list');
 });
 // MTN END //
 

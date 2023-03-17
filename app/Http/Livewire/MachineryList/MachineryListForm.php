@@ -2,14 +2,22 @@
 
 namespace App\Http\Livewire\MachineryList;
 
+use App\Models\Machine;
 use Livewire\Component;
+use Illuminate\Support\Str;
 use App\Models\MachineryList;
 use App\Models\MachineSystem;
+use Livewire\WithFileUploads;
 use App\Models\DepartmentList;
 use App\Models\MachineService;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\ImageManagerStatic;
 
 class MachineryListForm extends Component
 {
+    use WithFileUploads;
+
     public $idKey = 0;
     public $machinery_hd_date;
     public $machinery_hd_docuno;
@@ -33,6 +41,8 @@ class MachineryListForm extends Component
     public $machinery_hd_refdocuno;
     public $machinery_hd_pic1;
     public $machinery_hd_pic2;
+
+    public $mcs =[];
 
     protected $rules = [
         'machinery_hd_date' => "required",
@@ -75,6 +85,16 @@ class MachineryListForm extends Component
         $this->reset('ms_machine_service_name');
         $this->reset('machinery_hd_note');
     }
+    public function storeImage()
+    {
+        if(!$this->machinery_hd_pic1){
+            return null;
+        }
+        $img = ImageManagerStatic::make($this->machinery_hd_pic1)->encode('png');
+        $name = date('YmdHis').Str::random().'.png';
+        Storage::disk('machinerylist')->put($name,$img);
+        return $name;
+    }
 
     public function mount($id = 0)
     {
@@ -116,6 +136,7 @@ class MachineryListForm extends Component
             'ms_machine_service_name'=> $this->ms_machine_service_name,
             'machinery_hd_note'=> $this->machinery_hd_note,
             'machinery_hd_save' => auth()->user()->name,
+            'machinery_hd_pic1' => $this->storeImage()
         ]);
         $this->resetInput();
         $this->dispatchBrowserEvent('swal',[
@@ -136,6 +157,15 @@ class MachineryListForm extends Component
         } else {
             $docs = 'MTN-' . date('Ymd') . '-' . str_pad(1, 4, '0', STR_PAD_LEFT);
             $docs_number = 1;
+        }
+        if($this->department_name){
+            $d = DB::table('department_lists')->where('department_name',$this->department_name)->first();
+            $g = DB::table('machine_groups')->where('gruo_code',$d->department_refcode)->first();
+            $this->mcs = Machine::where('mcgroup_id',$g->id)->get();
+        }
+        if($this->ms_machine_code){
+            $mcname = DB::table('machines')->where('mc_code',$this->ms_machine_code)->first();
+            $this->ms_machine_name = $mcname->mc_name;
         }
         $this->machinery_hd_date = date('Y-m-d');
         $this->machinery_hd_docuno = $docs;

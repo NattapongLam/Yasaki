@@ -23,6 +23,7 @@ class CreateMachineryListSubsTable extends Migration
             $table->date('machinery_dt_date')->nullable();
             $table->boolean('machinery_dt_flag')->nullable()->default(true)->comment('สถานะ True-ใช้งาน False-ยกเลิก');
             $table->bigInteger('machinery_dt_id')->nullable();
+            $table->bigInteger('mclist_id')->nullable();
             $table->timestamps();
         });
     }

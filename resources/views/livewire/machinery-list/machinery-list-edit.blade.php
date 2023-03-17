@@ -224,26 +224,73 @@
                         </div>
                     </div>
                 </div><hr>
-                {{-- <div class="row">
-                    <div class="col-3">
-                        <a href="{{route('machinerylist.end',$doc)}}" class="btn btn-primary w-sm waves-effect waves-light"><i class="fas fa-plus"></i> เพิ่ม</a>
+                <div class="row">
+                    <div class="col-2" style="text-align:center">
+                        <button
+                            type="button"
+                            class="btn btn-info waves-effect waves-light"
+                            wire:click.prevent="addListsub({{$i}})">
+                            <i class="fas fa-plus"></i> เพิ่ม
+                        </button>                       
                     </div>
-                    <div class="col-3"></div>
-                    <div class="col-3"></div>
-                    <div class="col-3"></div>
-                    
-                </div>
+                    <div class="col-2">
+                        <div class="form-group">
+                            <input type="date" class="form-control" placeholder="วันที่เสร็จ" wire:model="machinery_dt_date.0">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="จำนวนชั่วโมง" wire:model="machinery_dt_hour.0">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="รายละเอียด" wire:model="machinery_dt_remark.0">
+                        </div>
+                    </div>
+                </div><br>
+                @foreach($listsubs as $key => $value)
+                <div class="row">
+                    <div class="col-2" style="text-align:center">
+                        <button
+                            type="button"
+                            class="btn btn-danger waves-effect waves-light"
+                            wire:click.prevent="delListsubRow({{$key}})">
+                            <i class="fa fa-trash"></i> ลบ
+                        </button>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-group">
+                            <input type="date" class="form-control" placeholder="วันที่เสร็จ" wire:model="machinery_dt_date.{{ $value }}">
+                            @error('machinery_dt_date.'.$value) <span class="text-danger error">{{ $message }}</span>@enderror
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="จำนวนชั่วโมง" wire:model="machinery_dt_hour.{{ $value }}">
+                            @error('machinery_dt_hour.'.$value) <span class="text-danger error">{{ $message }}</span>@enderror
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="รายละเอียด" wire:model="machinery_dt_remark.{{ $value }}">
+                            @error('machinery_dt_remark.'.$value) <span class="text-danger error">{{ $message }}</span>@enderror
+                        </div>
+                    </div>
+                </div><br>
+                @endforeach
+                {{--@if($list)
                 <div class="row">
                     <div class="col-12" >
                         <div class="table-responsive">
-                            <table class="table mb-0">
+                            <table class="table table-bordered">
                                 <thead>
                                     <tr>
                                         <th>#</th>
                                         <th>รายละเอียด</th>
                                         <th>จำนวนชั่วโมง</th>
                                         <th>วันที่เสร็จ</th>
-                                        <th></th>
+                                        <th style="text-align: center"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -253,72 +300,42 @@
                                            <td>{{$item->machinery_dt_remark}}</td> 
                                            <td>{{$item->machinery_dt_hour}}</td> 
                                            <td>{{$item->machinery_dt_date}}</td> 
-                                           <td></td>
+                                           <td>                                         
+                                            <button type="button" 
+                                            class="btn btn-sm btn-warning" 
+                                            data-bs-toggle="modal" 
+                                            data-bs-target="#exampleModal"
+                                            data-bs-whatever="@mdo" 
+                                            wire:click="$emit('editMachineryListEnd',{{$item->id}})">
+                                            <i class="fas fa-edit"></i>
+                                            </button>
+                                           </td>
                                         </tr>
                                     @endforeach                                                                           
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                </div>  --}}
-                <div class="row">
-                    <div class="col-3">
-                        <button type="button" class="btn btn-info w-sm waves-effect waves-light" wire:click="addSublist">
-                        <i class="fas fa-plus"></i> เพิ่ม</button>
-                    </div>
-                    <div class="col-3"></div>
-                    <div class="col-3"></div>
-                    <div class="col-3"></div><hr>
-                    <div class="col-12">
-                        <div class="table-responsive">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>วันที่เสร็จ</th>
-                                        <th>จำนวนชั่วโมง</th>
-                                        <th>รายละเอียด</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($sublists as $key => $item)
-                                        <tr>
-                                            <td>
-                                                <input type="date" name="machinery_dt_date[]" id="machinery_dt_date.{{$key}}" 
-                                                class="form-control" wire:model="machinery_dt_date.{{$key}}">
-                                            </td>
-                                            <td>
-                                                <input type="text" name="machinery_dt_hour[]" id="machinery_dt_hour.{{$key}}" 
-                                                class="form-control" wire:model="machinery_dt_hour.{{$key}}">
-                                                </td>
-                                            <td>
-                                                <input type="text" name="machinery_dt_remark[]" id="machinery_dt_remark.{{$key}}" 
-                                                class="form-control" wire:model="machinery_dt_remark.{{$key}}">
-                                            </td>
-                                            <td class="text-center">
-                                                <button type="button" wire:click="deleteSublistRow({{$key}})" class="btn btn-danger">
-                                                <i class="fas fa-trash"></i></button>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+                </div>                 
+                @endif--}}
                 <div class="row">
                     <div class="col-12" >
                         <div class="form-group">
                             <label for="machinery_hd_checknote" class="col-form-label">รายละเอียด/ผลการตรวจสอบ</label>
-                            <textarea class="form-control" wire:model="machinery_hd_checknote"></textarea>
+                            <textarea class="form-control @error('machinery_hd_checknote') is-invalid @enderror" wire:model="machinery_hd_checknote"></textarea>
+                            @error('machinery_hd_checknote')
+                            <div id="machinery_hd_checknote_validation" class="invalid-feedback">
+                            {{$message}}
+                            </div>
+                            @enderror
                         </div>
                     </div>
                 </div><hr>
                 <div class="row">
                     <button type="submit" class="btn btn-primary btn-lg waves-effect waves-light">บันทึกข้อมูล</button>  
-                </div>    
+                </div>                  
             </div>
         </div>         
-</form>   
+    </form> 
 </div>
 

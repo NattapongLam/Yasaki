@@ -5,21 +5,11 @@
             <div class="row">
                 <div class="col-3"><h2 class="card-title">บันทึกแจ้งซ่อมเครื่องจักร</h2></div>
                 <div class="col-3"></div>
-                <div class="col-3" style="text-align: right;"><h3 class="card-title" style="color: red">สถานะเอกสาร</h3></div>
-                <div class="col-3" style="text-align: right;">                      
-                        <select class="form-control @error('machinery_hd_status_id') is-invalid @enderror" wire:model="machinery_hd_status_id">
-                            <option value="1">รอดำเนินการ</option>
-                            <option value="2">ยกเลิก</option>
-                        </select>
-                        @error('machinery_hd_status_id')
-                        <div id="machinery_hd_status_id_validation" class="invalid-feedback">
-                        {{$message}}          
-                        </div>
-                        @enderror           
-                </div>        
+                <div class="col-3" style="text-align: right;"></div>
+                <div class="col-3" style="text-align: right;"></div>        
             </div>                      
                 <div class="row">
-                    <div class="col-12 col-md-4">
+                    <div class="col-12 col-md-3">
                         <div class="form-group">
                         <label for="machinery_hd_date" class="col-form-label">วันที่</label>
                         <input type="date" name="machinery_hd_date" id="machinery_hd_date" wire:model="machinery_hd_date"
@@ -31,7 +21,7 @@
                         @enderror
                         </div>
                     </div>
-                    <div class="col-12 col-md-4">
+                    <div class="col-12 col-md-3">
                         <div class="form-group">
                         <label for="machinery_hd_docuno" class="col-form-label">เลขที่เอกสาร</label>
                         <input type="text" name="machinery_hd_docuno" id="machinery_hd_docuno" wire:model="machinery_hd_docuno"
@@ -44,7 +34,19 @@
                         @enderror
                         </div>
                     </div>
-                    <div class="col-12 col-md-4" >
+                    <div class="col-12 col-md-3">
+                        <label for="machinery_hd_date" class="col-form-label">สถานะเอกสาร</label>
+                        <select class="form-control @error('machinery_hd_status_id') is-invalid @enderror" wire:model="machinery_hd_status_id">
+                            <option value="1">รอดำเนินการ</option>
+                            <option value="2">ยกเลิก</option>
+                        </select>
+                        @error('machinery_hd_status_id')
+                        <div id="machinery_hd_status_id_validation" class="invalid-feedback">
+                        {{$message}}          
+                        </div>
+                        @enderror   
+                    </div>
+                    <div class="col-12 col-md-3" >
                         <div class="form-group">
                             <label for="machinery_hd_type" class="col-form-label">ประเภทงาน</label>
                             <select class="form-control @error('machinery_hd_type') is-invalid @enderror" wire:model="machinery_hd_type">
@@ -59,8 +61,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12 col-md-4" >
+                <div class="row">                   
+                    <div class="col-12 col-md-4">
                         <div class="form-group">
                             <label for="department_name" class="col-form-label">แผนก</label>
                             <select class="form-control @error('department_name') is-invalid @enderror" wire:model="department_name">
@@ -80,7 +82,10 @@
                         <div class="form-group">
                             <label for="ms_machine_code" class="col-form-label">รหัสเครื่องจักร</label>
                             <select class="form-control" wire:model="ms_machine_code">
-                                <option value="">-- กรุณาเลือกรหัสเครื่องจักร --</option>                      
+                                <option value="">-- กรุณาเลือกรหัสเครื่องจักร --</option>  
+                                @foreach ($mcs as $item)
+                                <option value="{{$item->mc_code}}">{{$item->mc_code}}/{{$item->mc_name}}</option>  
+                                @endforeach             
                             </select>
                         </div>
                     </div>
@@ -98,7 +103,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-4" >
+                    <div class="col-12 col-md-3" >
                         <div class="form-group">
                             <label for="ms_machine_system_name" class="col-form-label">ระบบ</label>
                             <select class="form-control  @error('ms_machine_system_name') is-invalid @enderror" wire:model="ms_machine_system_name">
@@ -114,7 +119,7 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="col-12 col-md-4" >
+                    <div class="col-12 col-md-3" >
                         <div class="form-group">
                             <label for="ms_machine_service_name" class="col-form-label">บริการ</label>
                             <select class="form-control  @error('ms_machine_service_name') is-invalid @enderror" wire:model="ms_machine_service_name">
@@ -130,7 +135,7 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="col-12 col-md-4">
+                    <div class="col-12 col-md-3">
                         <div class="form-group">
                         <label for="machinery_hd_lcaol" class="col-form-label">สถานที่</label>
                         <input type="text" name="machinery_hd_lcaol" id="machinery_hd_lcaol" placeholder="สถานที่" wire:model="machinery_hd_lcaol"
@@ -141,6 +146,12 @@
                             </div>
                             @enderror
                         </div>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <div class="form-group">
+                            <label for="machinery_hd_pic1" class="col-form-label">รูปภาพ</label>
+                            <input class="form-control" type="file" id="machinery_hd_pic1" name="machinery_hd_pic1" wire:model="machinery_hd_pic1">
+                            </div>
                     </div>
                 </div>
                 <div class="row">

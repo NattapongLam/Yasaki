@@ -30,6 +30,7 @@ class CreateIsoHolderListsTable extends Migration
             $table->string('iso_docuholder_destroy')->nullable();
             $table->string('iso_docuholder_remark')->nullable();
             $table->string('iso_docuholder_save')->nullable();
+            $table->string('iso_docuholder_status')->nullable();
             $table->timestamps();
         });
     }
