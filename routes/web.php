@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\IsoAsb\IsoAsbHolder;
+use App\Http\Livewire\IsoDct\IsoDctHolder;
+use App\Http\Livewire\IsoHtp\IsoHtpHolder;
+use App\Http\Livewire\IsoMch\IsoMchHolder;
+use App\Http\Livewire\IsoPkg\IsoPkgHolder;
+use App\Http\Livewire\IsoPtg\IsoPtgHolder;
 use App\Http\Livewire\Employee\MenuListPage;
 use App\Http\Controllers\DashboardController;
 use App\Http\Livewire\Machine\MachineFormPage;
@@ -109,6 +115,8 @@ Route::group([
     'middleware' =>  ['auth','permission:machineryreports'],
 ],function(){
     Route::get('/', MachineryReportPage::class)->name('list');
+    Route::get('/edit/{id}', MachineryReportForm::class)->name('edit');
+    Route::get('/end/{id}', MachineryListEnd::class)->name('end');
 });
 // MTN END //
 
@@ -199,3 +207,63 @@ Route::group([
     Route::get('/update/{id}', DocumentControlIctPlanForm::class)->name('update');
 });
 // ISO ICT END //
+
+// ISO DCT //
+Route::group([
+    'prefix' => 'isodcts',
+    'as' => 'isodct.',
+    //'middleware' =>  ['auth','permission:isodcts'],
+],function(){
+    Route::get('/', IsoDctHolder::class)->name('list');
+});
+// ISO DCT END//
+
+// ISO HTP //
+Route::group([
+    'prefix' => 'isohtps',
+    'as' => 'isohtp.',
+    //'middleware' =>  ['auth','permission:isohtps'],
+],function(){
+    Route::get('/', IsoHtpHolder::class)->name('list');
+});
+// ISO HTP END//
+
+// ISO MCH //
+Route::group([
+    'prefix' => 'isomchs',
+    'as' => 'isomch.',
+    //'middleware' =>  ['auth','permission:isomchs'],
+],function(){
+    Route::get('/', IsoMchHolder::class)->name('list');
+});
+// ISO MCH END//
+
+// ISO PTG //
+Route::group([
+    'prefix' => 'isoptgs',
+    'as' => 'isoptg.',
+    //'middleware' =>  ['auth','permission:isoptgs'],
+],function(){
+    Route::get('/', IsoPtgHolder::class)->name('list');
+});
+// ISO PTG END//
+
+// ISO ASB //
+Route::group([
+    'prefix' => 'isoasbs',
+    'as' => 'isoasb.',
+    //'middleware' =>  ['auth','permission:isoasbs'],
+],function(){
+    Route::get('/', IsoAsbHolder::class)->name('list');
+});
+// ISO ASB END//
+
+// ISO PKG //
+Route::group([
+    'prefix' => 'isopkgs',
+    'as' => 'isopkg.',
+    //'middleware' =>  ['auth','permission:isopkgs'],
+],function(){
+    Route::get('/', IsoPkgHolder::class)->name('list');
+});
+// ISO PKG END//

@@ -2,9 +2,12 @@
 
 namespace App\Http\Livewire\MachineryList;
 
+use App\Models\Machine;
 use Livewire\Component;
 use Illuminate\Support\Str;
+use App\Http\Livewire\Field;
 use App\Models\EmployeeList;
+use Illuminate\Http\Request;
 use App\Models\MachineryList;
 use App\Models\MachineSystem;
 use Livewire\WithFileUploads;
@@ -14,8 +17,6 @@ use App\Models\MachineryListSub;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic;
-use App\Http\Livewire\Field;
-use Illuminate\Http\Request;
 
 
 class MachineryListEdit extends Component
@@ -116,13 +117,6 @@ class MachineryListEdit extends Component
         $this->reset('ms_machine_service_name');
         $this->reset('machinery_hd_note');
     }
-    public function resetSubsInput()
-    {
-        $this->reset('idSubKey');
-        $this->reset('machinery_dt_remark');
-        $this->reset('machinery_dt_hour');
-        $this->reset('machinery_dt_date');
-    }
 
     public function mount($id = 0)
     {
@@ -168,6 +162,9 @@ class MachineryListEdit extends Component
                 'machinery_hd_checksave'=> auth()->user()->name,
                 'machinery_hd_checknote'=> $this->machinery_hd_checknote,
                 'machinery_hd_refdocuno'=> $this->machinery_hd_refdocuno,
+                'machinery_hd_lcaol' => $this->machinery_hd_lcaol,
+                'ms_machine_code' => $this->ms_machine_code,
+                'ms_machine_name' => $this->ms_machine_name,
                 'machinery_hd_pic2' => $this->storeImage()                
             ]);
             foreach($this->machinery_dt_date as $key => $value){
@@ -196,33 +193,21 @@ class MachineryListEdit extends Component
             'url' =>  $this->idKey > 0 ? route('machinerylist.edit', $mclist->id) : route('machinerylist.list')
         ]);
     }
-    public function saveSub(){
-        $this->validate($this->ruleSubs,$this->messageSubs);
-        MachineryListSub::updateOrCreate([
-            'id' => $this->idSubKey
-            ],[
-            'machinery_hd_docuno'=> $this->machinery_hd_docuno,
-            'machinery_dt_listno'=> 1,
-            'machinery_dt_remark'=> $this->machinery_dt_remark,
-            'machinery_dt_hour'=> $this->machinery_dt_hour,
-            'machinery_dt_date'=> $this->machinery_dt_date,
-            'machinery_dt_flag'=> true,
-            'machinery_dt_id'=> 0,
-            'machinery_hd_id'=> 0,
-            'mclist_id' => $this->idKey
-        ]);
-        $this->resetSubsInput();
-    }
 
     public function render()
     {
         //$list = MachineryListSub::where('machinery_hd_docuno',$this->machinery_hd_docuno)->where('machinery_dt_flag',true)->get();
         $this->machinery_hd_checkdate = date('Y-m-d');
+        if($this->ms_machine_code){
+            $mcname = DB::table('machines')->where('mc_code',$this->ms_machine_code)->first();
+            $this->ms_machine_name = $mcname->mc_name;
+        }
         return view('livewire.machinery-list.machinery-list-edit',[
             'dep' => DepartmentList::get(),
             'sys' => MachineSystem::get(),
             'ser' => MachineService::get(),
             'emp' => EmployeeList::where('department_name','ซ่อมบำรุง(MTN)')->get(),
+            'mac' =>  Machine::get(),
             //'doc' => $this->idKey,
             //'list' => $list,
             ])->extends('layouts.main');

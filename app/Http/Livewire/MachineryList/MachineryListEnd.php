@@ -5,69 +5,68 @@ namespace App\Http\Livewire\MachineryList;
 use Livewire\Component;
 use App\Models\MachineryList;
 use App\Models\MachineryListSub;
+use App\Models\MachineryListStatus;
 
 class MachineryListEnd extends Component
 {
     public $idKey = 0;
+    public $machinery_hd_date;
     public $machinery_hd_docuno;
-    public $machinery_dt_listno=1;
-    public $machinery_dt_remark;
-    public $machinery_dt_hour;
-    public $machinery_dt_date;
-    public $machinery_dt_flag=1;
-    public $machinery_dt_id=0;
-    public $machinery_hd_id=0;
+    public $machinery_hd_type;
+    public $ms_machine_code;
+    public $ms_machine_name;
+    public $department_name;
+    public $machinery_hd_lcaol;
+    public $ms_machine_system_name;
+    public $ms_machine_service_name;
+    public $machinery_hd_save;
+    public $machinery_hd_note;
+    public $machinery_hd_number;
+    public $machinery_hd_checksave;
+    public $machinery_hd_checkdate;
+    public $machinery_hd_checknote;
+    public $machinery_hd_status_id;
+    public $machinery_hd_personsave;
+    public $vendor_code;
+    public $vendor_name;
+    public $machinery_hd_refdocuno;
+    public $machinery_hd_pic1;
+    public $machinery_hd_pic2;
+    public $machinery_hd_status_name;
+
+
+    public $listdt =[];
+ 
     
-    protected $listeners = [
-        'editMachineryListEnd' => 'edit',
-        'btnCreateMachineryListEnd' => 'resetInput'
-    ];
 
-    public function resetInput()
-    {
-        $this->reset('idKey');
-        $this->reset('machinery_hd_docuno');
-        $this->reset('machinery_dt_listno');
-        $this->reset('machinery_dt_remark');
-        $this->reset('machinery_dt_hour');
-        $this->reset('machinery_dt_date');
-        $this->reset('machinery_dt_flag');
-        $this->reset('machinery_dt_id');
-        $this->reset('machinery_hd_id');
-    }
-    public function edit($id)
-    {
-        $mcsub = MachineryListSub::findOrFail($id);
-        $this->idKey = $mcsub->id;
-        $this->machinery_hd_docuno = $mcsub->machinery_hd_docuno;
-        $this->machinery_dt_remark = $mcsub->machinery_dt_remark;
-        $this->machinery_dt_hour = $mcsub->machinery_dt_hour;
-        $this->machinery_dt_date = $mcsub->machinery_dt_date;
-        $this->machinery_dt_flag = $mcsub->machinery_dt_flag;
+
+    public function mount($id = 0)
+    {         
+        $listhd = MachineryList::findOrFail($id);        
+        $liststa = MachineryListStatus::where('id',$listhd->machinery_hd_status_id)->first();
+        $this->idKey = $listhd->id;
+        $this->machinery_hd_docuno = $listhd->machinery_hd_docuno;
+        $this->machinery_hd_date = $listhd->machinery_hd_date;
+        $this->machinery_hd_type =  $listhd->machinery_hd_type;
+        $this->machinery_hd_status_name = $liststa->name;
+        $this->department_name = $listhd->department_name;
+        $this->ms_machine_code = $listhd->ms_machine_code;
+        $this->ms_machine_name = $listhd->ms_machine_name;  
+        $this->ms_machine_system_name = $listhd->ms_machine_system_name;
+        $this->ms_machine_service_name = $listhd->ms_machine_service_name;
+        $this->machinery_hd_lcaol = $listhd->machinery_hd_lcaol;
+        $this->machinery_hd_checkdate =  $listhd->machinery_hd_checkdate;
+        $this->machinery_hd_personsave = $listhd->machinery_hd_personsave;
+        $this->machinery_hd_refdocuno = $listhd->machinery_hd_refdocuno;
     }
 
-    public function save()
-    {
-        MachineryListSub::updateOrCreate([
-            'id' => $this->idKey
-        ],[
-            'machinery_hd_docuno'=> $this->machinery_hd_docuno,
-            'machinery_dt_remark'=> $this->machinery_dt_remark,
-            'machinery_dt_hour'=> $this->machinery_dt_hour,
-            'machinery_dt_date'=> $this->machinery_dt_date,
-            'machinery_dt_flag'=> $this->machinery_dt_flag,
-        ]);
-        $this->resetInput();
-        $this->dispatchBrowserEvent('swal',[
-            'title' => 'บันทึกข้อมูลเรียบร้อย',
-            'timer' => 3000,
-            'icon' => 'success',
-        ]);
-        $this->emit('modalHide');
-    }
+
 
     public function render()
     {
-        return view('livewire.machinery-list.machinery-list-end');
+        if($this->idKey){
+            $this->listdt = MachineryListSub::where('mclist_id',$this->idKey)->get();
+        }
+        return view('livewire.machinery-list.machinery-list-end')->extends('layouts.main');
     }
 }

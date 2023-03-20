@@ -118,36 +118,10 @@
                                                 </tbody>
                                             </table>
                                         </div><hr>
-                                        {{-- @if($times)
-                                        <div class="col-lg-12">
-                                            <h4 class="card-title">เวลาเข้า - ออกประจำเดือน</h4>
-                                            <div class="table-responsive">
-                                                <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap w-100">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>วันที่</th>
-                                                            <th>เวลา</th>
-                                                            <th>หมายเหตุ</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        @foreach ($times as $key => $item)
-                                                            <tr>
-                                                                <td>{{$item->emp_times_date}}</td>
-                                                                <td>{{$item->emp_times_result}}</td>
-                                                                <td>{{$item->emp_times_remark}}</td>
-                                                            </tr>
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                        @endif                                      --}}
                                     </div>
                                 </div>
                             </div>                          
-                        </div> 
-                                                               
+                        </div>                                                               
                     </div> <!-- container-fluid -->
                 </div>
                 <!-- End Page-content -->               

@@ -31,7 +31,8 @@ class MachineryList extends Model
       ,"vendor_name"
       ,"machinery_hd_refdocuno"
       ,"machinery_hd_pic1"
-      ,"machinery_hd_pic2"  
+      ,"machinery_hd_pic2"
+      ,"machinery_hd_id"  
     ];
     public function MachineryListSubs()
     {

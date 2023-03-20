@@ -80,7 +80,10 @@
                         <div class="form-group">
                             <label for="ms_machine_code" class="col-form-label">รหัสเครื่องจักร</label>
                             <select class="form-control" wire:model="ms_machine_code">
-                                <option value="">-- กรุณาเลือกรหัสเครื่องจักร --</option>                      
+                                <option value="">-- กรุณาเลือกรหัสเครื่องจักร --</option>     
+                                @foreach ($mac as $item)
+                                <option value="{{$item->mc_code}}">{{$item->mc_code}}</option>  
+                                @endforeach                 
                             </select>
                         </div>
                     </div>

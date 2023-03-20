@@ -18,7 +18,6 @@
                                 <li><a href="#" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
                             </ul>
                         </li>
-
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">ICT</a>
                             <ul class="sub-menu" aria-expanded="true">
@@ -33,6 +32,48 @@
                                 
                             </ul>
                         </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow" key="t-vertical">DCT</a>
+                            <ul class="sub-menu" aria-expanded="true">                      
+                                <li><a href="{{route('isodct.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
+                                <li><a href="#" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow" key="t-vertical">HTP</a>
+                            <ul class="sub-menu" aria-expanded="true">                      
+                                <li><a href="{{route('isohtp.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
+                                <li><a href="#" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow" key="t-vertical">MCH</a>
+                            <ul class="sub-menu" aria-expanded="true">                      
+                                <li><a href="{{route('isomch.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
+                                <li><a href="#" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow" key="t-vertical">PTG</a>
+                            <ul class="sub-menu" aria-expanded="true">                      
+                                <li><a href="{{route('isoptg.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
+                                <li><a href="#" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow" key="t-vertical">ASB</a>
+                            <ul class="sub-menu" aria-expanded="true">                      
+                                <li><a href="{{route('isoasb.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
+                                <li><a href="#" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow" key="t-vertical">PKG</a>
+                            <ul class="sub-menu" aria-expanded="true">                      
+                                <li><a href="{{route('isopkg.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
+                                <li><a href="#" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li>
@@ -41,7 +82,8 @@
                         <span key="t-dashboards">ฝ่ายซ่อมบำรุง</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{route('machinerylist.list')}}" key="t-default">แจ้งซ่อมเครื่องจักร</a></li>                        
+                        <li><a href="{{route('machinerylist.list')}}" key="t-default">แจ้งซ่อมเครื่องจักร</a></li>    
+                        <li><a href="{{route('machineryreport.list')}}" key="t-default">รายการแจ้งซ่อมรอตรวจรับ</a></li>                    
                     </ul>
                 </li>
                 <li class="menu-title" key="t-apps">Report</li>  
@@ -51,7 +93,7 @@
                         <span key="t-dashboards">รายงานซ่อมบำรุง</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{route('machineryreport.list')}}" key="t-default">รายงานแจ้งซ่อมเครื่องจักร</a></li>     
+                             
                     </ul>
                 </li>                                                      
                 <li class="menu-title" key="t-pages">Setting</li>
