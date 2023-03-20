@@ -23,6 +23,7 @@ use App\Http\Livewire\MachineryList\MachineryListPage;
 use App\Http\Livewire\MachineGroup\MachineGroupListPage;
 use App\Http\Livewire\DepartmentList\DepartmentListReport;
 use App\Http\Livewire\LeaveApproval\LeaveApprovalListPage;
+use App\Http\Livewire\MachineryReport\MachineryReportForm;
 use App\Http\Livewire\MachineryReport\MachineryReportPage;
 use App\Http\Livewire\MachineSystem\MachineSystemListPage;
 use App\Http\Livewire\MachineService\MachineServiceListPage;
