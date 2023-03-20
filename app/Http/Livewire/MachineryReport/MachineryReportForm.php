@@ -9,6 +9,7 @@ use App\Models\MachineryListSub;
 class MachineryReportForm extends Component
 {
     public $idKey = 0;
+    
     public $ms_machine_code;
     public $ms_machine_name;
     public $machinery_hd_checksave;

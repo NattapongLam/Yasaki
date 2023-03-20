@@ -34,6 +34,7 @@
                         </div>
                     </form>
                 </div>
+                
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
                     <button type="button" class="btn btn-primary" wire:click="save">ตรวจรับ</button>
