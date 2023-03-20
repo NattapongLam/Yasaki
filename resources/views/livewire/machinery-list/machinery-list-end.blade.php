@@ -1,4 +1,5 @@
 <div>
+    <form wire:submit.prevent="save">
     <div class="card">
         <div class="card-body">
             <div class="row">
@@ -199,7 +200,11 @@
                         </div>
                     </div>
                 </div>   
+                <div class="row">
+                    <button type="submit" class="btn btn-primary btn-lg waves-effect waves-light">บันทึกตรวจรับ</button>  
+                </div>
             </div>      
-        </div> <hr>          
+        </div> <hr>         
+    </form>  
 </div>
 

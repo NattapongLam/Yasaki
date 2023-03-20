@@ -60,7 +60,20 @@ class MachineryListEnd extends Component
         $this->machinery_hd_refdocuno = $listhd->machinery_hd_refdocuno;
     }
 
-
+    public function save()
+    {
+        MachineryList::updateOrCreate([
+            'id' => $this->idKey
+        ],[
+            'machinery_hd_status_id' => 4,
+        ]);
+        $this->dispatchBrowserEvent('swal',[
+            'title' => 'บันทึกข้อมูลเรียบร้อย',
+            'timer' => 3000,
+            'icon' => 'success',
+            'url' => route('machineryreport.list')
+        ]);
+    }
 
     public function render()
     {

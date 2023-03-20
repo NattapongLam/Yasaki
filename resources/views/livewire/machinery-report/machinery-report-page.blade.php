@@ -23,8 +23,7 @@
                                     <th>เครื่องจักร</th>                                  
                                     <th>แผนก</th>  
                                     <th>บริการ</th>     
-                                    <th>อาการเสีย</th>                                      
-                                    <th></th>                         
+                                    <th>อาการเสีย</th>                                                             
                                 </tr>
                             </thead>
                             <tbody>
@@ -58,16 +57,7 @@
                                     <td>{{$item->ms_machine_code}} ({{$item->ms_machine_name}})</td>   
                                     <td>{{$item->department_name}}</td>    
                                     <td>{{$item->ms_machine_service_name}}</td>   
-                                    <td>( {{$item->ms_machine_system_name}} ) : {{$item->machinery_hd_note}}</td>                                        
-                                    <td>
-                                        @livewire('machinery-report.machinery-report-form')
-                                        <button type="button" class="btn btn-sm btn-warning" 
-                                        data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                        data-bs-whatever="@mdo" 
-                                        wire:click="$emit('editMachineryReport',{{$item->id}})">
-                                        <i class="fas fa-child"></i>
-                                        </button>
-                                    </td>                                                       
+                                    <td>( {{$item->ms_machine_system_name}} ) : {{$item->machinery_hd_note}}</td>                                                                                           
                                 </tr>     
                                 @endforeach                                                        
                            </tbody>
