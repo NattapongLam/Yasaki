@@ -115,9 +115,9 @@ Route::group([
     'as' => 'machineryreport.',
     'middleware' =>  ['auth','permission:machineryreports'],
 ],function(){
-    Route::get('/', MachineryReportPage::class)->name('list');
-    Route::get('/edit/{id}', MachineryReportForm::class)->name('edit');
+    Route::get('/', MachineryReportPage::class)->name('list');   
     Route::get('/end/{id}', MachineryListEnd::class)->name('end');
+    Route::get('/edit/{id}', MachineryReportForm::class)->name('edit');
 });
 // MTN END //
 
