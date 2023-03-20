@@ -13,7 +13,9 @@ use App\Http\Livewire\Machine\MachineFormPage;
 use App\Http\Livewire\Machine\MachineListPage;
 use App\Http\Livewire\Employee\EmployeeFormPage;
 use App\Http\Livewire\Employee\EmployeeListPage;
+use App\Http\Livewire\IsoDct\IsoDctMcChecksheet;
 use App\Http\Livewire\Employee\RolePermissionPage;
+use App\Http\Livewire\IsoDct\IsoDctMcChecksheetForm;
 use App\Http\Livewire\MachineryList\MachineryListEnd;
 use App\Http\Livewire\EmployeeList\EmployeeListReport;
 use App\Http\Livewire\LeaveConfig\LeaveConfigListPage;
@@ -28,6 +30,7 @@ use App\Http\Livewire\MachineSystem\MachineSystemListPage;
 use App\Http\Livewire\MachineService\MachineServiceListPage;
 use App\Http\Livewire\IsoDocumentControl\DocumentControlTypeList;
 use App\Http\Livewire\IsoDocumentControl\DocumentControlGroupList;
+use App\Http\Livewire\IsoDocumentControl\DocumentControlHolderList;
 use App\Http\Livewire\IsoDocumentControl\DocumentControlMasterList;
 use App\Http\Livewire\IsoDocumentControlIct\DocumentControlIctList;
 use App\Http\Livewire\IsoDocumentControlIct\DocumentControlIctPlanForm;
@@ -177,6 +180,14 @@ Route::group([
 ],function(){
     Route::get('/', DocumentControlMasterList::class)->name('list');
 });
+
+Route::group([
+    'prefix' => 'documentcontrolholderlists',
+    'as' => 'documentcontrolholderlist.',
+    'middleware' =>  ['auth','permission:documentcontrolholderlists'],
+],function(){
+    Route::get('/', DocumentControlHolderList::class)->name('list');
+});
 // ISO DCC END //
 
 // ISO ICT //
@@ -211,9 +222,17 @@ Route::group([
 Route::group([
     'prefix' => 'isodcts',
     'as' => 'isodct.',
-    //'middleware' =>  ['auth','permission:isodcts'],
+    'middleware' =>  ['auth','permission:isodcts'],
 ],function(){
     Route::get('/', IsoDctHolder::class)->name('list');
+});
+Route::group([
+    'prefix' => 'mcchkdcts',
+    'as' => 'mcchkdct.',
+    'middleware' =>  ['auth','permission:isodcts'],
+],function(){
+    Route::get('/', IsoDctMcChecksheet::class)->name('list');
+    Route::get('/edit/{id}', IsoDctMcChecksheetForm::class)->name('edit');
 });
 // ISO DCT END//
 

@@ -15,7 +15,7 @@
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">DCC</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li><a href="{{route('documentcontrolmasterlist.list')}}" key="t-default">บัญชีแม่บทเอกสาร</a></li>   
-                                <li><a href="#" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
+                                <li><a href="{{route('documentcontrolholderlist.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
                             </ul>
                         </li>
                         <li>
@@ -36,7 +36,7 @@
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">DCT</a>
                             <ul class="sub-menu" aria-expanded="true">                      
                                 <li><a href="{{route('isodct.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
-                                <li><a href="#" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
+                                <li><a href="{{route('mcchkdct.list')}}" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
                             </ul>
                         </li>
                         <li>
