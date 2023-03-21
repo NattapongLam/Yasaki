@@ -34,7 +34,7 @@
                                     <td>{{$item->id}}</td>
                                     <td>
                                         @auth
-                                            @if(auth()->user()->type == "Admin")
+                                            @if(auth()->user()->type == "Admin" || auth()->user()->type == "Maintenance")
                                             <a href="{{route('machinerylist.edit',$item->id)}}"
                                                 class="btn btn-sm btn-success">
                                                 <i class="fas fa-hammer"></i>

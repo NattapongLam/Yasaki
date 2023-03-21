@@ -80,7 +80,6 @@ class DocumentControlIctPlanForm extends Component
     public function save()
     {
         $this->validate($this->rules,$this->messages);
-        // dd($this->coms);
         try {
             DB::beginTransaction();
             $paln = IsoIctPlanHd::updateOrCreate([
@@ -93,6 +92,7 @@ class DocumentControlIctPlanForm extends Component
                 'created_at' => 1,
                 'updated_at' => 1
             ]);
+            DB::table('iso_ict_plan_dts')->where('planhd_id',$plan->id)->delete();
             foreach($this->coms as $key => $value)
             {
                 $item = IsoIctPlanDt::Create([
@@ -151,8 +151,7 @@ class DocumentControlIctPlanForm extends Component
             $this->idKey = $paln->id;
             $this->year_name = $paln->year_name;
             $this->planhd_remark = $paln->planhd_remark;
-            $this->planhd_type = $paln->planhd_type;
-            
+            $this->planhd_type = $paln->planhd_type;   
             foreach ($paln->coms as $key => $value) {
                 $this->coms[] = [
                     'com_id' => $value->com_id,

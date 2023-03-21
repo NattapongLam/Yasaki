@@ -61,7 +61,8 @@ require __DIR__.'/auth.php';
 Route::group([
     'prefix' => 'employees',
     'as' => 'employee.',
-    'middleware' =>  ['auth','permission:employees'],
+    // 'middleware' =>  ['auth','permission:employees'],
+    'middleware' =>  ['auth','role:superadmin']
 ],function(){
     Route::get('/', EmployeeListPage::class)->name('list');
     Route::get('/create', EmployeeFormPage::class)->name('create');
@@ -73,7 +74,7 @@ Route::group([
 Route::group([
     'prefix' => 'machineservices',
     'as' => 'machineservice.',
-    'middleware' =>  ['auth','permission:machineservices']
+    'middleware' =>  ['auth','role:superadmin|MTN']
 ],function(){
     Route::get('/', MachineServiceListPage::class)->name('list');
 });
@@ -81,7 +82,7 @@ Route::group([
 Route::group([
     'prefix' => 'machinesystems',
     'as' => 'machinesystem.',
-    'middleware' =>  ['auth','permission:machinesystems']
+    'middleware' =>  ['auth','role:superadmin|MTN']
 ],function(){
     Route::get('/', MachineSystemListPage::class)->name('list');
 });
@@ -89,7 +90,7 @@ Route::group([
 Route::group([
     'prefix' => 'machinegroups',
     'as' => 'machinegroup.',
-    'middleware' =>  ['auth','permission:machinegroups']
+    'middleware' =>  ['auth','role:superadmin|MTN']
 ],function(){
     Route::get('/', MachineGroupListPage::class)->name('list');
 });
@@ -97,7 +98,7 @@ Route::group([
 Route::group([
     'prefix' => 'machines',
     'as' => 'machine.',
-    'middleware' =>  ['auth','permission:machines']
+    'middleware' =>  ['auth','role:superadmin|MTN']
 ],function(){
     Route::get('/', MachineListPage::class)->name('list');
     Route::get('/create', MachineFormPage::class)->name('create');
@@ -127,7 +128,7 @@ Route::group([
 Route::group([
     'prefix' => 'mtnreports',
     'as' => 'mtnreport.',
-    //'middleware' =>  ['auth','permission:mtnreports'],
+    'middleware' =>  ['auth','role:superadmin|MTN']
 ],function(){
     Route::get('/mtnday', [MachineryReportController::class,'mtnday'])->name('mtnday.index');
     Route::get('/mtnday/dt', [MachineryReportController::class,'mtnday'])->name('mtnday.dt');
@@ -140,7 +141,7 @@ Route::group([
 Route::group([
     'prefix' => 'departmentlists',
     'as' => 'departmentlist.',
-    'middleware' =>  ['auth','permission:departmentlists'],
+    'middleware' =>  ['auth','role:superadmin|HRM']
 ],function(){
     Route::get('/', DepartmentListReport::class)->name('list');
 });
@@ -148,7 +149,7 @@ Route::group([
 Route::group([
     'prefix' => 'employeelists',
     'as' => 'employeelist.',
-    'middleware' =>  ['auth','permission:employeelists'],
+    'middleware' =>  ['auth','role:superadmin|HRM']
 ],function(){
     Route::get('/', EmployeeListReport::class)->name('list');
 });
@@ -156,7 +157,7 @@ Route::group([
 Route::group([
     'prefix' => 'leaveconfigs',
     'as' => 'leaveconfig.',
-    'middleware' =>  ['auth','permission:leaveconfigs'],
+    'middleware' =>  ['auth','role:superadmin|HRM']
 ],function(){
     Route::get('/', LeaveConfigListPage::class)->name('list');
 });
@@ -164,10 +165,11 @@ Route::group([
 Route::group([
     'prefix' => 'leaveapprovals',
     'as' => 'leaveapproval.',
-    'middleware' =>  ['auth','permission:leaveapprovals'],
+    'middleware' =>  ['auth','role:superadmin|HRM']
 ],function(){
     Route::get('/', LeaveApprovalListPage::class)->name('list');
     Route::get('/create', LeaveApprovalListForm::class)->name('create');
+    Route::get('/update/{id}', LeaveApprovalListForm::class)->name('update');
 });
 // EMP  END//
 
@@ -175,7 +177,7 @@ Route::group([
 Route::group([
     'prefix' => 'documentcontrolgroups',
     'as' => 'documentcontrolgroup.',
-    'middleware' =>  ['auth','permission:documentcontrolgroups'],
+    'middleware' =>  ['auth','role:superadmin|admin']
 ],function(){
     Route::get('/', DocumentControlGroupList::class)->name('list');
 });
@@ -183,7 +185,7 @@ Route::group([
 Route::group([
     'prefix' => 'documentcontroltypes',
     'as' => 'documentcontroltype.',
-    'middleware' =>  ['auth','permission:documentcontroltypes'],
+    'middleware' =>  ['auth','role:superadmin|admin']
 ],function(){
     Route::get('/', DocumentControlTypeList::class)->name('list');
 });
@@ -191,7 +193,7 @@ Route::group([
 Route::group([
     'prefix' => 'documentcontrolmasterlists',
     'as' => 'documentcontrolmasterlist.',
-    'middleware' =>  ['auth','permission:documentcontrolmasterlists'],
+    'middleware' =>  ['auth','role:superadmin|admin']
 ],function(){
     Route::get('/', DocumentControlMasterList::class)->name('list');
 });
@@ -199,7 +201,7 @@ Route::group([
 Route::group([
     'prefix' => 'documentcontrolholderlists',
     'as' => 'documentcontrolholderlist.',
-    'middleware' =>  ['auth','permission:documentcontrolholderlists'],
+    'middleware' =>  ['auth','role:superadmin|admin']
 ],function(){
     Route::get('/', DocumentControlHolderList::class)->name('list');
 });
@@ -209,7 +211,7 @@ Route::group([
 Route::group([
     'prefix' => 'documentcontrolictcomlists',
     'as' => 'documentcontrolictcomlist.',
-    'middleware' =>  ['auth','permission:documentcontrolictcomlists'],
+    'middleware' =>  ['auth','role:superadmin|admin']
 ],function(){
     Route::get('/', DocumentControlIctList::class)->name('list');
 });
@@ -217,7 +219,7 @@ Route::group([
 Route::group([
     'prefix' => 'documentcontrolictbackups',
     'as' => 'documentcontrolictbackup.',
-    'middleware' =>  ['auth','permission:documentcontrolictbackups'],
+    'middleware' =>  ['auth','role:superadmin|admin']
 ],function(){
     Route::get('/', DocumentControlIctBackupList::class)->name('list');
 });
@@ -225,7 +227,7 @@ Route::group([
 Route::group([
     'prefix' => 'documentcontrolictplans',
     'as' => 'documentcontrolictplan.',
-    'middleware' =>  ['auth','permission:documentcontrolictplans'],
+    'middleware' =>  ['auth','role:superadmin|admin']
 ],function(){
     Route::get('/', DocumentControlIctPlanList::class)->name('list');
     Route::get('/create', DocumentControlIctPlanForm::class)->name('create');
@@ -237,14 +239,14 @@ Route::group([
 Route::group([
     'prefix' => 'isodcts',
     'as' => 'isodct.',
-    'middleware' =>  ['auth','permission:isodcts'],
+    'middleware' =>  ['auth','role:superadmin|DCT|admin']
 ],function(){
     Route::get('/', IsoDctHolder::class)->name('list');
 });
 Route::group([
     'prefix' => 'mcchkdcts',
     'as' => 'mcchkdct.',
-    'middleware' =>  ['auth','permission:isodcts'],
+    'middleware' =>  ['auth','role:superadmin|DCT|admin']
 ],function(){
     Route::get('/', IsoDctMcChecksheet::class)->name('list');
     Route::get('/edit/{id}', IsoDctMcChecksheetForm::class)->name('edit');
@@ -255,7 +257,7 @@ Route::group([
 Route::group([
     'prefix' => 'isohtps',
     'as' => 'isohtp.',
-    //'middleware' =>  ['auth','permission:isohtps'],
+    'middleware' =>  ['auth','role:superadmin|HTP|admin']
 ],function(){
     Route::get('/', IsoHtpHolder::class)->name('list');
 });
@@ -265,7 +267,7 @@ Route::group([
 Route::group([
     'prefix' => 'isomchs',
     'as' => 'isomch.',
-    //'middleware' =>  ['auth','permission:isomchs'],
+    'middleware' =>  ['auth','role:superadmin|MCH|admin']
 ],function(){
     Route::get('/', IsoMchHolder::class)->name('list');
 });
@@ -275,7 +277,7 @@ Route::group([
 Route::group([
     'prefix' => 'isoptgs',
     'as' => 'isoptg.',
-    //'middleware' =>  ['auth','permission:isoptgs'],
+    'middleware' =>  ['auth','role:superadmin|PTG|admin']
 ],function(){
     Route::get('/', IsoPtgHolder::class)->name('list');
 });
@@ -285,7 +287,7 @@ Route::group([
 Route::group([
     'prefix' => 'isoasbs',
     'as' => 'isoasb.',
-    //'middleware' =>  ['auth','permission:isoasbs'],
+    'middleware' =>  ['auth','role:superadmin|ASB|admin']
 ],function(){
     Route::get('/', IsoAsbHolder::class)->name('list');
 });
@@ -295,7 +297,7 @@ Route::group([
 Route::group([
     'prefix' => 'isopkgs',
     'as' => 'isopkg.',
-    //'middleware' =>  ['auth','permission:isopkgs'],
+    'middleware' =>  ['auth','role:superadmin|PKG|admin']
 ],function(){
     Route::get('/', IsoPkgHolder::class)->name('list');
 });

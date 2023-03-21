@@ -15,7 +15,7 @@ class MachineryListPage extends Component
 
     public function render()
     {
-        if(auth()->user()->type == "Admin")
+        if(auth()->user()->type == "Admin" || auth()->user()->type == "Maintenance")
         {
             $this->mcdoculist = MachineryList::where('machinery_hd_status_id',1)->get();          
         }

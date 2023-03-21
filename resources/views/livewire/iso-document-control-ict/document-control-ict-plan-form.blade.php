@@ -45,9 +45,7 @@
                             <table class="table table-bordered dt-responsive nowrap w-100 text-center">
                             <thead>
                                 <tr style="background-color:#ddddddce">
-
-                                </tr>
-                                {{-- <th>ลำดับ</th> --}}
+                                        {{-- <th>ลำดับ</th> --}}
                                 <th>ชื่อเครื่อง</th>
                                 <th>สถานที่</th>
                                 <th>P-01</th>
@@ -81,9 +79,10 @@
                                     class="btn btn-success waves-effect waves-light"
                                     data-bs-toggle="modal" 
                                     data-bs-target="#exampleModal"
-                                    data-bs-whatever="@mdo" wire:click="$emit('btnCreateDocumentControlIctBackup')">
+                                    data-bs-whatever="@mdo">
                                     <i class="fas fa-plus"></i></button>
                                 </th>
+                                </tr>                               
                             </thead>
                             <tbody>
                                 @foreach ($coms as $key => $item)

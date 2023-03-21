@@ -19,6 +19,7 @@ class CreateLeaveApprovalDtsTable extends Migration
             $table->integer('leavsub_type')->nullable()->comment('1-ตรวจสอบ 2-อนุมัติ');;
             $table->string('leavsub_empcode')->nullable();
             $table->string('leavsub_empname')->nullable();
+            $table->bigInteger('emp_id')->nullable();
             $table->timestamps();
         });
     }

@@ -16,8 +16,8 @@ class LeaveApprovalHd extends Model
       "leavapp_status",
       "leavapp_save",
     ];
-    public function LeaveApprovalDts()
+    public function emps()
     {
-        return $this->belongsTo(LeaveApprovalDt::class,'leavapp_id');
+        return $this->hasMany(LeaveApprovalDt::class,'leavapp_id');
     }
 }

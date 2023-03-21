@@ -64,6 +64,7 @@
                             <select class="form-control" wire:model="type">
                                 <option value="Employee">Employee</option>
                                 <option value="Admin">Admin</option>
+                                <option value="Maintenance">Maintenance</option>
                             </select>
                         </div>
                     </div>

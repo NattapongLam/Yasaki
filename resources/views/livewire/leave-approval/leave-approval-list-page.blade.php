@@ -44,9 +44,10 @@
                                     <td>{{$item->leavapp_name}}</td>
                                     <td>{{$item->leavapp_remark}}</td>
                                     <td>                                        
-                                        <button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"data-bs-whatever="@mdo" wire:click="$emit('editMachineGroup',{{$item->id}})">
-                                            <i class="fas fa-edit"></i>
-                                        </button>                                      
+                                        <a href="{{route('leaveapproval.update',$item->id)}}"
+                                            class="btn btn-sm btn-warning">
+                                        <i class="fas fa-edit"></i>
+                                        </a>                                      
                                     </td>
                                 </tr>     
                                 @endforeach                                                        

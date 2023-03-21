@@ -17,31 +17,18 @@ class RolePermissionSeeder extends Seeder
     {
         // Role::create(['name' => 'superadmin']); 
         // Role::create(['name' => 'admin']);     
-        // Role::create(['name' => 'employee']);        
+        // Role::create(['name' => 'employee']); 
+        // Role::create(['name' => 'MTN']); 
+        // Role::create(['name' => 'DCT']);     
+        // Role::create(['name' => 'HTP']); 
+        // Role::create(['name' => 'MCH']);
+        // Role::create(['name' => 'PTG']);  
+        // Role::create(['name' => 'ASB']);      
+        // Role::create(['name' => 'PKG']);   
+        // Role::create(['name' => 'HRM']);  
+        // Role::create(['name' => 'QCC']);  
 
-        // Permission::create(['name' => 'machinegroups']);
-        // Permission::create(['name' => 'machines']);
-        // Permission::create(['name' => 'employees']);
-        // Permission::create(['name' => 'machineservices']);
-        // Permission::create(['name' => 'machinesystems']);
-        // Permission::create(['name' => 'departmentlists']);
-        // Permission::create(['name' => 'employeelists']);
         // Permission::create(['name' => 'machinerylists']);
-        // Permission::create(['name' => 'documentcontrolgroups']);
-        // Permission::create(['name' => 'documentcontroltypes']);
-        // Permission::create(['name' => 'documentcontrolictcomlists']);
-        // Permission::create(['name' => 'documentcontrolictbackups']);
-        // Permission::create(['name' => 'leaveconfigs']);
-        // Permission::create(['name' => 'leaveapprovals']);
-        // Permission::create(['name' => 'documentcontrolmasterlists']);
-        // Permission::create(['name' => 'documentcontrolictplans']);
-        // Permission::create(['name' => 'machineryreports']);
-        // Permission::create(['name' => 'documentcontrolholderlists']);
-        // Permission::create(['name' => 'isodcts']);
-        // Permission::create(['name' => 'isohtps']);
-        // Permission::create(['name' => 'isomchs']);
-        // Permission::create(['name' => 'isoptgs']);
-        // Permission::create(['name' => 'isoasbs']);
-        // Permission::create(['name' => 'isopkgs']);
+        // Permission::create(['name' => 'machineryreports']);         
     }
 }

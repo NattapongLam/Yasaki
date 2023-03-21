@@ -13,5 +13,6 @@ class LeaveApprovalDt extends Model
       "leavsub_type",
       "leavsub_empcode",
       "leavsub_empname",
+      'emp_id',
     ];
 }
