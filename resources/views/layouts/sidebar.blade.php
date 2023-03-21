@@ -92,7 +92,8 @@
                         <span key="t-dashboards">ฝ่ายบุคคล</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="#" key="t-default">บันทึนการลา</a></li>                      
+                        <li><a href="#" key="t-default">บันทึกการลา</a></li>      
+                        <li><a href="#" key="t-default">อนุมัติการลา</a></li>                   
                     </ul>
                 </li>
                 <li class="menu-title" key="t-apps">Report</li>  

@@ -41,6 +41,16 @@
                             <input type="text" class="form-control" wire:model="employee_job">
                         </div>
                         <div class="mb-3">
+                            <label for="approval_id" class="col-form-label">สายอนุมัติ</label>
+                            <select name="department_id" id="department_id" wire:model="approval_id"
+                            class="form-control @error('approval_id') is-invalid @enderror">  
+                            <option value="">-- กรุณาเลือกสายอนุมัติ --</option>
+                            @foreach ($apv as $item)
+                            <option value="{{$item->id}}">{{$item->leavapp_code}}/{{$item->leavapp_name}}</option>
+                            @endforeach
+                            </select>
+                        </div>
+                        <div class="mb-3">
                             <div class="row">
                                 <div class="col-4">
                                     <label for="sickleave" class="col-form-label">ลาป่วย</label>

@@ -130,11 +130,10 @@ Route::group([
     'as' => 'mtnreport.',
     'middleware' =>  ['auth','role:superadmin|MTN']
 ],function(){
-    Route::get('/mtnday', [MachineryReportController::class,'mtnday'])->name('mtnday.index');
-    Route::get('/mtnday/dt', [MachineryReportController::class,'mtnday'])->name('mtnday.dt');
-    Route::get('/mtnday/excel', [MachineryReportController::class,'mtndayExcel'])->name('mtnday.excel');
-    Route::get('/mtnday/pdf', [MachineryReportController::class,'mtndayPdf'])->name('mtnday.pdf');
+    Route::get('/mtnday', [MachineryReportController::class,'mtnday'])->name('mtnday.index');  
 });
+Route::post('/getDataMcListsub' , [MachineryReportController::class,'getDataMcListsub']);  
+
 // MTN END //
 
 // EMP //

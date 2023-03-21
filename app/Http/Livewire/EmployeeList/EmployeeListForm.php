@@ -5,6 +5,7 @@ namespace App\Http\Livewire\EmployeeList;
 use Livewire\Component;
 use App\Models\EmployeeList;
 use App\Models\DepartmentList;
+use App\Models\LeaveApprovalHd;
 
 class EmployeeListForm extends Component
 {
@@ -95,6 +96,7 @@ class EmployeeListForm extends Component
             'businessleave' => $this->businessleave,
             'vacation' => $this->vacation,
             'employee_save' => auth()->user()->name,
+            'approval_id' => $this->approval_id
         ]);
         $this->resetInput();
         $this->dispatchBrowserEvent('swal',[
@@ -109,8 +111,10 @@ class EmployeeListForm extends Component
     public function render()
     {
         $dep = DepartmentList::get();
+        $apv = LeaveApprovalHd::get();
         return view('livewire.employee-list.employee-list-form',[
-            'dep' => $dep 
+            'dep' => $dep,
+            'apv' => $apv
         ]);
     }
 }
