@@ -25,6 +25,9 @@ class EmployeeList extends Model
         'employee_id',
         'employee_date',
         'employee_tel',
-        'department_name'
+        'department_name',
+        'sickleave',
+        'businessleave',
+        'vacation'
     ];
 }

@@ -15,6 +15,7 @@ use App\Http\Livewire\Employee\EmployeeFormPage;
 use App\Http\Livewire\Employee\EmployeeListPage;
 use App\Http\Livewire\IsoDct\IsoDctMcChecksheet;
 use App\Http\Livewire\Employee\RolePermissionPage;
+use App\Http\Controllers\MachineryReportController;
 use App\Http\Livewire\IsoDct\IsoDctMcChecksheetForm;
 use App\Http\Livewire\MachineryList\MachineryListEnd;
 use App\Http\Livewire\EmployeeList\EmployeeListReport;
@@ -24,6 +25,7 @@ use App\Http\Livewire\MachineryList\MachineryListForm;
 use App\Http\Livewire\MachineryList\MachineryListPage;
 use App\Http\Livewire\MachineGroup\MachineGroupListPage;
 use App\Http\Livewire\DepartmentList\DepartmentListReport;
+use App\Http\Livewire\LeaveApproval\LeaveApprovalListForm;
 use App\Http\Livewire\LeaveApproval\LeaveApprovalListPage;
 use App\Http\Livewire\MachineryReport\MachineryReportPage;
 use App\Http\Livewire\MachineSystem\MachineSystemListPage;
@@ -112,6 +114,7 @@ Route::group([
     Route::get('/update/{id}', MachineryListForm::class)->name('update');
     Route::get('/edit/{id}', MachineryListEdit::class)->name('edit');
 });
+
 Route::group([
     'prefix' => 'machineryreports',
     'as' => 'machineryreport.',
@@ -119,6 +122,17 @@ Route::group([
 ],function(){
     Route::get('/', MachineryReportPage::class)->name('list');   
     Route::get('/end/{id}', MachineryListEnd::class)->name('end');
+});
+
+Route::group([
+    'prefix' => 'mtnreports',
+    'as' => 'mtnreport.',
+    //'middleware' =>  ['auth','permission:mtnreports'],
+],function(){
+    Route::get('/mtnday', [MachineryReportController::class,'mtnday'])->name('mtnday.index');
+    Route::get('/mtnday/dt', [MachineryReportController::class,'mtnday'])->name('mtnday.dt');
+    Route::get('/mtnday/excel', [MachineryReportController::class,'mtndayExcel'])->name('mtnday.excel');
+    Route::get('/mtnday/pdf', [MachineryReportController::class,'mtndayPdf'])->name('mtnday.pdf');
 });
 // MTN END //
 
@@ -153,6 +167,7 @@ Route::group([
     'middleware' =>  ['auth','permission:leaveapprovals'],
 ],function(){
     Route::get('/', LeaveApprovalListPage::class)->name('list');
+    Route::get('/create', LeaveApprovalListForm::class)->name('create');
 });
 // EMP  END//
 

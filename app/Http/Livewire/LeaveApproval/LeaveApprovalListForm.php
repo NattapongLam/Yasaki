@@ -8,6 +8,6 @@ class LeaveApprovalListForm extends Component
 {
     public function render()
     {
-        return view('livewire.leave-approval.leave-approval-list-form');
+        return view('livewire.leave-approval.leave-approval-list-form')->extends('layouts.main');
     }
 }

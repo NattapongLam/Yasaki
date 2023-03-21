@@ -10,7 +10,7 @@
                     <form wire:submit.prevent="save">
                         <div class="mb-3">
                             <label for="employee_code" class="col-form-label">รหัสพนักงาน</label>
-                            <input type="text" class="form-control @error('employee_code') is-invalid @enderror" placeholder="ระบุรหัสพนักงาน" wire:model="employee_code">
+                            <input type="text" class="form-control @error('employee_code') is-invalid @enderror" placeholder="ระบุรหัสพนักงาน" wire:model="employee_code" readonly>
                             @error('employee_code')
                             <div id="employee_code_validation" class="invalid-feedback">
                               {{$message}}
@@ -19,7 +19,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="employee_fullname" class="col-form-label">ชื่อ - นามสกุล</label>
-                            <input type="text" class="form-control @error('employee_fullname') is-invalid @enderror" placeholder="ระบุชื่อ - นามสกุล" wire:model="employee_fullname">
+                            <input type="text" class="form-control @error('employee_fullname') is-invalid @enderror" placeholder="ระบุชื่อ - นามสกุล" wire:model="employee_fullname" readonly>
                             @error('employee_fullname')
                             <div id="employee_fullname_validation" class="invalid-feedback">
                               {{$message}}
@@ -29,7 +29,7 @@
                         <div class="mb-3">
                             <label for="department_id" class="col-form-label">แผนก</label>
                             <select name="department_id" id="department_id" wire:model="department_id"
-                        class="form-control select2-search-disable @error('department_id') is-invalid @enderror">                       
+                        class="form-control @error('department_id') is-invalid @enderror">                       
                         <option value="">-- กรุณาเลือกแผนก --</option>
                         @foreach ($dep as $item)
                         <option value="{{$item->id}}">{{$item->department_code}}/{{$item->department_name}}</option>
@@ -39,6 +39,22 @@
                         <div class="mb-3">
                             <label for="employee_job" class="col-form-label">ตำแหน่ง</label>
                             <input type="text" class="form-control" wire:model="employee_job">
+                        </div>
+                        <div class="mb-3">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="sickleave" class="col-form-label">ลาป่วย</label>
+                                    <input type="text" class="form-control" wire:model="sickleave">
+                                </div>
+                                <div class="col-4">
+                                    <label for="businessleave" class="col-form-label">ลากิจ</label>
+                                    <input type="text" class="form-control" wire:model="businessleave">
+                                </div>
+                                <div class="col-4">
+                                    <label for="vacation" class="col-form-label">พักร้อน</label>
+                                    <input type="text" class="form-control" wire:model="vacation">
+                                </div>
+                            </div>                          
                         </div>
                     </form>
                 </div>

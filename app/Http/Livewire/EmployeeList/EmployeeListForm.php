@@ -26,6 +26,9 @@ class EmployeeListForm extends Component
     public $employee_date;
     public $employee_tel;
     public $department_name;
+    public $sickleave=0;
+    public $businessleave=0;
+    public $vacation=0;
 
     protected $listeners = [
         'editEmployeeList' => 'edit',
@@ -69,6 +72,9 @@ class EmployeeListForm extends Component
         $this->employee_date = $emp->employee_date;
         $this->employee_tel = $emp->employee_tel;
         $this->department_name = $emp->department_name;
+        $this->sickleave = $emp->sickleave;
+        $this->businessleave = $emp->businessleave;
+        $this->vacation = $emp->vacation;
     }
     public function resetInput()
     {
@@ -76,6 +82,28 @@ class EmployeeListForm extends Component
         $this->reset('employee_code');
         $this->reset('employee_fullname');
         $this->reset('employee_company');
+        $this->reset('department_id');
+        $this->reset('employee_job');
+        $this->reset('sickleave');
+        $this->reset('businessleave');
+        $this->reset('vacation');
+    }
+    public function save()
+    {
+        EmployeeList::where('id',$this->idKey)->update([
+            'sickleave' => $this->sickleave,
+            'businessleave' => $this->businessleave,
+            'vacation' => $this->vacation,
+            'employee_save' => auth()->user()->name,
+        ]);
+        $this->resetInput();
+        $this->dispatchBrowserEvent('swal',[
+            'title' => 'บันทึกข้อมูลเรียบร้อย',
+            'timer' => 3000,
+            'icon' => 'success',
+            'url' => route('employeelist.list')
+        ]);
+        $this->emit('modalHide');
     }
 
     public function render()

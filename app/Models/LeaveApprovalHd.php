@@ -2,10 +2,22 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\LeaveApprovalDt;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class LeaveApprovalHd extends Model
 {
     use HasFactory;
+    protected $fillable = [
+      "leavapp_code",
+      "leavapp_name",
+      "leavapp_remark",
+      "leavapp_status",
+      "leavapp_save",
+    ];
+    public function LeaveApprovalDts()
+    {
+        return $this->belongsTo(LeaveApprovalDt::class,'leavapp_id');
+    }
 }

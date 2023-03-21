@@ -62,10 +62,8 @@ class MachineryListEnd extends Component
 
     public function save()
     {
-        MachineryList::updateOrCreate([
-            'id' => $this->idKey
-        ],[
-            'machinery_hd_status_id' => 4,
+        MachineryList::where('id',$this->idKey)->update([
+            'machinery_hd_status_id' => 4
         ]);
         $this->dispatchBrowserEvent('swal',[
             'title' => 'บันทึกข้อมูลเรียบร้อย',

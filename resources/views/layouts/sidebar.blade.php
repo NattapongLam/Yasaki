@@ -86,11 +86,30 @@
                         <li><a href="{{route('machineryreport.list')}}" key="t-default">รายการแจ้งซ่อมรอตรวจรับ</a></li>                    
                     </ul>
                 </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="fas fa-id-card"></i>
+                        <span key="t-dashboards">ฝ่ายบุคคล</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="#" key="t-default">บันทึนการลา</a></li>                      
+                    </ul>
+                </li>
                 <li class="menu-title" key="t-apps">Report</li>  
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="dripicons-graph-bar"></i>
+                        <i class="dripicons-graph-line"></i>
                         <span key="t-dashboards">รายงานซ่อมบำรุง</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{route('mtnreport.mtnday.index')}}" key="t-default">รายงานการซ่อม-รายวัน</a></li>      
+                    </ul>
+                </li>  
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="dripicons-graph-bar"></i>
+
+                        <span key="t-dashboards">รายงานบุคคล</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                              
@@ -122,7 +141,7 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="dripicons-list"></i>
-                        <span key="t-dashboards">ตั้งค่าพนักงาน</span>
+                        <span key="t-dashboards">ตั้งค่าบุคคล</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{route('departmentlist.list')}}" key="t-default">รายชื่อแผนก</a></li>  
