@@ -43,7 +43,7 @@
                             <tbody>
                                 @foreach ($data as $item)
                                     <tr>
-                                    <td><img class="img-thumbnail" alt="100x100" width="100" src="assets/images/users/{{$item->employee_image}}" data-holder-rendered="true"></td>
+                                    <td><img class="img-thumbnail" alt="100x100" width="100" src="{{URL::asset('assets/images/users/'.$item->employee_image)" data-holder-rendered="true"></td>
                                     <td>{{$item->emp_times_company}}</td>
                                     <td>{{$item->emp_times_empfullname}} ({{$item->emp_times_empcode}})</td>  
                                     <td>{{\Carbon\Carbon::parse($item->emp_times_date)->format('d/m/Y')}}</td>                                
