@@ -24,7 +24,7 @@
                                 <li><a href="{{route('documentcontrolictcomlist.list')}}" key="t-default">ทะเบียนอุปกรณ์ICT01</a></li>
                                 <li><a href="{{route('documentcontrolictplan.list')}}" key="t-default">แผนบำรุงรักษาICT02</a></li>
                                 <li><a href="#" key="t-default">ใบขอใช้บริการICT03</a></li>
-                                <li><a href="#" key="t-default">ใบเช็คการบำรุงรักษาICT04</a></li>
+                                <li><a href="{{route('documentcontrolictcheck.list')}}" key="t-default">ใบเช็คการบำรุงรักษาICT04</a></li>
                                 <li><a href="#" key="t-default">ใบแก้ไขอุปกรณ์ICT05</a></li>
                                 <li><a href="#" key="t-default">ประวัติอุปกรณ์ICT06</a></li>
                                 <li><a href="{{route('documentcontrolictbackup.list')}}" key="t-default">LogBackupICT07</a></li>
@@ -103,17 +103,18 @@
                         <span key="t-dashboards">รายงานซ่อมบำรุง</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{route('mtnreport.mtnday.index')}}" key="t-default">รายงานการซ่อม-รายวัน</a></li>      
+                        <li><a href="{{route('mtnreport.mtnday.index')}}" key="t-default">รายงานการซ่อม-รายวัน</a></li>  
+                        <li><a href="{{route('mtnreport.mtnmonth.index')}}" key="t-default">รายงานการซ่อม-รายเดือน</a></li>     
                     </ul>
                 </li>  
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="dripicons-graph-bar"></i>
-
                         <span key="t-dashboards">รายงานบุคคล</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                             
+                        <li><a href="{{route('empreport.emptime.index')}}" key="t-default">รายงานตรวจสอบเวลา</a></li>  
+                        <li><a href="#" key="t-default">รายงานตรวจสอบการลา</a></li>     
                     </ul>
                 </li>                                                      
                 <li class="menu-title" key="t-pages">Setting</li>

@@ -15,6 +15,7 @@ use App\Http\Livewire\Machine\MachineListPage;
 use App\Http\Livewire\Employee\EmployeeFormPage;
 use App\Http\Livewire\Employee\EmployeeListPage;
 use App\Http\Livewire\IsoDct\IsoDctMcChecksheet;
+use App\Http\Controllers\EmployeeReportController;
 use App\Http\Livewire\Employee\RolePermissionPage;
 use App\Http\Livewire\LeaveDocuno\LeaveDocunoForm;
 use App\Http\Livewire\LeaveDocuno\LeaveDocunoList;
@@ -42,6 +43,7 @@ use App\Http\Livewire\IsoDocumentControlIct\DocumentControlIctList;
 use App\Http\Livewire\IsoDocumentControlIct\DocumentControlIctPlanForm;
 use App\Http\Livewire\IsoDocumentControlIct\DocumentControlIctPlanList;
 use App\Http\Livewire\IsoDocumentControlIct\DocumentControlIctBackupList;
+use App\Http\Livewire\IsoDocumentControlIct\DocumentControlIctChecksheetList;
 
 /*
 |--------------------------------------------------------------------------
@@ -135,6 +137,7 @@ Route::group([
     'middleware' =>  ['auth','role:superadmin|MTN']
 ],function(){
     Route::get('/mtnday', [MachineryReportController::class,'mtnday'])->name('mtnday.index');  
+    Route::get('/mtnmonth', [MachineryReportController::class,'mtnmonth'])->name('mtnmonth.index');  
 });
 Route::post('/getDataMcListsub' , [MachineryReportController::class,'getDataMcListsub']);  
 
@@ -192,6 +195,14 @@ Route::group([
     Route::get('/create', LeaveDocunoForm::class)->name('create');
     Route::get('/update/{id}', LeaveDocunoForm::class)->name('update');
     Route::get('/excel', LeaveDocunoExcel::class)->name('excel');
+});
+
+Route::group([
+    'prefix' => 'empreports',
+    'as' => 'empreport.',
+    // 'middleware' =>  ['auth','role:superadmin|MTN']
+],function(){
+    Route::get('/emptime', [EmployeeReportController::class,'emptime'])->name('emptime.index');  
 });
 // EMP  END//
 
@@ -254,6 +265,14 @@ Route::group([
     Route::get('/', DocumentControlIctPlanList::class)->name('list');
     Route::get('/create', DocumentControlIctPlanForm::class)->name('create');
     Route::get('/update/{id}', DocumentControlIctPlanForm::class)->name('update');
+});
+
+Route::group([
+    'prefix' => 'documentcontrolictchecks',
+    'as' => 'documentcontrolictcheck.',
+    'middleware' =>  ['auth','role:superadmin|admin']
+],function(){
+    Route::get('/', DocumentControlIctChecksheetList::class)->name('list');
 });
 // ISO ICT END //
 

@@ -96,5 +96,6 @@
             })
             });
           </script>
+          @stack('scriptjs')
     </body>
 </html>

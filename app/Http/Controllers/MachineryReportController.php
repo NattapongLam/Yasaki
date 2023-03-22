@@ -49,4 +49,28 @@ class MachineryReportController extends Controller
             'sub' => $sub
         ]);
     }
+    public function mtnmonth(Request $request)
+    {
+        $year = $request->year ? $request->year : date("Y");
+        $dep = $request->dep;
+        $deplist = DepartmentList::get();
+        $data = $data = DB::table('vw_machinery_monthreport');
+        if($year){   
+            $data = $data      
+            ->where('Year', $year);
+        }
+        if($dep){
+            $data = $data
+            ->where('department_name',$dep);
+        }
+        $data = $data->orderby('Month','asc')->get();
+        return view('mtnreport.mtnmonth',[
+            'year' =>  $year,
+            'deplist' => $deplist,
+            'dep' => $dep,
+            'data' => $data,
+            'months' => '',
+            'dataBar' => ''
+        ]);
+    }
 }

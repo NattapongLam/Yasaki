@@ -41,7 +41,7 @@
                                 @foreach ($emplist as $key => $item)
                                 <tr>
                                     <th>{{$key + 1}}</th>
-                                    <td> <img class="img-thumbnail" alt="100x100" width="100" src="assets/images/users/{{$item->employee_image}}" data-holder-rendered="true"></td>
+                                    <td><img class="img-thumbnail" alt="100x100" width="100" src="assets/images/users/{{$item->employee_image}}" data-holder-rendered="true"></td>
                                     <td>{{$item->employee_code}}</td>
                                     <td>{{$item->employee_fullname}}</td>
                                     <td>{{$item->employee_company}}</td>

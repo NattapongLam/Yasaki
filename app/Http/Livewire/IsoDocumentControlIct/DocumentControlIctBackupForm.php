@@ -151,7 +151,7 @@ class DocumentControlIctBackupForm extends Component
             'ck_day18' => $this->ck_day18,
             'ck_day19' => $this->ck_day19,
             'ck_day20' => $this->ck_day20,
-            'ck_day20' => $this->ck_day21,
+            'ck_day21' => $this->ck_day21,
             'ck_day22' => $this->ck_day22,
             'ck_day23' => $this->ck_day23,
             'ck_day24' => $this->ck_day24,

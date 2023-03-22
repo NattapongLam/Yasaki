@@ -4,7 +4,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header bg-transparent border-bottom text-uppercase">
-                    <h3 class="card-title">รายงานการซ่อมเครื่องจักร-รายวัน</h3>
+                    <h3 class="card-title">รายงานการซ่อมเครื่องจักร - รายวัน</h3>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -72,6 +72,7 @@
                         </div>
                     </div><br>
                     <div class="row">
+                        <div class="table-responsive">
                         <table id="tb_job" class="table table-bordered dt-responsive nowrap w-100">
                             <thead>
                                 <tr>
@@ -130,6 +131,7 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        </div>
                     </div>
                 </div>
             </div>
