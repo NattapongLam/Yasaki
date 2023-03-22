@@ -9,13 +9,17 @@ use App\Http\Livewire\IsoPkg\IsoPkgHolder;
 use App\Http\Livewire\IsoPtg\IsoPtgHolder;
 use App\Http\Livewire\Employee\MenuListPage;
 use App\Http\Controllers\DashboardController;
+use App\Http\Livewire\LeaveType\LeaveTypeList;
 use App\Http\Livewire\Machine\MachineFormPage;
 use App\Http\Livewire\Machine\MachineListPage;
 use App\Http\Livewire\Employee\EmployeeFormPage;
 use App\Http\Livewire\Employee\EmployeeListPage;
 use App\Http\Livewire\IsoDct\IsoDctMcChecksheet;
 use App\Http\Livewire\Employee\RolePermissionPage;
+use App\Http\Livewire\LeaveDocuno\LeaveDocunoForm;
+use App\Http\Livewire\LeaveDocuno\LeaveDocunoList;
 use App\Http\Controllers\MachineryReportController;
+use App\Http\Livewire\LeaveDocuno\LeaveDocunoExcel;
 use App\Http\Livewire\IsoDct\IsoDctMcChecksheetForm;
 use App\Http\Livewire\MachineryList\MachineryListEnd;
 use App\Http\Livewire\EmployeeList\EmployeeListReport;
@@ -162,6 +166,14 @@ Route::group([
 });
 
 Route::group([
+    'prefix' => 'leavetypes',
+    'as' => 'leavetype.',
+    'middleware' =>  ['auth','role:superadmin|HRM']
+],function(){
+    Route::get('/', LeaveTypeList::class)->name('list');
+});
+
+Route::group([
     'prefix' => 'leaveapprovals',
     'as' => 'leaveapproval.',
     'middleware' =>  ['auth','role:superadmin|HRM']
@@ -169,6 +181,17 @@ Route::group([
     Route::get('/', LeaveApprovalListPage::class)->name('list');
     Route::get('/create', LeaveApprovalListForm::class)->name('create');
     Route::get('/update/{id}', LeaveApprovalListForm::class)->name('update');
+});
+
+Route::group([
+    'prefix' => 'leavedocunos',
+    'as' => 'leavedocuno.',
+    //'middleware' =>  ['auth','permission:leavedocunos'],
+],function(){
+    Route::get('/', LeaveDocunoList::class)->name('list');
+    Route::get('/create', LeaveDocunoForm::class)->name('create');
+    Route::get('/update/{id}', LeaveDocunoForm::class)->name('update');
+    Route::get('/excel', LeaveDocunoExcel::class)->name('excel');
 });
 // EMP  END//
 

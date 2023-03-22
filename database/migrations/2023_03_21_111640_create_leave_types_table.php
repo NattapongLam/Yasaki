@@ -14,7 +14,7 @@ class CreateLeaveTypesTable extends Migration
     public function up()
     {
         Schema::create('leave_types', function (Blueprint $table) {
-            $table->id('ltype_id');
+            $table->id();
             $table->string('ltype_name');
             $table->decimal('ltype_qty');
             $table->string('ltype_desc');

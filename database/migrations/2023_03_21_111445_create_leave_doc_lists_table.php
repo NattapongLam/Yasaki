@@ -14,7 +14,7 @@ class CreateLeaveDocListsTable extends Migration
     public function up()
     {
         Schema::create('leave_doc_lists', function (Blueprint $table) {
-            $table->id('ldoc_id');
+            $table->id();
             $table->date('ldoc_datestart');
             $table->date('ldoc_dateend');
             $table->bigInteger('lconf_id');

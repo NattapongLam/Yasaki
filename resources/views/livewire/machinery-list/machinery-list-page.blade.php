@@ -39,6 +39,7 @@
                                                 class="btn btn-sm btn-success">
                                                 <i class="fas fa-hammer"></i>
                                                 </a>
+                                            @else
                                             @endif
                                         @endauth
                                         <a href="{{route('machinerylist.update',$item->id)}}"

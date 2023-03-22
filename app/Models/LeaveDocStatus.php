@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class LeaveDocStatus extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'lsta_name'
+    ];
 }

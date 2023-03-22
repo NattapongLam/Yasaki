@@ -92,7 +92,7 @@
                         <span key="t-dashboards">ฝ่ายบุคคล</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="#" key="t-default">บันทึกการลา</a></li>      
+                        <li><a href="{{route('leavedocuno.list')}}" key="t-default">บันทึกการลา</a></li>      
                         <li><a href="#" key="t-default">อนุมัติการลา</a></li>                   
                     </ul>
                 </li>
@@ -148,6 +148,7 @@
                         <li><a href="{{route('departmentlist.list')}}" key="t-default">รายชื่อแผนก</a></li>  
                         <li><a href="{{route('employeelist.list')}}" key="t-default">รายชื่อพนักงาน</a></li>    
                         <li><a href="{{route('leaveconfig.list')}}" key="t-default">ตั้งค่าการลา</a></li>
+                        <li><a href="{{route('leavetype.list')}}" key="t-default">ประเภทการลา</a></li>
                         <li><a href="{{route('leaveapproval.list')}}" key="t-default">ตั้งค่าสายอนุมัติ</a></li>   
                     </ul>
                 </li>

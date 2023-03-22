@@ -29,14 +29,14 @@ class IsoDctMcChecksheetForm extends Component
         $this->ms_machine_name = $hd->ms_machine_name;
         $this->checksheetmc_hd_docuno = $hd->checksheetmc_hd_docuno;
         $this->checksheetmc_hd_save = $hd->checksheetmc_hd_save;
-        $this->checksheetmc_hd_filename = "images/machinechecksheets/".$hd->checksheetmc_hd_filename;
+        $this->checksheetmc_hd_filename = $hd->checksheetmc_hd_filename;
     }
 
     public function render()
     {
         if($this->idKey){
             $pic = DB::table('machine_checksheet_hds')->where('id',$this->idKey)->first();
-            $pic = "images/machinechecksheets/".$pic->checksheetmc_hd_filename;
+            $pic = $pic->checksheetmc_hd_filename;
             $this->chkdt = MachineChecksheetDt::where('checksheetmc_hd_docuno',$this->checksheetmc_hd_docuno)->get();
             $this->chkemp = MachineChecksheetLg::where('checksheetmc_hd_docuno',$this->checksheetmc_hd_docuno)->get();
             //dd($this->chkdt);
