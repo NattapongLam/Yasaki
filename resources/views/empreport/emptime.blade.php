@@ -6,6 +6,7 @@
             <div class="card-header bg-transparent border-bottom text-uppercase">
                 <h3 class="card-title">รายงานตรวจสอบเวลา</h3>
             </div>
+            <form method="GET" class="form-horizontal">
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-md-3">
@@ -43,7 +44,7 @@
                             <tbody>
                                 @foreach ($data as $item)
                                     <tr>
-                                    <td><img class="img-thumbnail" alt="100x100" width="100" src="/assets/images/users/{{$item->employee_image}}"></td>
+                                    <td style="text-align: center"><img class="img-thumbnail" alt="100x100" width="100" src="/assets/images/users/{{$item->employee_image}}"></td>
                                     <td>{{$item->emp_times_company}}</td>
                                     <td>{{$item->emp_times_empfullname}} ({{$item->emp_times_empcode}})</td>  
                                     <td>{{\Carbon\Carbon::parse($item->emp_times_date)->format('d/m/Y')}}</td>                                
@@ -55,6 +56,7 @@
                     </div>
                 </div>
             </div>
+            </form>
         </div>
     </div>
 </div>

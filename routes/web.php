@@ -338,7 +338,7 @@ Route::group([
 Route::group([
     'prefix' => 'isopkgs',
     'as' => 'isopkg.',
-    'middleware' =>  ['auth','role:superadmin|PKG|admin']
+    'middleware' =>  ['auth','role:superadmin|PKG|admin|PTG']
 ],function(){
     Route::get('/', IsoPkgHolder::class)->name('list');
 });

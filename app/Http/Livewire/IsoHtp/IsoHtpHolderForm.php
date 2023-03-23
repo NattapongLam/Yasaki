@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Livewire\IsoDct;
+namespace App\Http\Livewire\IsoHtp;
 
 use Livewire\Component;
 use App\Models\IsoHolderList;
 
-class IsoDctHolderForm extends Component
+class IsoHtpHolderForm extends Component
 {
     public $idKey = 0;
     public $iso_doculist_code;
@@ -13,7 +13,7 @@ class IsoDctHolderForm extends Component
     public $iso_docuholder_status = 3;
 
     protected $listeners = [
-        'editDctHolder' => 'edit',
+        'editHtpHolder' => 'edit',
     ];
 
     
@@ -45,13 +45,12 @@ class IsoDctHolderForm extends Component
             'title' => 'บันทึกข้อมูลเรียบร้อย',
             'timer' => 3000,
             'icon' => 'success',
-            'url' => route('isodct.list')
+            'url' => route('isohtp.list')
         ]);
         $this->emit('modalHide');
     }
-
     public function render()
     {
-        return view('livewire.iso-dct.iso-dct-holder-form');
+        return view('livewire.iso-htp.iso-htp-holder-form');
     }
 }
