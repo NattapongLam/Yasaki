@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\IsoDct;
+namespace App\Http\Livewire\IsoHtp;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\DB;
@@ -8,7 +8,7 @@ use App\Models\MachineChecksheetDt;
 use App\Models\MachineChecksheetHd;
 use App\Models\MachineChecksheetLg;
 
-class IsoDctMcChecksheetForm extends Component
+class IsoHtpMcChecksheetForm extends Component
 {
     public $idKey = 0;
     public $checksheetmc_hd_docuno;
@@ -32,6 +32,7 @@ class IsoDctMcChecksheetForm extends Component
         $this->checksheetmc_hd_filename = $hd->checksheetmc_hd_filename;
     }
 
+
     public function render()
     {
         if($this->idKey){
@@ -40,7 +41,7 @@ class IsoDctMcChecksheetForm extends Component
             $this->chkdt = MachineChecksheetDt::where('checksheetmc_hd_docuno',$this->checksheetmc_hd_docuno)->get();
             $this->chkemp = MachineChecksheetLg::where('checksheetmc_hd_docuno',$this->checksheetmc_hd_docuno)->get();
         }
-        return view('livewire.iso-dct.iso-dct-mc-checksheet-form',[
+        return view('livewire.iso-htp.iso-htp-mc-checksheet-form',[
             'pic' => $pic,
             'chkdt' => $this->chkdt,
             'chkemp' => $this->chkemp

@@ -15,6 +15,7 @@ use App\Http\Livewire\Machine\MachineListPage;
 use App\Http\Livewire\Employee\EmployeeFormPage;
 use App\Http\Livewire\Employee\EmployeeListPage;
 use App\Http\Livewire\IsoDct\IsoDctMcChecksheet;
+use App\Http\Livewire\IsoHtp\IsoHtpMcChecksheet;
 use App\Http\Controllers\EmployeeReportController;
 use App\Http\Livewire\Employee\RolePermissionPage;
 use App\Http\Livewire\LeaveDocuno\LeaveDocunoForm;
@@ -22,6 +23,7 @@ use App\Http\Livewire\LeaveDocuno\LeaveDocunoList;
 use App\Http\Controllers\MachineryReportController;
 use App\Http\Livewire\LeaveDocuno\LeaveDocunoExcel;
 use App\Http\Livewire\IsoDct\IsoDctMcChecksheetForm;
+use App\Http\Livewire\IsoHtp\IsoHtpMcChecksheetForm;
 use App\Http\Livewire\MachineryList\MachineryListEnd;
 use App\Http\Livewire\EmployeeList\EmployeeListReport;
 use App\Http\Livewire\LeaveConfig\LeaveConfigListPage;
@@ -301,6 +303,14 @@ Route::group([
     'middleware' =>  ['auth','role:superadmin|HTP|admin']
 ],function(){
     Route::get('/', IsoHtpHolder::class)->name('list');
+});
+Route::group([
+    'prefix' => 'mcchkhtps',
+    'as' => 'mcchkhtp.',
+    'middleware' =>  ['auth','role:superadmin|DCT|admin']
+],function(){
+    Route::get('/', IsoHtpMcChecksheet::class)->name('list');
+    Route::get('/edit/{id}', IsoHtpMcChecksheetForm::class)->name('edit');
 });
 // ISO HTP END//
 

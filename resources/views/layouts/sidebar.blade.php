@@ -43,7 +43,7 @@
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">HTP</a>
                             <ul class="sub-menu" aria-expanded="true">                      
                                 <li><a href="{{route('isohtp.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
-                                <li><a href="#" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
+                                <li><a href="{{route('mcchkhtp.list')}}" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
                             </ul>
                         </li>
                         <li>
@@ -159,7 +159,6 @@
                         <span key="t-dashboards">ตั้งค่าระบบ</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        {{-- <li><a href="{{route('menulist.list')}}" key="t-default">กำหนดเมนู</a></li>    --}}
                         <li><a href="{{route('employee.list')}}" key="t-default">ผู้ใช้งานระบบ</a></li>    
                     </ul>
                 </li>
