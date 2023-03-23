@@ -127,7 +127,7 @@ class EmployeeFormPage extends Component
             }            
         }
         return view('livewire.employee.employee-form-page',[
-            'emplist' => EmployeeList::where('employee_status',true)->get()
+            'emplist' => EmployeeList::where('employee_status',true)->where('employee_code','LIKE','A%')->get()
         ])->extends('layouts.main');
     }
 }

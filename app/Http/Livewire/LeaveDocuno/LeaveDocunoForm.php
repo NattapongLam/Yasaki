@@ -103,6 +103,7 @@ class LeaveDocunoForm extends Component
             'ldoc_reamrk'=> $this->ldoc_reamrk,
             'lsta_id'=> 1,
             'ldoc_save' =>  auth()->user()->name,
+            'department_name' => $emp->department_name,
         ]);
         $this->resetInput();
         $this->dispatchBrowserEvent('swal',[

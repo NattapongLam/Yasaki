@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Livewire\IsoHtp;
+namespace App\Http\Livewire\IsoMch;
 
 use Livewire\Component;
 use App\Models\IsoHolderList;
 
-class IsoHtpHolderForm extends Component
+class IsoMchHolderForm extends Component
 {
     public $idKey = 0;
     public $iso_doculist_code;
@@ -13,10 +13,9 @@ class IsoHtpHolderForm extends Component
     public $iso_docuholder_status = 3;
 
     protected $listeners = [
-        'editHtpHolder' => 'edit',
+        'editMchHolder' => 'edit',
     ];
 
-    
     public function edit($id)
     {
         $this->resetInput();
@@ -46,13 +45,14 @@ class IsoHtpHolderForm extends Component
             'title' => 'บันทึกข้อมูลเรียบร้อย',
             'timer' => 3000,
             'icon' => 'success',
-            'url' => route('isohtp.list')
+            'url' => route('isomch.list')
         ]);
         $this->emit('modalHide');
     }
     
+
     public function render()
     {
-        return view('livewire.iso-htp.iso-htp-holder-form');
+        return view('livewire.iso-mch.iso-mch-holder-form');
     }
 }

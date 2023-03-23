@@ -11,12 +11,10 @@
                         <div class="col-3"></div>                
                     </div><hr>                                                      
                     <div class="table-responsive">
-                        <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap w-100">
+                        <table id="tb_job" class="table table-bordered dt-responsive nowrap w-100">
                             <thead>
                                 <tr>
                                     <th style="text-align: center">สถานะ</th>   
-                                    <th style="text-align: center">#</th>
-                                    <th style="text-align: center">วันที่ประกาศใช้</th>
                                     <th style="text-align: center">วันที่แจกจ่าย</th>
                                     <th style="text-align: center">ประเภทเอกสาร</th>
                                     <th>เอกสาร</th>                                  
@@ -36,10 +34,8 @@
                                         @else
                                         <span class="badge bg-danger">ยกเลิก</span>
                                         @endif
-                                    </td>   
-                                    <td style="text-align: center">{{$key+1}}</td>
-                                    <td style="text-align: center">{{$item->iso_doculist_forcedate}}</td>     
-                                    <td style="text-align: center">{{$item->recipient_date}}</td>      
+                                    </td>    
+                                    <td style="text-align: center">{{\Carbon\Carbon::parse($item->recipient_date)->format('d/m/Y')}}</td>    
                                     <td style="text-align: center">{{$item->iso_docutype_code}}</td>    
                                     <td>
                                         <a href="images/isodocuments/{{$item->iso_doculist_filename}}">
@@ -49,8 +45,12 @@
                                     <td>{{$item->iso_docuholder_remark}}</td>        
                                     <td>
                                         @livewire('iso-htp.iso-htp-holder-form')
-                                        <button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"data-bs-whatever="@mdo" wire:click="$emit('editHtpHolder',{{$item->id}})">
-                                            <i class="fas fa-edit"></i>
+                                        <button type="button" class="btn btn-sm btn-warning" 
+                                        data-bs-toggle="modal" 
+                                        data-bs-target="#exampleModal"
+                                        data-bs-whatever="@mdo" 
+                                        wire:click="$emit('editHtpHolder',{{$item->id}})">
+                                        <i class="fas fa-edit"></i>
                                         </button>
                                     </td>                                     
                                 </tr>     

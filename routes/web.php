@@ -14,16 +14,24 @@ use App\Http\Livewire\Machine\MachineFormPage;
 use App\Http\Livewire\Machine\MachineListPage;
 use App\Http\Livewire\Employee\EmployeeFormPage;
 use App\Http\Livewire\Employee\EmployeeListPage;
+use App\Http\Livewire\IsoAsb\IsoAsbMcChecksheet;
 use App\Http\Livewire\IsoDct\IsoDctMcChecksheet;
 use App\Http\Livewire\IsoHtp\IsoHtpMcChecksheet;
+use App\Http\Livewire\IsoMch\IsoMchMcChecksheet;
+use App\Http\Livewire\IsoPkg\IsoPkgMcChecksheet;
+use App\Http\Livewire\IsoPtg\IsoPtgMcChecksheet;
 use App\Http\Controllers\EmployeeReportController;
 use App\Http\Livewire\Employee\RolePermissionPage;
 use App\Http\Livewire\LeaveDocuno\LeaveDocunoForm;
 use App\Http\Livewire\LeaveDocuno\LeaveDocunoList;
 use App\Http\Controllers\MachineryReportController;
 use App\Http\Livewire\LeaveDocuno\LeaveDocunoExcel;
+use App\Http\Livewire\IsoAsb\IsoAsbMcChecksheetForm;
 use App\Http\Livewire\IsoDct\IsoDctMcChecksheetForm;
 use App\Http\Livewire\IsoHtp\IsoHtpMcChecksheetForm;
+use App\Http\Livewire\IsoMch\IsoMchMcChecksheetForm;
+use App\Http\Livewire\IsoPkg\IsoPkgMcChecksheetForm;
+use App\Http\Livewire\IsoPtg\IsoPtgMcChecksheetForm;
 use App\Http\Livewire\MachineryList\MachineryListEnd;
 use App\Http\Livewire\EmployeeList\EmployeeListReport;
 use App\Http\Livewire\LeaveConfig\LeaveConfigListPage;
@@ -39,6 +47,7 @@ use App\Http\Livewire\MachineSystem\MachineSystemListPage;
 use App\Http\Livewire\MachineService\MachineServiceListPage;
 use App\Http\Livewire\IsoDocumentControl\DocumentControlTypeList;
 use App\Http\Livewire\IsoDocumentControl\DocumentControlGroupList;
+use App\Http\Livewire\LeaveDocunoApproval\LeaveDocunoApprovalList;
 use App\Http\Livewire\IsoDocumentControl\DocumentControlHolderList;
 use App\Http\Livewire\IsoDocumentControl\DocumentControlMasterList;
 use App\Http\Livewire\IsoDocumentControlIct\DocumentControlIctList;
@@ -200,6 +209,14 @@ Route::group([
 });
 
 Route::group([
+    'prefix' => 'leaveapprovals',
+    'as' => 'leaveapproval.',
+    //'middleware' =>  ['auth','permission:leaveapprovals'],
+],function(){
+    Route::get('/', LeaveDocunoApprovalList::class)->name('list');
+});
+
+Route::group([
     'prefix' => 'empreports',
     'as' => 'empreport.',
     // 'middleware' =>  ['auth','role:superadmin|MTN']
@@ -307,7 +324,7 @@ Route::group([
 Route::group([
     'prefix' => 'mcchkhtps',
     'as' => 'mcchkhtp.',
-    'middleware' =>  ['auth','role:superadmin|DCT|admin']
+    'middleware' =>  ['auth','role:superadmin|HTP|admin']
 ],function(){
     Route::get('/', IsoHtpMcChecksheet::class)->name('list');
     Route::get('/edit/{id}', IsoHtpMcChecksheetForm::class)->name('edit');
@@ -322,6 +339,14 @@ Route::group([
 ],function(){
     Route::get('/', IsoMchHolder::class)->name('list');
 });
+Route::group([
+    'prefix' => 'mcchkmchs',
+    'as' => 'mcchkmch.',
+    'middleware' =>  ['auth','role:superadmin|MCH|admin']
+],function(){
+    Route::get('/', IsoMchMcChecksheet::class)->name('list');
+    Route::get('/edit/{id}', IsoMchMcChecksheetForm::class)->name('edit');
+});
 // ISO MCH END//
 
 // ISO PTG //
@@ -331,6 +356,14 @@ Route::group([
     'middleware' =>  ['auth','role:superadmin|PTG|admin']
 ],function(){
     Route::get('/', IsoPtgHolder::class)->name('list');
+});
+Route::group([
+    'prefix' => 'mcchkptgs',
+    'as' => 'mcchkptg.',
+    'middleware' =>  ['auth','role:superadmin|PTG|admin']
+],function(){
+    Route::get('/', IsoPtgMcChecksheet::class)->name('list');
+    Route::get('/edit/{id}', IsoPtgMcChecksheetForm::class)->name('edit');
 });
 // ISO PTG END//
 
@@ -342,6 +375,14 @@ Route::group([
 ],function(){
     Route::get('/', IsoAsbHolder::class)->name('list');
 });
+Route::group([
+    'prefix' => 'mcchkasbs',
+    'as' => 'mcchkasb.',
+    'middleware' =>  ['auth','role:superadmin|ASB|admin']
+],function(){
+    Route::get('/', IsoAsbMcChecksheet::class)->name('list');
+    Route::get('/edit/{id}', IsoAsbMcChecksheetForm::class)->name('edit');
+});
 // ISO ASB END//
 
 // ISO PKG //
@@ -351,5 +392,13 @@ Route::group([
     'middleware' =>  ['auth','role:superadmin|PKG|admin|PTG']
 ],function(){
     Route::get('/', IsoPkgHolder::class)->name('list');
+});
+Route::group([
+    'prefix' => 'mcchkpkgs',
+    'as' => 'mcchkpkg.',
+    'middleware' =>  ['auth','role:superadmin|PKG|admin|PTG']
+],function(){
+    Route::get('/', IsoPkgMcChecksheet::class)->name('list');
+    Route::get('/edit/{id}', IsoPkgMcChecksheetForm::class)->name('edit');
 });
 // ISO PKG END//

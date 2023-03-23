@@ -28,6 +28,7 @@ class CreateLeaveDocListsTable extends Migration
             $table->string('ldoc_save');
             $table->string('ldoc_appsave')->nullable();
             $table->string('ldoc_appdesc')->nullable();
+            $table->string('department_name')->nullable();
             $table->timestamps();
         });
     }

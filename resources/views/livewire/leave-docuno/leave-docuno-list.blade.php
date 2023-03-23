@@ -29,6 +29,8 @@
                                 <tr>
                                     <th>#</th>
                                     <th class="text-center">สถานะ</th>
+                                    <th>วันที่</th>
+                                    <th>ประเภท</th>
                                     <th>พนักงาน</th>
                                     <th>หมายเหตุ</th>
                                     <th class="text-center">รูปแนบ</th>
@@ -48,6 +50,8 @@
                                         <span class="badge bg-danger">ยกเลิก/ไม่อนุมัติ</span>
                                         @endif
                                     </td>
+                                    <td>{{\Carbon\Carbon::parse($item->ldoc_datestart)->format('d/m/Y')}} - {{\Carbon\Carbon::parse($item->ldoc_dateend)->format('d/m/Y')}} {{$item->leav_name}}</td>
+                                    <td>{{$item->leav_name}}</td>
                                     <td>{{$item->employee_fullname}} ({{$item->employee_code}})</td>
                                     <td>{{$item->ldoc_reamrk}}</td>
                                     <td class="text-center">

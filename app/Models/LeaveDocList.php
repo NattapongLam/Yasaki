@@ -22,5 +22,6 @@ class LeaveDocList extends Model
       "ldoc_save",
       "ldoc_appsave",
       "ldoc_appdesc",
+      "department_name"
     ];
 }

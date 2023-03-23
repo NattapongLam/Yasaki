@@ -9,7 +9,7 @@ use Livewire\WithPagination;
 class EmployeeListPage extends Component
 {
     use WithPagination;
-
+    protected $paginationTheme = "bootstrap";
     public $searchTerm;
     
     public function render()
