@@ -12,7 +12,7 @@ class EmployeeReportController extends Controller
         $emp = DB::table('employee_lists')->where('employee_code',auth()->user()->username)->first();
         $dateend = $request->dateend ? $request->dateend : date("Y-m-d");
         $datestart = $request->datestart ? $request->datestart : date("Y-m-d",strtotime("-1 month",strtotime($dateend)));
-        if($emp->department_name == "สำนักงาน(OFF)"){
+        if($emp->department_name == "สำนักงาน(OFF)" || $emp->department_name == "ขาย(SAL)"){
             $data = DB::table('employee_datetimes')
             ->join('employee_lists','employee_datetimes.emp_times_empcode','=','employee_lists.employee_code')
             ->where('emp_times_empcode',auth()->user()->username);

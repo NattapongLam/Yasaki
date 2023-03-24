@@ -5,7 +5,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-3">
-                            <h3 class="card-title">ทะเบียนผู้ถือครอง (QMR)</h3>                           
+                            <h3 class="card-title">ทะเบียนผู้ถือครอง (SAL)</h3>                           
                         </div>
                         <div class="col-3"></div>
                         <div class="col-3"></div>                
