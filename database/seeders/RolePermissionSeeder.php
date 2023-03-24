@@ -27,6 +27,12 @@ class RolePermissionSeeder extends Seeder
         // Role::create(['name' => 'PKG']);   
         // Role::create(['name' => 'HRM']);  
         // Role::create(['name' => 'QCC']);  
+        // Role::create(['name' => 'STR']); 
+        // Role::create(['name' => 'PUR']); 
+        // Role::create(['name' => 'DLV']); 
+        // Role::create(['name' => 'MLD']); 
+        // Role::create(['name' => 'SAL']); 
+        // Role::create(['name' => 'PDT']); 
 
         // Permission::create(['name' => 'machinerylists']);
         // Permission::create(['name' => 'machineryreports']);         

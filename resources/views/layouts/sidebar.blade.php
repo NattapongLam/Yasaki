@@ -19,7 +19,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="javascript: void(0);" class="has-arrow" key="t-vertical">ICT</a>
+                            <a href="javascript: void(0);" class="has-arrow" key="t-vertical">IT</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li><a href="{{route('documentcontrolictcomlist.list')}}" key="t-default">ทะเบียนอุปกรณ์ICT01</a></li>
                                 <li><a href="{{route('documentcontrolictplan.list')}}" key="t-default">แผนบำรุงรักษาICT02</a></li>
@@ -29,6 +29,7 @@
                                 <li><a href="#" key="t-default">ประวัติอุปกรณ์ICT06</a></li>
                                 <li><a href="{{route('documentcontrolictbackup.list')}}" key="t-default">LogBackupICT07</a></li>
                                 <li><a href="#" key="t-default">KPI-ICT</a></li>
+                                <li><a href="#" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
                                 
                             </ul>
                         </li>
@@ -77,38 +78,72 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">QCC</a>
                             <ul class="sub-menu" aria-expanded="true">                      
-                                <li><a href="#" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
-                                <li><a href="#" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
+                                <li><a href="{{route('isoqcc.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
+                                <li><a href="{{route('mcchkqcc.list')}}" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
                             </ul>
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">MLD</a>
                             <ul class="sub-menu" aria-expanded="true">                      
-                                <li><a href="#" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
-                                <li><a href="#" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow" key="t-vertical">STR</a>
-                            <ul class="sub-menu" aria-expanded="true">                      
-                                <li><a href="#" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
-                                <li><a href="#" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow" key="t-vertical">CLB</a>
-                            <ul class="sub-menu" aria-expanded="true">                      
-                                <li><a href="#" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
-                                <li><a href="#" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
+                                <li><a href="{{route('isomld.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
+                                <li><a href="{{route('mcchkmld.list')}}" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
                             </ul>
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">DLV</a>
                             <ul class="sub-menu" aria-expanded="true">                      
-                                <li><a href="#" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
-                                <li><a href="#" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
+                                <li><a href="{{route('isodlv.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
+                                <li><a href="{{route('mcchkdlv.list')}}" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
                             </ul>
                         </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow" key="t-vertical">STR</a>
+                            <ul class="sub-menu" aria-expanded="true">                      
+                                <li><a href="{{route('isostr.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow" key="t-vertical">CLB</a>
+                            <ul class="sub-menu" aria-expanded="true">                      
+                                <li><a href="{{route('isoclb.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow" key="t-vertical">HR</a>
+                            <ul class="sub-menu" aria-expanded="true">                      
+                                <li><a href="{{route('isohr.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
+                            </ul>
+                        </li> 
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow" key="t-vertical">MTN</a>
+                            <ul class="sub-menu" aria-expanded="true">                      
+                                <li><a href="{{route('isomtn.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
+                            </ul>
+                        </li>      
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow" key="t-vertical">PTD</a>
+                            <ul class="sub-menu" aria-expanded="true">                      
+                                <li><a href="{{route('isoptd.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
+                            </ul>
+                        </li>       
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow" key="t-vertical">PUR</a>
+                            <ul class="sub-menu" aria-expanded="true">                      
+                                <li><a href="{{route('isopur.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
+                            </ul>
+                        </li>     
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow" key="t-vertical">QMR</a>
+                            <ul class="sub-menu" aria-expanded="true">                      
+                                <li><a href="#" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
+                            </ul>
+                        </li>  
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow" key="t-vertical">SAL</a>
+                            <ul class="sub-menu" aria-expanded="true">                      
+                                <li><a href="#" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
+                            </ul>
+                        </li>           
                     </ul>
                 </li>
                 <li>
@@ -128,7 +163,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{route('leavedocuno.list')}}" key="t-default">บันทึกการลา</a></li>      
-                        <li><a href="{{route('leaveapproval.list')}}" key="t-default">อนุมัติการลา</a></li>                   
+                        <li><a href="{{route('leavedocapproval.list')}}" key="t-default">อนุมัติการลา</a></li>                   
                     </ul>
                 </li>
                 <li class="menu-title" key="t-apps">Report</li>  

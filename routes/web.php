@@ -1,12 +1,21 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\IsoHr\IsoHrHolder;
 use App\Http\Livewire\IsoAsb\IsoAsbHolder;
+use App\Http\Livewire\IsoClb\IsoClbHolder;
 use App\Http\Livewire\IsoDct\IsoDctHolder;
+use App\Http\Livewire\IsoDlv\IsoDlvHolder;
 use App\Http\Livewire\IsoHtp\IsoHtpHolder;
 use App\Http\Livewire\IsoMch\IsoMchHolder;
+use App\Http\Livewire\IsoMld\IsoMldHolder;
+use App\Http\Livewire\IsoMtn\IsoMtnHolder;
 use App\Http\Livewire\IsoPkg\IsoPkgHolder;
+use App\Http\Livewire\IsoPtd\IsoPtdHolder;
 use App\Http\Livewire\IsoPtg\IsoPtgHolder;
+use App\Http\Livewire\IsoPur\IsoPurHolder;
+use App\Http\Livewire\IsoQcc\IsoQccHolder;
+use App\Http\Livewire\IsoStr\IsoStrHolder;
 use App\Http\Livewire\Employee\MenuListPage;
 use App\Http\Controllers\DashboardController;
 use App\Http\Livewire\LeaveType\LeaveTypeList;
@@ -16,10 +25,13 @@ use App\Http\Livewire\Employee\EmployeeFormPage;
 use App\Http\Livewire\Employee\EmployeeListPage;
 use App\Http\Livewire\IsoAsb\IsoAsbMcChecksheet;
 use App\Http\Livewire\IsoDct\IsoDctMcChecksheet;
+use App\Http\Livewire\IsoDlv\IsoDlvMcChecksheet;
 use App\Http\Livewire\IsoHtp\IsoHtpMcChecksheet;
 use App\Http\Livewire\IsoMch\IsoMchMcChecksheet;
+use App\Http\Livewire\IsoMld\IsoMldMcChecksheet;
 use App\Http\Livewire\IsoPkg\IsoPkgMcChecksheet;
 use App\Http\Livewire\IsoPtg\IsoPtgMcChecksheet;
+use App\Http\Livewire\IsoQcc\IsoQccMcChecksheet;
 use App\Http\Controllers\EmployeeReportController;
 use App\Http\Livewire\Employee\RolePermissionPage;
 use App\Http\Livewire\LeaveDocuno\LeaveDocunoForm;
@@ -28,10 +40,13 @@ use App\Http\Controllers\MachineryReportController;
 use App\Http\Livewire\LeaveDocuno\LeaveDocunoExcel;
 use App\Http\Livewire\IsoAsb\IsoAsbMcChecksheetForm;
 use App\Http\Livewire\IsoDct\IsoDctMcChecksheetForm;
+use App\Http\Livewire\IsoDlv\IsoDlvMcChecksheetForm;
 use App\Http\Livewire\IsoHtp\IsoHtpMcChecksheetForm;
 use App\Http\Livewire\IsoMch\IsoMchMcChecksheetForm;
+use App\Http\Livewire\IsoMld\IsoMldMcChecksheetForm;
 use App\Http\Livewire\IsoPkg\IsoPkgMcChecksheetForm;
 use App\Http\Livewire\IsoPtg\IsoPtgMcChecksheetForm;
+use App\Http\Livewire\IsoQcc\IsoQccMcChecksheetForm;
 use App\Http\Livewire\MachineryList\MachineryListEnd;
 use App\Http\Livewire\EmployeeList\EmployeeListReport;
 use App\Http\Livewire\LeaveConfig\LeaveConfigListPage;
@@ -152,6 +167,13 @@ Route::group([
 });
 Route::post('/getDataMcListsub' , [MachineryReportController::class,'getDataMcListsub']);  
 
+Route::group([
+    'prefix' => 'isomtns',
+    'as' => 'isomtn.',
+    'middleware' =>  ['auth','role:superadmin|MTN|admin']
+],function(){
+    Route::get('/', IsoMtnHolder::class)->name('list');
+});
 // MTN END //
 
 // EMP //
@@ -209,9 +231,9 @@ Route::group([
 });
 
 Route::group([
-    'prefix' => 'leaveapprovals',
-    'as' => 'leaveapproval.',
-    //'middleware' =>  ['auth','permission:leaveapprovals'],
+    'prefix' => 'leavedocapprovals',
+    'as' => 'leavedocapproval.',
+    //'middleware' =>  ['auth','permission:leavedocapprovals'],
 ],function(){
     Route::get('/', LeaveDocunoApprovalList::class)->name('list');
 });
@@ -402,3 +424,107 @@ Route::group([
     Route::get('/edit/{id}', IsoPkgMcChecksheetForm::class)->name('edit');
 });
 // ISO PKG END//
+
+// ISO QCC //
+Route::group([
+    'prefix' => 'isoqccs',
+    'as' => 'isoqcc.',
+    'middleware' =>  ['auth','role:superadmin|QCC|admin']
+],function(){
+    Route::get('/', IsoQccHolder::class)->name('list');
+});
+Route::group([
+    'prefix' => 'mcchkqccs',
+    'as' => 'mcchkqcc.',
+    'middleware' =>  ['auth','role:superadmin|QCC|admin']
+],function(){
+    Route::get('/', IsoQccMcChecksheet::class)->name('list');
+    Route::get('/edit/{id}', IsoQccMcChecksheetForm::class)->name('edit');
+});
+// ISO QCC END//
+
+// ISO MLD //
+Route::group([
+    'prefix' => 'isomlds',
+    'as' => 'isomld.',
+    'middleware' =>  ['auth','role:superadmin|MLD|admin']
+],function(){
+    Route::get('/', IsoMldHolder::class)->name('list');
+});
+Route::group([
+    'prefix' => 'mcchkmlds',
+    'as' => 'mcchkmld.',
+    'middleware' =>  ['auth','role:superadmin|MLD|admin']
+],function(){
+    Route::get('/', IsoMldMcChecksheet::class)->name('list');
+    Route::get('/edit/{id}', IsoMldMcChecksheetForm::class)->name('edit');
+});
+// ISO MLD END//
+
+// ISO DLV //
+Route::group([
+    'prefix' => 'isodlvs',
+    'as' => 'isodlv.',
+    'middleware' =>  ['auth','role:superadmin|DLV|admin']
+],function(){
+    Route::get('/', IsoDlvHolder::class)->name('list');
+});
+Route::group([
+    'prefix' => 'mcchkdlvs',
+    'as' => 'mcchkdlv.',
+    'middleware' =>  ['auth','role:superadmin|DLV|admin']
+],function(){
+    Route::get('/', IsoDlvMcChecksheet::class)->name('list');
+    Route::get('/edit/{id}', IsoDlvMcChecksheetForm::class)->name('edit');
+});
+// ISO DLV END//
+
+// ISO STR //
+Route::group([
+    'prefix' => 'isostrs',
+    'as' => 'isostr.',
+    'middleware' =>  ['auth','role:superadmin|STR|admin']
+],function(){
+    Route::get('/', IsoStrHolder::class)->name('list');
+});
+// ISO STR END//
+
+// ISO CLB //
+Route::group([
+    'prefix' => 'isoclbs',
+    'as' => 'isoclb.',
+    'middleware' =>  ['auth','role:superadmin|CLB|admin']
+],function(){
+    Route::get('/', IsoClbHolder::class)->name('list');
+});
+// ISO CLB END//
+
+// ISO HR //
+Route::group([
+    'prefix' => 'isohrs',
+    'as' => 'isohr.',
+    'middleware' =>  ['auth','role:superadmin|HRM|admin']
+],function(){
+    Route::get('/', IsoHrHolder::class)->name('list');
+});
+// ISO HR END//
+
+// ISO PTD //
+Route::group([
+    'prefix' => 'isoptds',
+    'as' => 'isoptd.',
+    'middleware' =>  ['auth','role:superadmin|PTD|admin']
+],function(){
+    Route::get('/', IsoPtdHolder::class)->name('list');
+});
+// ISO PTD END//
+
+// ISO PUR //
+Route::group([
+    'prefix' => 'isopurs',
+    'as' => 'isopur.',
+    'middleware' =>  ['auth','role:superadmin|PUR|admin']
+],function(){
+    Route::get('/', IsoPurHolder::class)->name('list');
+});
+// ISO PUR END//
