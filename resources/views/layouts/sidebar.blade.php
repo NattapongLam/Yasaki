@@ -14,11 +14,15 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">DCC</a>
                             <ul class="sub-menu" aria-expanded="true">
+                                @role('superadmin|admin') 
                                 <li><a href="{{route('documentcontrolmasterlist.list')}}" key="t-default">บัญชีแม่บทเอกสาร</a></li>   
                                 <li><a href="{{route('documentcontrolholderlist.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
+                                @endrole
+                                <li><a href="{{route('documentcontrolformmasterlist.list')}}" key="t-default">ฟอร์มแม่บทเอกสาร</a></li>  
                             </ul>
                         </li>
-                        <li>
+                        @role('superadmin|admin') 
+                        <li>                           
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">IT</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li><a href="{{route('documentcontrolictcomlist.list')}}" key="t-default">ทะเบียนอุปกรณ์ICT01</a></li>
@@ -31,15 +35,21 @@
                                 <li><a href="#" key="t-default">KPI-ICT</a></li>
                                 <li><a href="#" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
                                 
-                            </ul>
+                            </ul>                         
                         </li>
+                        @endrole
+                        @role('superadmin|admin|DCT') 
                         <li>
+                           
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">DCT</a>
                             <ul class="sub-menu" aria-expanded="true">                      
                                 <li><a href="{{route('isodct.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
                                 <li><a href="{{route('mcchkdct.list')}}" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
                             </ul>
+                          
                         </li>
+                        @endrole
+                        @role('superadmin|admin|HTP') 
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">HTP</a>
                             <ul class="sub-menu" aria-expanded="true">                      
@@ -47,6 +57,8 @@
                                 <li><a href="{{route('mcchkhtp.list')}}" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
                             </ul>
                         </li>
+                        @endrole
+                        @role('superadmin|admin|MCH') 
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">MCH</a>
                             <ul class="sub-menu" aria-expanded="true">                      
@@ -54,6 +66,8 @@
                                 <li><a href="{{route('mcchkmch.list')}}" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
                             </ul>
                         </li>
+                        @endrole
+                        @role('superadmin|admin|PTG')
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">PTG</a>
                             <ul class="sub-menu" aria-expanded="true">                      
@@ -61,6 +75,8 @@
                                 <li><a href="{{route('mcchkptg.list')}}" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
                             </ul>
                         </li>
+                        @endrole
+                        @role('superadmin|admin|ASB')
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">ASB</a>
                             <ul class="sub-menu" aria-expanded="true">                      
@@ -68,6 +84,8 @@
                                 <li><a href="{{route('mcchkasb.list')}}" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
                             </ul>
                         </li>
+                        @endrole
+                        @role('superadmin|admin|PTG|PKG')
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">PKG</a>
                             <ul class="sub-menu" aria-expanded="true">                      
@@ -75,6 +93,8 @@
                                 <li><a href="{{route('mcchkpkg.list')}}" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
                             </ul>
                         </li>
+                        @endrole
+                        @role('superadmin|admin|QCC')
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">QCC</a>
                             <ul class="sub-menu" aria-expanded="true">                      
@@ -82,6 +102,8 @@
                                 <li><a href="{{route('mcchkqcc.list')}}" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
                             </ul>
                         </li>
+                        @endrole
+                        @role('superadmin|admin|MLD')
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">MLD</a>
                             <ul class="sub-menu" aria-expanded="true">                      
@@ -89,6 +111,8 @@
                                 <li><a href="{{route('mcchkmld.list')}}" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
                             </ul>
                         </li>
+                        @endrole
+                        @role('superadmin|admin|MLD')
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">DLV</a>
                             <ul class="sub-menu" aria-expanded="true">                      
@@ -96,54 +120,71 @@
                                 <li><a href="{{route('mcchkdlv.list')}}" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
                             </ul>
                         </li>
+                        @endrole
+                        @role('superadmin|admin|STR')
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">STR</a>
                             <ul class="sub-menu" aria-expanded="true">                      
                                 <li><a href="{{route('isostr.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
                             </ul>
                         </li>
+                        @endrole
+                        @role('superadmin|admin|CLB')
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">CLB</a>
                             <ul class="sub-menu" aria-expanded="true">                      
                                 <li><a href="{{route('isoclb.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
                             </ul>
                         </li>
+                        @endrole
+                        @role('superadmin|admin|HRM')
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">HR</a>
                             <ul class="sub-menu" aria-expanded="true">                      
                                 <li><a href="{{route('isohr.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
                             </ul>
                         </li> 
+                        @endrole
+                        @role('superadmin|admin|MTN')
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">MTN</a>
                             <ul class="sub-menu" aria-expanded="true">                      
                                 <li><a href="{{route('isomtn.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
                             </ul>
-                        </li>      
+                        </li>    
+                        @endrole  
+                        @role('superadmin|admin|PDT')
                         <li>
-                            <a href="javascript: void(0);" class="has-arrow" key="t-vertical">PTD</a>
+                            <a href="javascript: void(0);" class="has-arrow" key="t-vertical">PDT</a>
                             <ul class="sub-menu" aria-expanded="true">                      
                                 <li><a href="{{route('isoptd.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
                             </ul>
                         </li>       
+                        @endrole 
+                        @role('superadmin|admin|PUR')
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">PUR</a>
                             <ul class="sub-menu" aria-expanded="true">                      
                                 <li><a href="{{route('isopur.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
                             </ul>
-                        </li>     
+                        </li>    
+                        @endrole  
+                        @role('superadmin|admin')
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">QMR</a>
                             <ul class="sub-menu" aria-expanded="true">                      
-                                <li><a href="#" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
+                                <li><a href="{{route('isoqmr.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
                             </ul>
                         </li>  
+                        @endrole 
+                        @role('superadmin|admin|SAL')
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">SAL</a>
                             <ul class="sub-menu" aria-expanded="true">                      
-                                <li><a href="#" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
+                                <li><a href="{{route('isosal.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
                             </ul>
-                        </li>           
+                        </li>     
+                        @endrole       
                     </ul>
                 </li>
                 <li>
@@ -167,6 +208,7 @@
                     </ul>
                 </li>
                 <li class="menu-title" key="t-apps">Report</li>  
+                @role('superadmin|MTN') 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="dripicons-graph-line"></i>
@@ -177,6 +219,7 @@
                         <li><a href="{{route('mtnreport.mtnmonth.index')}}" key="t-default">รายงานการซ่อม-รายเดือน</a></li>     
                     </ul>
                 </li>  
+                @endrole
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="dripicons-graph-bar"></i>
@@ -188,6 +231,7 @@
                     </ul>
                 </li>                                                      
                 <li class="menu-title" key="t-pages">Setting</li>
+                @role('superadmin|admin') 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="dripicons-list"></i>
@@ -198,6 +242,8 @@
                         <li><a href="{{route('documentcontroltype.list')}}" key="t-default">ประเภทเอกสารควบคุม</a></li>    
                     </ul>
                 </li>
+                @endrole
+                @role('superadmin|MTN')  
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="dripicons-list"></i>
@@ -209,7 +255,9 @@
                         <li><a href="{{route('machinesystem.list')}}" key="t-default">ประเภทแจ้งซ่อม</a></li>     
                         <li><a href="{{route('machineservice.list')}}" key="t-default">บริการแจ้งซ่อม</a></li>      
                     </ul>
-                </li>               
+                </li>
+                @endrole
+                @role('superadmin|HRM')               
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="dripicons-list"></i>
@@ -223,6 +271,8 @@
                         <li><a href="{{route('leaveapproval.list')}}" key="t-default">ตั้งค่าสายอนุมัติ</a></li>   
                     </ul>
                 </li>
+                @endrole
+                @role('superadmin')
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="dripicons-list"></i>
@@ -232,6 +282,7 @@
                         <li><a href="{{route('employee.list')}}" key="t-default">ผู้ใช้งานระบบ</a></li>    
                     </ul>
                 </li>
+                @endrole
                 <li class="menu-title" key="t-components">BI Analytics</li>                                   
             </ul>
         </div>

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Livewire\IsoPur;
+namespace App\Http\Livewire\IsoQmr;
 
 use Livewire\Component;
 use App\Models\IsoHolderList;
 
-class IsoPurHolderForm extends Component
+class IsoQmrHolderForm extends Component
 {
     public $idKey = 0;
     public $iso_doculist_code;
@@ -13,7 +13,7 @@ class IsoPurHolderForm extends Component
     public $iso_docuholder_status = 3;
 
     protected $listeners = [
-        'editPurHolder' => 'edit',
+        'editQmrHolder' => 'edit',
     ];
 
     public function edit($id)
@@ -31,6 +31,7 @@ class IsoPurHolderForm extends Component
         $this->reset('idKey');
         $this->reset('iso_doculist_code');
         $this->reset('iso_doculist_name');
+        +
         $this->reset('iso_docuholder_status');
     }
 
@@ -45,12 +46,13 @@ class IsoPurHolderForm extends Component
             'title' => 'บันทึกข้อมูลเรียบร้อย',
             'timer' => 3000,
             'icon' => 'success',
-            'url' => route('isopur.list')
+            'url' => route('isoqmr.list')
         ]);
         $this->emit('modalHide');
     }
+
     public function render()
     {
-        return view('livewire.iso-pur.iso-pur-holder-form');
+        return view('livewire.iso-qmr.iso-qmr-holder-form');
     }
 }

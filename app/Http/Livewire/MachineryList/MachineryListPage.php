@@ -19,11 +19,15 @@ class MachineryListPage extends Component
         {
             $this->mcdoculist = MachineryList::where('machinery_hd_status_id',1)->get();          
         }
+        else if(auth()->user()->username == "A570126")
+        {
+            $this->mcdoculist = MachineryList::where('department_name',['ทำสี(PTG)','แพ็คกิ้ง(PKG)'])->where('machinery_hd_status_id',1)->get();  
+        }
         else if(auth()->user()->type == "Employee")
         {
             $emp = DB::table('employee_lists')->where('employee_code',auth()->user()->username)->first();          
             $this->mcdoculist = MachineryList::where('department_name',$emp->department_name)->where('machinery_hd_status_id',1)->get();  
-        }
+        }      
         return view('livewire.machinery-list.machinery-list-page')->extends('layouts.main');
     }
 }

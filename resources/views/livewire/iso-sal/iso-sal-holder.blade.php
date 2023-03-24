@@ -5,7 +5,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-3">
-                            <h3 class="card-title">ทะเบียนผู้ถือครอง (MTN)</h3>                           
+                            <h3 class="card-title">ทะเบียนผู้ถือครอง (QMR)</h3>                           
                         </div>
                         <div class="col-3"></div>
                         <div class="col-3"></div>                
@@ -45,7 +45,7 @@
                                     <td>{{$item->iso_docuholder_remark}}</td>        
                                     <td>
                                         @livewire('iso-clb.iso-clb-holder-form')
-                                        <button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"data-bs-whatever="@mdo" wire:click="$emit('editMtnHolder',{{$item->id}})">
+                                        <button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"data-bs-whatever="@mdo" wire:click="$emit('editSalHolder',{{$item->id}})">
                                             <i class="fas fa-edit"></i>
                                         </button>
                                     </td>                                     
@@ -59,4 +59,3 @@
         </div>
     </div>
 </div>
-

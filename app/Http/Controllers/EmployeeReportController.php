@@ -17,7 +17,15 @@ class EmployeeReportController extends Controller
             ->join('employee_lists','employee_datetimes.emp_times_empcode','=','employee_lists.employee_code')
             ->where('emp_times_empcode',auth()->user()->username);
         }
-        else{
+        elseif(auth()->user()->username == "B521001"){
+            $data = DB::table('employee_datetimes')
+            ->join('employee_lists','employee_datetimes.emp_times_empcode','=','employee_lists.employee_code')
+            ->where('emp_times_empcode',"B521001");
+        }elseif(auth()->user()->username == "A570126"){
+            $data = DB::table('employee_datetimes')
+            ->join('employee_lists','employee_datetimes.emp_times_empcode','=','employee_lists.employee_code')
+            ->whereIn('emp_times_depcode',['A15','A16']);
+        }else{
             $data = DB::table('employee_datetimes')
             ->join('employee_lists','employee_datetimes.emp_times_empcode','=','employee_lists.employee_code')
             ->where('emp_times_depcode',$emp->department_code);

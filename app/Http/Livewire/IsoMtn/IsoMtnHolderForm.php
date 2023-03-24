@@ -12,7 +12,7 @@ class IsoMtnHolderForm extends Component
     public $iso_docuholder_status = 3;
 
     protected $listeners = [
-        'editClbHolder' => 'edit',
+        'editMtnHolder' => 'edit',
     ];
 
     public function edit($id)

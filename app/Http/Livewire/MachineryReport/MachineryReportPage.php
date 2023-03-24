@@ -11,13 +11,21 @@ class MachineryReportPage extends Component
 {
     public function render()
     {
-        if(auth()->user()->type == "Admin")
+        if(auth()->user()->type == "Admin" || auth()->user()->type == "Maintenance")
         {
             $mcdoculist = MachineryList::join('machinery_list_statuses','machinery_lists.machinery_hd_status_id','=','machinery_list_statuses.id')
             ->select('machinery_lists.*','machinery_list_statuses.id as sta_id','machinery_list_statuses.name as sta_name')
             ->where('machinery_lists.machinery_hd_status_id',3)->get();                    
         }
-        if(auth()->user()->type == "Employee")
+        elseif(auth()->user()->username == "A570126")
+        {
+            $emp = DB::table('employee_lists')->where('employee_code',auth()->user()->username)->first();          
+            $mcdoculist = MachineryList::join('machinery_list_statuses','machinery_lists.machinery_hd_status_id','=','machinery_list_statuses.id')
+            ->select('machinery_lists.*','machinery_list_statuses.id as sta_id','machinery_list_statuses.name as sta_name')
+            ->where('machinery_lists.machinery_hd_status_id',3)
+            ->where('department_name',['ทำสี(PTG)','แพ็คกิ้ง(PKG)'])->get(); 
+        }
+        elseif(auth()->user()->type == "Employee")
         {
 
             $emp = DB::table('employee_lists')->where('employee_code',auth()->user()->username)->first();          

@@ -15,6 +15,8 @@ use App\Http\Livewire\IsoPtd\IsoPtdHolder;
 use App\Http\Livewire\IsoPtg\IsoPtgHolder;
 use App\Http\Livewire\IsoPur\IsoPurHolder;
 use App\Http\Livewire\IsoQcc\IsoQccHolder;
+use App\Http\Livewire\IsoQmr\IsoQmrHolder;
+use App\Http\Livewire\IsoSal\IsoSalHolder;
 use App\Http\Livewire\IsoStr\IsoStrHolder;
 use App\Http\Livewire\Employee\MenuListPage;
 use App\Http\Controllers\DashboardController;
@@ -66,6 +68,7 @@ use App\Http\Livewire\LeaveDocunoApproval\LeaveDocunoApprovalList;
 use App\Http\Livewire\IsoDocumentControl\DocumentControlHolderList;
 use App\Http\Livewire\IsoDocumentControl\DocumentControlMasterList;
 use App\Http\Livewire\IsoDocumentControlIct\DocumentControlIctList;
+use App\Http\Livewire\IsoDocumentControl\IsoDocumentControlFormMaster;
 use App\Http\Livewire\IsoDocumentControlIct\DocumentControlIctPlanForm;
 use App\Http\Livewire\IsoDocumentControlIct\DocumentControlIctPlanList;
 use App\Http\Livewire\IsoDocumentControlIct\DocumentControlIctBackupList;
@@ -278,6 +281,14 @@ Route::group([
     'middleware' =>  ['auth','role:superadmin|admin']
 ],function(){
     Route::get('/', DocumentControlHolderList::class)->name('list');
+});
+
+Route::group([
+    'prefix' => 'documentcontrolformmasterlists',
+    'as' => 'documentcontrolformmasterlist.',
+    //'middleware' =>  ['auth','role:superadmin|admin']
+],function(){
+    Route::get('/', IsoDocumentControlFormMaster::class)->name('list');
 });
 // ISO DCC END //
 
@@ -528,3 +539,24 @@ Route::group([
     Route::get('/', IsoPurHolder::class)->name('list');
 });
 // ISO PUR END//
+
+
+// ISO QMR //
+Route::group([
+    'prefix' => 'isoqmrs',
+    'as' => 'isoqmr.',
+    'middleware' =>  ['auth','role:superadmin|admin']
+],function(){
+    Route::get('/', IsoQmrHolder::class)->name('list');
+});
+// ISO QMR END//
+
+// ISO QMR //
+Route::group([
+    'prefix' => 'isosals',
+    'as' => 'isosal.',
+    'middleware' =>  ['auth','role:superadmin|admin|SAL']
+],function(){
+    Route::get('/', IsoSalHolder::class)->name('list');
+});
+// ISO QMR END//

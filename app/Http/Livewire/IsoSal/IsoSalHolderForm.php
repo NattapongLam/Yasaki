@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Livewire\IsoPur;
+namespace App\Http\Livewire\IsoSal;
 
 use Livewire\Component;
 use App\Models\IsoHolderList;
 
-class IsoPurHolderForm extends Component
+class IsoSalHolderForm extends Component
 {
     public $idKey = 0;
     public $iso_doculist_code;
@@ -13,7 +13,7 @@ class IsoPurHolderForm extends Component
     public $iso_docuholder_status = 3;
 
     protected $listeners = [
-        'editPurHolder' => 'edit',
+        'editSalHolder' => 'edit',
     ];
 
     public function edit($id)
@@ -45,12 +45,13 @@ class IsoPurHolderForm extends Component
             'title' => 'บันทึกข้อมูลเรียบร้อย',
             'timer' => 3000,
             'icon' => 'success',
-            'url' => route('isopur.list')
+            'url' => route('isosal.list')
         ]);
         $this->emit('modalHide');
     }
+
     public function render()
     {
-        return view('livewire.iso-pur.iso-pur-holder-form');
+        return view('livewire.iso-sal.iso-sal-holder-form');
     }
 }
