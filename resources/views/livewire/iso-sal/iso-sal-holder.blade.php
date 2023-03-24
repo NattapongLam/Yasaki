@@ -44,7 +44,7 @@
                                     </td>   
                                     <td>{{$item->iso_docuholder_remark}}</td>        
                                     <td>
-                                        @livewire('iso-clb.iso-clb-holder-form')
+                                        @livewire('iso-sal.iso-sal-holder-form')
                                         <button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"data-bs-whatever="@mdo" wire:click="$emit('editSalHolder',{{$item->id}})">
                                             <i class="fas fa-edit"></i>
                                         </button>

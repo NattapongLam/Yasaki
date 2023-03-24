@@ -16,7 +16,7 @@ class IsoDocumentControlFormMaster extends Component
     
     public function render()
     {
-        $isodocs = IsoMasterList::where('iso_docustatus_name','<>','ยกเลิก')->where('iso_docutype_code','FM');
+        $isodocs = IsoMasterList::where('iso_docustatus_name','<>','ยกเลิก')->wherein('iso_docutype_code',['FM','SD']);
         if($this->searchTerm){
             $isodocs = $isodocs
             ->where('iso_docugroup_name','LIKE',"%{$this->searchTerm}%")          
