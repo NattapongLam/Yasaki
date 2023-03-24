@@ -33,7 +33,8 @@ class RolePermissionSeeder extends Seeder
         // Role::create(['name' => 'MLD']); 
         // Role::create(['name' => 'SAL']); 
         // Role::create(['name' => 'PDT']); 
-
+        // Role::create(['name' => 'CLB']);
+        
         // Permission::create(['name' => 'machinerylists']);
         // Permission::create(['name' => 'machineryreports']);         
     }

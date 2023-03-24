@@ -11,7 +11,7 @@
                         <div class="col-3"></div>                
                     </div><hr>                                                      
                     <div class="table-responsive">
-                        <table id="tb_job" class="table table-bordered dt-responsive nowrap w-100">
+                        <table id="tb_job" class="table table-bordered">
                             <thead>
                                 <tr>
                                     <th style="text-align: center">สถานะ</th>   
