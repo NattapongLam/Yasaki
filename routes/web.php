@@ -524,7 +524,7 @@ Route::group([
 Route::group([
     'prefix' => 'isoptds',
     'as' => 'isoptd.',
-    'middleware' =>  ['auth','role:superadmin|PTD|admin']
+    'middleware' =>  ['auth','role:superadmin|PDT|admin']
 ],function(){
     Route::get('/', IsoPtdHolder::class)->name('list');
 });

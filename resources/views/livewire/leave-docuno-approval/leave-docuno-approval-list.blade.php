@@ -25,9 +25,9 @@
                                 @foreach ($doc as $item)
                                 <tr>
                                     <td style="text-align: center">
-                                        <a href="/assets/images/users/{{$item->employee_image}}">
+                                        <button type="button" style="border:none;" onclick="previewAttach('{{'assets/images/users/'.$item->employee_image}}')">
                                             <img class="img-thumbnail" alt="100x100" width="100" src="/assets/images/users/{{$item->employee_image}}">
-                                        </a>                                       
+                                        </button>                                       
                                     </td>
                                     <td>{{$item->employee_fullname}}/{{$item->employee_code}} ( {{$item->department_name}} )</td>
                                     <td>{{$item->ldoc_reamrk}}</td>
@@ -37,9 +37,9 @@
                                         ( {{$item->ltype_name}} )
                                     </td>
                                     <td class="text-center">
-                                        <a href="{{URL::asset('images/leavedocs/'.$item->ldoc_fileup)}}">
+                                        <button type="button" style="border:none;" onclick="previewAttach('{{'images/leavedocs/'.$item->ldoc_fileup}}')">
                                             <img class="img-thumbnail"  width="70px" src="{{URL::asset('images/leavedocs/'.$item->ldoc_fileup)}}"data-holder-rendered="true">
-                                        </a>                   
+                                        </button>                   
                                     </td>
                                     <td>    
                                         @livewire('leave-docuno-approval.leave-docuno-approval-form')                                    
@@ -57,3 +57,13 @@
         </div>
     </div>
 </div>
+<script>
+    previewAttach = (path) => {
+            Swal.fire({
+                imageUrl: `{{ asset('${path}') }}`,
+                imageHeight: 350,
+                imageWidth: 350,
+                imageClass: 'img-responsive rounded-circle',
+            })
+        }
+</script>

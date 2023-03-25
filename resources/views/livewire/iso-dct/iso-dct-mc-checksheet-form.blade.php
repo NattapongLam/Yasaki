@@ -24,11 +24,13 @@
                     class="form-control" readonly>
                 </div>        
             </div><hr>
-            {{-- <div class="row">
+            <div class="row">
                 <div class="col-12">
-                    <img src="{{asset('assset/images/machinechecksheets/'.$pic)}}" class="img-fluid" alt="Responsive image">
+                    <center>
+                        <img src="{{URL::asset('assets/images/machinechecksheets/'.$pic)}}" class="img-thumbnail" width="1000">
+                    </center>                  
                 </div>               
-            </div> --}}
+            </div>
             <div class="row"> 
                 <label class="col-form-label" style="color: red">รายละเอียดการตรวจ</label>
                 <div class="table-responsive">

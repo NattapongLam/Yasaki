@@ -55,9 +55,9 @@
                                     <td>{{$item->employee_fullname}} ({{$item->employee_code}})</td>
                                     <td>{{$item->ldoc_reamrk}}</td>
                                     <td class="text-center">
-                                        <a href="{{URL::asset('images/leavedocs/'.$item->ldoc_fileup)}}">
+                                        <button type="button" style="border:none;" onclick="previewAttach('{{('images/leavedocs/'.$item->ldoc_fileup)}}')" href="{{URL::asset('images/leavedocs/'.$item->ldoc_fileup)}}">
                                             <img class="img-thumbnail"  width="70px" src="{{URL::asset('images/leavedocs/'.$item->ldoc_fileup)}}"data-holder-rendered="true">
-                                        </a>                   
+                                        </button>                   
                                     </td>
                                     <td>
                                         @if($item->lsta_id == 1)                                        
