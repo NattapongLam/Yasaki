@@ -32,8 +32,8 @@
                                 <li><a href="#" key="t-default">ใบแก้ไขอุปกรณ์ICT05</a></li>
                                 <li><a href="#" key="t-default">ประวัติอุปกรณ์ICT06</a></li>
                                 <li><a href="{{route('documentcontrolictbackup.list')}}" key="t-default">LogBackupICT07</a></li>
-                                <li><a href="#" key="t-default">KPI-ICT</a></li>
-                                <li><a href="#" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
+                                <li><a href="{{route('kpiit.list')}}" key="t-default">KPI-ICT</a></li>
+                                <li><a href="{{route('isoit.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
                                 
                             </ul>                         
                         </li>

@@ -66,6 +66,12 @@ return [
             'url' => env('APP_URL').'/images',
             'visibility' => 'public',
         ],
+        'kpifile' => [
+            'driver' => 'local',
+            'root' => public_path('images/kpifiles'),
+            'url' => env('APP_URL').'/images',
+            'visibility' => 'public',
+        ],
 
         's3' => [
             'driver' => 's3',

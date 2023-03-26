@@ -55,7 +55,9 @@ use App\Http\Livewire\LeaveConfig\LeaveConfigListPage;
 use App\Http\Livewire\MachineryList\MachineryListEdit;
 use App\Http\Livewire\MachineryList\MachineryListForm;
 use App\Http\Livewire\MachineryList\MachineryListPage;
+use App\Http\Livewire\IsoDocumentControlIct\IsoItHolder;
 use App\Http\Livewire\MachineGroup\MachineGroupListPage;
+use App\Http\Livewire\IsoDocumentControlIct\IsoItkpiList;
 use App\Http\Livewire\DepartmentList\DepartmentListReport;
 use App\Http\Livewire\LeaveApproval\LeaveApprovalListForm;
 use App\Http\Livewire\LeaveApproval\LeaveApprovalListPage;
@@ -325,6 +327,22 @@ Route::group([
     'middleware' =>  ['auth','role:superadmin|admin']
 ],function(){
     Route::get('/', DocumentControlIctChecksheetList::class)->name('list');
+});
+
+Route::group([
+    'prefix' => 'isoits',
+    'as' => 'isoit.',
+    'middleware' =>  ['auth','role:superadmin|admin']
+],function(){
+    Route::get('/', IsoItHolder::class)->name('list');
+});
+
+Route::group([
+    'prefix' => 'kpiits',
+    'as' => 'kpiit.',
+    'middleware' =>  ['auth','role:superadmin|admin']
+],function(){
+    Route::get('/', IsoItkpiList::class)->name('list');
 });
 // ISO ICT END //
 

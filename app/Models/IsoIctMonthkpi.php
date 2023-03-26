@@ -13,5 +13,6 @@ class IsoIctMonthkpi extends Model
       'dep_name',
       'kpi_name',
       'kpi_file',
+      'kpi_status'
     ];
 }
