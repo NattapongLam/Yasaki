@@ -15,7 +15,8 @@
                                         aria-label="ค้นหา" wire:model="searchTerm">     
                                 </div>     
                             </div>                
-                        </div><hr>    
+                        </div><hr>  
+                        @livewire('product-list.product-list-bom')  
                         <div class="row">
                             @foreach ($pd as $key => $item)
                             <div class="col-xl-4 col-sm-6">
@@ -31,8 +32,7 @@
                                                     </span>
                                                 </div>
                                             </div>                                        
-                                            <div class="flex-grow-1 overflow-hidden">
-                                                @livewire('product-list.product-list-bom')
+                                            <div class="flex-grow-1 overflow-hidden">                                               
                                                 <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"data-bs-whatever="@mdo" wire:click="$emit('editListBom',{{$item->id}})">
                                                 <h5 class="text-truncate font-size-15"><a href="javascript: void(0);" class="text-dark">{{$item->Code}}</a></h5>      
                                                 </button>                                         

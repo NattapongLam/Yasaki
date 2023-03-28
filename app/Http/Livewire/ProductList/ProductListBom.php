@@ -17,19 +17,14 @@ class ProductListBom extends Component
     ];
     public function edit($id)
     {
-        $pd = DB::table('vw_product_list')->where('id',$id)->first();
-        $this->idKey = $pd->id;
-        $this->code = $pd->Code;
-        //$this->dt = DB::table('vw_product_bom')->where('bom_hd_fgcode',$this->code)->get();
+        $pds = DB::table('vw_product_list')->where('id',$id)->first();
+        $this->idKey = $pds->id;
+        $this->code = $pds->Code;
+        $this->dt = DB::table('vw_product_bom')->where('bom_hd_fgcode',$this->code)->get();
     }
 
     public function render()
     {
-        if($this->code){
-            $this->dt = DB::table('vw_product_bom')->where('bom_hd_fgcode',$this->code)->get();
-        }
-        return view('livewire.product-list.product-list-bom',[
-            'dt' => $this->dt
-        ]);
+        return view('livewire.product-list.product-list-bom');
     }
 }
