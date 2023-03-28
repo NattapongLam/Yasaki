@@ -96,7 +96,7 @@
                                     <td>
                                         <div class="input-group">
                                             <input class="form-check-input" type="checkbox" id="formCheck2"
-                                            name="plandt_check01[]"
+                                            name="plandt_check01[]" 
                                             wire:model="coms.{{$key}}.plandt_check01">
                                         </div>                                   
                                     </td>

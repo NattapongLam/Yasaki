@@ -38,6 +38,7 @@ use App\Http\Controllers\EmployeeReportController;
 use App\Http\Livewire\Employee\RolePermissionPage;
 use App\Http\Livewire\LeaveDocuno\LeaveDocunoForm;
 use App\Http\Livewire\LeaveDocuno\LeaveDocunoList;
+use App\Http\Livewire\ProductList\ProductListPage;
 use App\Http\Controllers\MachineryReportController;
 use App\Http\Livewire\LeaveDocuno\LeaveDocunoExcel;
 use App\Http\Livewire\IsoAsb\IsoAsbMcChecksheetForm;
@@ -578,3 +579,11 @@ Route::group([
     Route::get('/', IsoSalHolder::class)->name('list');
 });
 // ISO QMR END//
+
+Route::group([
+    'prefix' => 'productlists',
+    'as' => 'productlist.',
+    // 'middleware' =>  ['auth','role:superadmin|admin|SAL']
+],function(){
+    Route::get('/', ProductListPage::class)->name('list');
+});

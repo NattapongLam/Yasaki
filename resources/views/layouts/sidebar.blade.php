@@ -229,7 +229,16 @@
                         <li><a href="{{route('empreport.emptime.index')}}" key="t-default">รายงานตรวจสอบเวลา</a></li>  
                         <li><a href="#" key="t-default">รายงานตรวจสอบการลา</a></li>     
                     </ul>
-                </li>                                                      
+                </li>      
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="fas fa-chart-bar"></i>
+                        <span key="t-dashboards">รายงานสินค้า</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{route('productlist.list')}}" key="t-default">สินค้าสำเร็จรูป</a></li>    
+                    </ul>
+                </li>                                                       
                 <li class="menu-title" key="t-pages">Setting</li>
                 @role('superadmin|admin') 
                 <li>

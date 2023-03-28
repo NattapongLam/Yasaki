@@ -31,7 +31,7 @@
                 </div><hr>
                 <div class="row">
                     <div class="table-responsive">
-                        <table id="tb_job" class="table table-bordered dt-responsive nowrap w-100">
+                        <table id="tb_job" class="table table-bordered">
                             <thead>
                                 <tr>
                                     <th></th>

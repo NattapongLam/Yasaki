@@ -20,7 +20,7 @@ class IsoItkpiList extends Component
 
     public function render()
     {
-        $kpilist = IsoIctMonthkpi::query();
+        $kpilist = IsoIctMonthkpi::where('dep_name','IT');
         if($this->searchTerm){
             $kpilist = $kpilist
             ->where('kpi_name','LIKE',"%{$this->searchTerm}%");

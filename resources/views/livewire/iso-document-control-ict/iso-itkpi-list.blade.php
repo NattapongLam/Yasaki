@@ -65,7 +65,7 @@
             Swal.fire({
                 imageUrl: `{{ asset('${path}') }}`,
                 imageHeight: 600,
-                imageWidth: 600,
+                imageWidth: 800,
                 imageClass: 'img-responsive rounded-circle',
             })
         }
