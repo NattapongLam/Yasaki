@@ -32,7 +32,10 @@
                                                 </div>
                                             </div>                                        
                                             <div class="flex-grow-1 overflow-hidden">
-                                                <h5 class="text-truncate font-size-15"><a href="javascript: void(0);" class="text-dark">{{$item->Code}}</a></h5>
+                                                @livewire('product-list.product-list-bom')
+                                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"data-bs-whatever="@mdo" wire:click="$emit('editListBom',{{$item->id}})">
+                                                <h5 class="text-truncate font-size-15"><a href="javascript: void(0);" class="text-dark">{{$item->Code}}</a></h5>      
+                                                </button>                                         
                                                 <p class="text-muted mb-4">{{$item->Name1}}</p>
                                                 <div class="avatar-group">
                                                     <div class="avatar-group-item">
