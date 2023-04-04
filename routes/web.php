@@ -34,6 +34,7 @@ use App\Http\Livewire\IsoMld\IsoMldMcChecksheet;
 use App\Http\Livewire\IsoPkg\IsoPkgMcChecksheet;
 use App\Http\Livewire\IsoPtg\IsoPtgMcChecksheet;
 use App\Http\Livewire\IsoQcc\IsoQccMcChecksheet;
+use App\Http\Livewire\IsoStr\IsoStrMcChecksheet;
 use App\Http\Controllers\EmployeeReportController;
 use App\Http\Livewire\Employee\RolePermissionPage;
 use App\Http\Livewire\LeaveDocuno\LeaveDocunoForm;
@@ -50,6 +51,7 @@ use App\Http\Livewire\IsoMld\IsoMldMcChecksheetForm;
 use App\Http\Livewire\IsoPkg\IsoPkgMcChecksheetForm;
 use App\Http\Livewire\IsoPtg\IsoPtgMcChecksheetForm;
 use App\Http\Livewire\IsoQcc\IsoQccMcChecksheetForm;
+use App\Http\Livewire\IsoStr\IsoStrMcChecksheetForm;
 use App\Http\Livewire\MachineryList\MachineryListEnd;
 use App\Http\Livewire\EmployeeList\EmployeeListReport;
 use App\Http\Livewire\LeaveConfig\LeaveConfigListPage;
@@ -76,6 +78,7 @@ use App\Http\Livewire\IsoDocumentControlIct\DocumentControlIctPlanForm;
 use App\Http\Livewire\IsoDocumentControlIct\DocumentControlIctPlanList;
 use App\Http\Livewire\IsoDocumentControlIct\DocumentControlIctBackupList;
 use App\Http\Livewire\IsoDocumentControlIct\DocumentControlIctChecksheetList;
+use App\Http\Livewire\IsoDocumentControlIct\DocumentControlIctChecksheetExcel;
 
 /*
 |--------------------------------------------------------------------------
@@ -328,6 +331,7 @@ Route::group([
     'middleware' =>  ['auth','role:superadmin|admin']
 ],function(){
     Route::get('/', DocumentControlIctChecksheetList::class)->name('list');
+    Route::get('/excel', DocumentControlIctChecksheetExcel::class)->name('excel');
 });
 
 Route::group([
@@ -516,6 +520,14 @@ Route::group([
     'middleware' =>  ['auth','role:superadmin|STR|admin']
 ],function(){
     Route::get('/', IsoStrHolder::class)->name('list');
+});
+Route::group([
+    'prefix' => 'mcchkstrs',
+    'as' => 'mcchkstr.',
+    'middleware' =>  ['auth','role:superadmin|STR|admin']
+],function(){
+    Route::get('/', IsoStrMcChecksheet::class)->name('list');
+    Route::get('/edit/{id}', IsoStrMcChecksheetForm::class)->name('edit');
 });
 // ISO STR END//
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\IsoDct;
+namespace App\Http\Livewire\IsoStr;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\DB;
@@ -8,7 +8,7 @@ use App\Models\MachineChecksheetDt;
 use App\Models\MachineChecksheetHd;
 use App\Models\MachineChecksheetLg;
 
-class IsoDctMcChecksheetForm extends Component
+class IsoStrMcChecksheetForm extends Component
 {
     public $idKey = 0;
     public $checksheetmc_hd_docuno;
@@ -40,8 +40,8 @@ class IsoDctMcChecksheetForm extends Component
             $this->chkdt = MachineChecksheetDt::where('checksheetmc_hd_docuno',$this->checksheetmc_hd_docuno)->get();
             $this->chkemp = MachineChecksheetLg::where('checksheetmc_hd_docuno',$this->checksheetmc_hd_docuno)->get();
         }
-        return view('livewire.iso-dct.iso-dct-mc-checksheet-form',[
-            'pic' => 'assets/images/machinechecksheets/'.$pic,
+        return view('livewire.iso-str.iso-str-mc-checksheet-form',[
+            'pic' => $pic,
             'chkdt' => $this->chkdt,
             'chkemp' => $this->chkemp
         ])->extends('layouts.main');

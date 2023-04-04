@@ -12,6 +12,8 @@
                                 <input class="form-control float-right" type="text" placeholder="ค้นหา"
                                     aria-label="ค้นหา" wire:model="searchTerm">
                             <div class="vr"></div>
+                            <a href="{{route('documentcontrolictcheck.excel')}}" class="btn btn-info w-sm waves-effect waves-light">
+                                <i class="fas fa-file-excel"></i> Excel</a>
                             @livewire('iso-document-control-ict.document-control-ict-checksheet-form')
                             <button type="button" class="btn btn-primary w-sm waves-effect waves-light"
                             data-bs-toggle="modal" data-bs-target="#exampleModal"data-bs-whatever="@mdo" 

@@ -126,6 +126,7 @@
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">STR</a>
                             <ul class="sub-menu" aria-expanded="true">                      
                                 <li><a href="{{route('isostr.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
+                                <li><a href="{{route('mcchkstr.list')}}" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
                             </ul>
                         </li>
                         @endrole
@@ -207,6 +208,14 @@
                         <li><a href="{{route('leavedocapproval.list')}}" key="t-default">อนุมัติการลา</a></li>                   
                     </ul>
                 </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="fas fa-paper-plane"></i>
+                        <span key="t-dashboards">ระบบติดตามงาน</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">            
+                    </ul>
+                </li>
                 <li class="menu-title" key="t-apps">Report</li>  
                 @role('superadmin|MTN') 
                 <li>
@@ -243,7 +252,7 @@
                 @role('superadmin|admin') 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="dripicons-list"></i>
+                        <i class="fas fa-scroll"></i>
                         <span key="t-dashboards">ตั้งค่าระบบควบคุมคุณภาพ</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -255,7 +264,7 @@
                 @role('superadmin|MTN')  
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="dripicons-list"></i>
+                        <i class="fas fa-compass"></i>
                         <span key="t-dashboards">ตั้งค่าเครื่องจักร</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -266,10 +275,21 @@
                     </ul>
                 </li>
                 @endrole
+                 @role('superadmin|MLD')  
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="fas fa-american-sign-language-interpreting"></i>
+                        <span key="t-dashboards">ตั้งค่าแม่พิมพ์</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="" key="t-default">ทะเบียนแม่พิมพ์</a></li>  
+                    </ul>
+                </li>
+                @endrole
                 @role('superadmin|HRM')               
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="dripicons-list"></i>
+                        <i class="fas fa-id-card"></i>
                         <span key="t-dashboards">ตั้งค่าบุคคล</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -284,7 +304,7 @@
                 @role('superadmin')
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="dripicons-list"></i>
+                        <i class="fas fa-rocket"></i>
                         <span key="t-dashboards">ตั้งค่าระบบ</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">

@@ -27,7 +27,7 @@
             <div class="row">
                 <div class="col-12">
                     <center>
-                        <img src="{{asset($pic)}}" class="img-thumbnail" width="1000">
+                        <img src="{{URL::asset('assets/images/machinechecksheets/'.$pic)}}" class="img-thumbnail" width="1000">
                     </center>                  
                 </div>               
             </div>
@@ -470,4 +470,3 @@
         </div>       
     </form>  
 </div>
-
