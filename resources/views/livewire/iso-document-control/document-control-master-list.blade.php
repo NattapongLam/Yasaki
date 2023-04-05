@@ -5,7 +5,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-3">
-                            <h3 class="card-title">บัญชีแม่บทเอกสาร (YSK1-FM-DCC-02)</h3>
+                            <h3 class="card-title">บัญชีแม่บทเอกสาร</h3>
                         </div>
                         <div class="col-3"></div>
                         <div class="col-6">   
@@ -67,8 +67,7 @@
                         </table>
                     </div><hr>
                     <div class="row">
-                        <div class="col-9">{{$isodocs->links()}}</div>
-                        <div class="col-3" style="text-align:right;">R.02.20230313</div>
+                        {{$isodocs->links()}}
                     </div>
                 </div>                
             </div>

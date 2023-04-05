@@ -5,7 +5,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-3">
-                            <h3 class="card-title">ทะเบียนผู้ถือครองเอกสาร (YSK1-FM-DCC-03)</h3>
+                            <h3 class="card-title">ทะเบียนผู้ถือครองเอกสาร</h3>
                         </div>
                         <div class="col-3"></div>
                         <div class="col-6">   
@@ -67,8 +67,7 @@
                         </table>
                     </div><hr>
                     <div class="row">
-                        <div class="col-9">{{$isohold->links()}}</div>
-                        <div class="col-3" style="text-align:right;">R.02.20230313</div>
+                       {{$isohold->links()}}
                     </div>
                 </div>                
             </div>
