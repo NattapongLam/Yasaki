@@ -14,10 +14,6 @@ class DocumentControlPolicyList extends Component
 
     public $searchTerm;
 
-    protected $listeners = [
-        'refreshIsopol' => '$refresh'
-    ];
-
     public function render()
     {
         $pollist = IsoPolicyLsit::query();

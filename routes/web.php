@@ -313,6 +313,7 @@ Route::group([
 ],function(){
     Route::get('/', DocumentControlPolicyList::class)->name('list');
 });
+Route::resource('/policy' , App\Http\Controllers\PolicyController::class);
 // ISO DCC END //
 
 // ISO ICT //

@@ -5,7 +5,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-3">
-                            <h3 class="card-title">KPI</h3>
+                            <h3 class="card-title">Policy</h3>
                         </div>
                         <div class="col-3"></div>
                         <div class="col-6">   
@@ -13,10 +13,8 @@
                                 <input class="form-control float-right" type="text" placeholder="ค้นหา"
                                     aria-label="ค้นหา" wire:model="searchTerm">
                             <div class="vr"></div>
-                                @livewire('iso-document-control.document-control-policy-form')
-                                <button type="button" class="btn btn-primary w-sm waves-effect waves-light"
-                                data-bs-toggle="modal" data-bs-target="#exampleModal"data-bs-whatever="@mdo" wire:click="$emit('btnCreateIsopol')">
-                                <i class="fas fa-plus"></i> เพิ่ม</button>                             
+                                <a type="button" class="btn btn-primary w-sm waves-effect waves-light" href="{{route('policy.create')}}">
+                                <i class="fas fa-plus"></i> เพิ่ม</a>                             
                             </div>     
                         </div>                
                     </div><hr>                                                      
@@ -27,7 +25,6 @@
                                     <th>#</th>
                                     <th>วันที่</th>
                                     <th>รายละเอียด</th>
-                                    <th class="text-center">ไฟล์</th>
                                     <th>แก้ไข</th>
                                 </tr>
                             </thead>
@@ -36,16 +33,12 @@
                                 <tr>
                                     <th>{{$item->id}}</th>
                                     <td>{{\Carbon\Carbon::parse($item->pol_date)->format('d/m/Y')}}</td>
-                                    <td>{{$item->pol_name}}</td>
-                                    <td class="text-center">     
-                                        <button type="button" style="border:none;" onclick="previewAttach('{{('images/polfiles/'.$item->pol_file)}}')" href="#">
-                                            <img class="img-thumbnail"  width="70px" src="{{URL::asset('images/polfiles/'.$item->pol_file)}}"data-holder-rendered="true">
-                                        </button>                                   
+                                    <td><a href="{{asset($item->pol_file)}}">{{$item->pol_name}}</a>                                    
                                     </td>
                                     <td>                                        
-                                        <button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"data-bs-whatever="@mdo" wire:click="$emit('editIsopol',{{$item->id}})">
+                                        <a type="button" class="btn btn-sm btn-warning" href="{{route('policy.edit',$item->id)}}">
                                             <i class="fas fa-edit"></i>
-                                        </button>                                      
+                                        </a>                                      
                                     </td>
                                 </tr>     
                                 @endforeach                                                        
