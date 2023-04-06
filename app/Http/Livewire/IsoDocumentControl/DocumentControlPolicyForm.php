@@ -36,6 +36,7 @@ class DocumentControlPolicyForm extends Component
 
     public function edit($id)
     {
+        $this->reset('pol_file');
         $pol = IsoPolicyLsit::findOrFail($id);
         $this->idKey = $pol->id;
         $this->pol_date = $pol->pol_date;
