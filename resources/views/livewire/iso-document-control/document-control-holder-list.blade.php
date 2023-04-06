@@ -47,9 +47,9 @@
                                         <span class="badge bg-danger">ยกเลิก</span>
                                         @endif
                                     </td>
-                                    <td class="text-center">{{$item->recipient_date}}</td>
+                                    <td class="text-center">{{\Carbon\Carbon::parse($item->recipient_date)->format('d/m/Y')}}</td>
                                     <td class="text-center">{{$item->recipient_person}}</td>
-                                    <td class="text-center">{{$item->return_date}}</td>
+                                    <td class="text-center">{{\Carbon\Carbon::parse($item->return_date)->format('d/m/Y')}}</td>
                                     <td class="text-center">{{$item->return_person}}</td>
                                     <td class="text-center">{{$item->emp_department_refcode}}</td>
                                     <td class="text-center">{{$item->iso_docutype_code}}</td>

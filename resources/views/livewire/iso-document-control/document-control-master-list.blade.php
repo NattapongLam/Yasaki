@@ -5,7 +5,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-3">
-                            <h3 class="card-title">บัญชีแม่บทเอกสาร</h3>
+                            <h3 class="card-title">Master List</h3>
                         </div>
                         <div class="col-3"></div>
                         <div class="col-6">   
@@ -46,8 +46,8 @@
                                         <span class="badge bg-danger">ยกเลิก</span>
                                         @endif
                                     </td>
-                                    <td class="text-center">{{$item->iso_doculist_date}}</td>
-                                    <td class="text-center">{{$item->iso_doculist_forcedate}}</td>
+                                    <td class="text-center">{{\Carbon\Carbon::parse($item->iso_doculist_date)->format('d/m/Y')}}</td>
+                                    <td class="text-center">{{\Carbon\Carbon::parse($item->iso_doculist_forcedate)->format('d/m/Y')}}</td>
                                     <td class="text-center">{{$item->iso_docugroup_name}}</td>
                                     <td class="text-center">{{$item->iso_docutype_code}}</td>
                                     <td>

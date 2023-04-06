@@ -67,11 +67,13 @@ use App\Http\Livewire\LeaveApproval\LeaveApprovalListPage;
 use App\Http\Livewire\MachineryReport\MachineryReportPage;
 use App\Http\Livewire\MachineSystem\MachineSystemListPage;
 use App\Http\Livewire\MachineService\MachineServiceListPage;
+use App\Http\Livewire\IsoDocumentControl\DocumentControlKpiList;
 use App\Http\Livewire\IsoDocumentControl\DocumentControlTypeList;
 use App\Http\Livewire\IsoDocumentControl\DocumentControlGroupList;
 use App\Http\Livewire\LeaveDocunoApproval\LeaveDocunoApprovalList;
 use App\Http\Livewire\IsoDocumentControl\DocumentControlHolderList;
 use App\Http\Livewire\IsoDocumentControl\DocumentControlMasterList;
+use App\Http\Livewire\IsoDocumentControl\DocumentControlPolicyList;
 use App\Http\Livewire\IsoDocumentControlIct\DocumentControlIctList;
 use App\Http\Livewire\IsoDocumentControl\IsoDocumentControlFormMaster;
 use App\Http\Livewire\IsoDocumentControlIct\DocumentControlIctPlanForm;
@@ -295,6 +297,21 @@ Route::group([
     //'middleware' =>  ['auth','role:superadmin|admin']
 ],function(){
     Route::get('/', IsoDocumentControlFormMaster::class)->name('list');
+});
+
+Route::group([
+    'prefix' => 'documentcontrolkpis',
+    'as' => 'documentcontrolkpi.',
+    //'middleware' =>  ['auth','role:superadmin|admin']
+],function(){
+    Route::get('/', DocumentControlKpiList::class)->name('list');
+});
+Route::group([
+    'prefix' => 'documentcontrolpols',
+    'as' => 'documentcontrolpol.',
+    //'middleware' =>  ['auth','role:superadmin|admin']
+],function(){
+    Route::get('/', DocumentControlPolicyList::class)->name('list');
 });
 // ISO DCC END //
 

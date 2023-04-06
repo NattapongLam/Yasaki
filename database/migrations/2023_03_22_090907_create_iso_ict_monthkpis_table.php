@@ -19,6 +19,7 @@ class CreateIsoIctMonthkpisTable extends Migration
             $table->string('dep_name');
             $table->string('kpi_name');
             $table->string('kpi_file');
+            $table->boolean('kpi_status')->nullable()->default(true)->comment('สถานะ True-ใช้งาน False-ยกเลิก');
             $table->timestamps();
         });
     }

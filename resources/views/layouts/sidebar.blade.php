@@ -15,10 +15,12 @@
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">DCC</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 @role('superadmin|admin') 
-                                <li><a href="{{route('documentcontrolmasterlist.list')}}" key="t-default">บัญชีแม่บทเอกสาร</a></li>   
+                                <li><a href="{{route('documentcontrolmasterlist.list')}}" key="t-default">Master List</a></li>   
                                 <li><a href="{{route('documentcontrolholderlist.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
                                 @endrole
                                 <li><a href="{{route('documentcontrolformmasterlist.list')}}" key="t-default">ฟอร์มแม่บทเอกสาร</a></li>  
+                                <li><a href="{{route('documentcontrolkpi.list')}}" key="t-default">KPI</a></li>  
+                                <li><a href="{{route('documentcontrolpol.list')}}" key="t-default">Policy</a></li>  
                             </ul>
                         </li>
                         @role('superadmin|admin') 
@@ -32,7 +34,7 @@
                                 <li><a href="#" key="t-default">ใบแก้ไขอุปกรณ์ICT05</a></li>
                                 <li><a href="#" key="t-default">ประวัติอุปกรณ์ICT06</a></li>
                                 <li><a href="{{route('documentcontrolictbackup.list')}}" key="t-default">LogBackupICT07</a></li>
-                                <li><a href="{{route('kpiit.list')}}" key="t-default">KPI-Policy</a></li>
+                                <li><a href="{{route('kpiit.list')}}" key="t-default">KPI-ICT</a></li>
                                 <li><a href="{{route('isoit.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
                                 
                             </ul>                         
@@ -275,14 +277,14 @@
                     </ul>
                 </li>
                 @endrole
-                 @role('superadmin|MLD')  
+                @role('superadmin|MLD')  
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="fas fa-american-sign-language-interpreting"></i>
                         <span key="t-dashboards">ตั้งค่าแม่พิมพ์</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="" key="t-default">ทะเบียนแม่พิมพ์</a></li>  
+                        <li><a href="#" key="t-default">ทะเบียนแม่พิมพ์</a></li>  
                     </ul>
                 </li>
                 @endrole
