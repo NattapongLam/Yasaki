@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\DB;
 
 class EmployeeReportController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function emptime(Request $request)
     {
         $emp = DB::table('employee_lists')->where('employee_code',auth()->user()->username)->first();

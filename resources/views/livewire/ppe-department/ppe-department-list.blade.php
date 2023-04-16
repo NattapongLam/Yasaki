@@ -18,7 +18,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-3">
-                            <h3 class="card-title">Policy</h3>
+                            <h3 class="card-title">แบบบันทึกการตรวจอุปกรณ์ป้องกันภัยส่วนบุคคล (PPE)</h3>
                         </div>
                         <div class="col-3"></div>
                         <div class="col-6">   
@@ -26,8 +26,7 @@
                                 <input class="form-control float-right" type="text" placeholder="ค้นหา"
                                     aria-label="ค้นหา" wire:model="searchTerm">
                             <div class="vr"></div>
-                                <a type="button" class="btn btn-primary w-sm waves-effect waves-light" href="{{route('policy.create')}}">
-                                <i class="fas fa-plus"></i> เพิ่ม</a>                             
+                                <a href="{{route('ppe-dep.create')}}" class="btn btn-primary w-sm waves-effect waves-light"><i class="fas fa-plus"></i> เพิ่ม</a>                             
                             </div>     
                         </div>                
                     </div><hr>                                                      
@@ -36,21 +35,29 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>วันที่</th>
-                                    <th>รายละเอียด</th>
-                                    <th>แก้ไข</th>
+                                    <th>ปี</th>
+                                    <th>เดือน</th>
+                                    <th>แผนก</th>
+                                    <th>หน้างานที่ทำ</th>
+                                    <th>หัวหน้าแผนก</th>
+                                    <th>ผู้จัดการฝ่าย</th>
+                                    <th>แก้ไข</th>                               
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($pollist as $item)
+                                @foreach ($ppe as $item)
                                 <tr>
                                     <th>{{$item->id}}</th>
-                                    <td>{{\Carbon\Carbon::parse($item->pol_date)->format('d/m/Y')}}</td>
-                                    <td><a href="{{asset($item->pol_file)}}">{{$item->pol_name}}</a>                                    
-                                    </td>
-                                    <td>                                        
-                                        <a type="button" class="btn btn-sm btn-warning" href="{{route('policy.edit',$item->id)}}">
-                                            <i class="fas fa-edit"></i>
+                                    <td>{{$item->year_name}}</td>
+                                    <td>{{$item->month_name}}</td>
+                                    <td>{{$item->department_name}}</td>
+                                    <td>{{$item->job_desc}}</td>
+                                    <td>{{$item->personsave}}</td>
+                                    <td>{{$item->approvalsave}}</td>
+                                    <td>
+                                        <a href="{{route('ppe-dep.edit',$item->id)}}"
+                                        class="btn btn-sm btn-warning">
+                                        <i class="fas fa-edit"></i>
                                         </a>                                      
                                     </td>
                                 </tr>     
@@ -59,21 +66,10 @@
                         </table>
                     </div><hr>
                     <div class="row">
-                        {{$pollist->links()}}
+                        {{$ppe->links()}}
                     </div>
-                </div>
+                </div>                
             </div>
         </div>
     </div>
 </div>
-<script>
-    previewAttach = (path) => {
-            Swal.fire({
-                imageUrl: `{{ asset('${path}') }}`,
-                // imageHeight: 600,
-                // imageWidth: 600,
-                imageClass: 'img-fluid',
-            })
-        }
-</script>
-

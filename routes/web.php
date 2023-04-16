@@ -58,6 +58,7 @@ use App\Http\Livewire\LeaveConfig\LeaveConfigListPage;
 use App\Http\Livewire\MachineryList\MachineryListEdit;
 use App\Http\Livewire\MachineryList\MachineryListForm;
 use App\Http\Livewire\MachineryList\MachineryListPage;
+use App\Http\Livewire\PpeDepartment\PpeDepartmentList;
 use App\Http\Livewire\IsoDocumentControlIct\IsoItHolder;
 use App\Http\Livewire\MachineGroup\MachineGroupListPage;
 use App\Http\Livewire\IsoDocumentControlIct\IsoItkpiList;
@@ -67,6 +68,8 @@ use App\Http\Livewire\LeaveApproval\LeaveApprovalListPage;
 use App\Http\Livewire\MachineryReport\MachineryReportPage;
 use App\Http\Livewire\MachineSystem\MachineSystemListPage;
 use App\Http\Livewire\MachineService\MachineServiceListPage;
+use App\Http\Livewire\TrasheDepartment\TrasheDepartmentForm;
+use App\Http\Livewire\TrasheDepartment\TrasheDepartmentList;
 use App\Http\Livewire\IsoDocumentControl\DocumentControlKpiList;
 use App\Http\Livewire\IsoDocumentControl\DocumentControlTypeList;
 use App\Http\Livewire\IsoDocumentControl\DocumentControlGroupList;
@@ -314,6 +317,24 @@ Route::group([
     Route::get('/', DocumentControlPolicyList::class)->name('list');
 });
 Route::resource('/policy' , App\Http\Controllers\PolicyController::class);
+Route::group([
+    'prefix' => 'trashedeps',
+    'as' => 'trashedep.',
+    //'middleware' =>  ['auth','role:superadmin|admin']
+],function(){
+    Route::get('/', TrasheDepartmentList::class)->name('list');
+});
+Route::resource('/tras-dep' , App\Http\Controllers\TrasheDepartmentForm::class);
+Route::group([
+    'prefix' => 'ppedeps',
+    'as' => 'ppedep.',
+    //'middleware' =>  ['auth','role:superadmin|admin']
+],function(){
+    Route::get('/', PpeDepartmentList::class)->name('list');
+});
+Route::resource('/ppe-dep' , App\Http\Controllers\PpeDepartmentForm::class);
+Route::post('/getTypeDatalist' , [App\Http\Controllers\PpeDepartmentForm::class , 'getTypeDatalist']);
+Route::post('/getEmp' , [App\Http\Controllers\PpeDepartmentForm::class , 'getEmp']);
 // ISO DCC END //
 
 // ISO ICT //

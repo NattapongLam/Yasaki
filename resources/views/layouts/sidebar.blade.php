@@ -21,6 +21,8 @@
                                 <li><a href="{{route('documentcontrolformmasterlist.list')}}" key="t-default">ฟอร์มแม่บทเอกสาร</a></li>  
                                 <li><a href="{{route('documentcontrolkpi.list')}}" key="t-default">KPI</a></li>  
                                 <li><a href="{{route('documentcontrolpol.list')}}" key="t-default">Policy</a></li>  
+                                <li><a href="{{route('trashedep.list')}}" key="t-default">บันทึกการนำของเสียออกนอกแผนก</a></li>  
+                                <li><a href="{{route('ppedep.list')}}" key="t-default">แบบบันทึกการตรวจอุปกรณ์ป้องกันภัยส่วนบุคคล (PPE)</a></li>  
                             </ul>
                         </li>
                         @role('superadmin|admin') 
