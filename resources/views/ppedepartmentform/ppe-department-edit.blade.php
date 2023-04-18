@@ -215,7 +215,7 @@
                                 <tbody>
                                     @foreach ($dt as $key => $item)
                                     <tr style="background-color:powderblue">
-                                        <td>
+                                        <td colspan="2">
                                             <label class="col-form-label">
                                             {{$item->emp_listno}}/{{$item->emp_fullname}}
                                             </label>
@@ -262,7 +262,9 @@
                                                 @endif   
                                             </select>
                                             </div>
-                                        </td>
+                                        </td>                                                                                                       
+                                    </tr>
+                                    <tr>
                                         <td>
                                             <div class="input-group">
                                                 <label class="col-form-label">04 :</label>&nbsp;
@@ -276,7 +278,7 @@
                                                 @endif   
                                             </select>
                                             </div>
-                                        </td>
+                                        </td>     
                                         <td>
                                             <div class="input-group">
                                                 <label class="col-form-label">05 :</label>&nbsp;
@@ -290,7 +292,7 @@
                                                 @endif   
                                             </select>
                                             </div>
-                                        </td>
+                                        </td>    
                                         <td>
                                             <div class="input-group">
                                                 <label class="col-form-label">06 :</label>&nbsp;
@@ -319,8 +321,6 @@
                                             </select>
                                             </div>
                                         </td>
-                                    </tr>
-                                    <tr>
                                         <td>
                                             <div class="input-group">
                                                 <label class="col-form-label">08 :</label>&nbsp;
@@ -334,7 +334,9 @@
                                                 @endif   
                                             </select>
                                             </div>
-                                        </td>
+                                        </td>                                                                    
+                                    </tr>
+                                    <tr>
                                         <td>
                                             <div class="input-group">
                                                 <label class="col-form-label">09 :</label>&nbsp;
@@ -362,7 +364,7 @@
                                                 @endif   
                                             </select>
                                             </div>
-                                        </td>
+                                        </td>          
                                         <td>
                                             <div class="input-group">
                                                 <label class="col-form-label">11 :</label>&nbsp;
@@ -404,7 +406,9 @@
                                                 @endif   
                                             </select>
                                             </div>
-                                        </td>
+                                        </td>                                       
+                                    </tr>
+                                    <tr>  
                                         <td>
                                             <div class="input-group">
                                                 <label class="col-form-label">14 :</label>&nbsp;
@@ -433,8 +437,6 @@
                                             </select>
                                             </div>
                                         </td>
-                                    </tr>
-                                    <tr>
                                         <td>
                                             <div class="input-group">
                                                 <label class="col-form-label">16 :</label>&nbsp;
@@ -448,7 +450,7 @@
                                                 @endif   
                                             </select>
                                             </div>
-                                        </td>
+                                        </td>                                      
                                         <td>
                                             <div class="input-group">
                                                 <label class="col-form-label">17 :</label>&nbsp;
@@ -476,7 +478,9 @@
                                                 @endif   
                                             </select>
                                             </div>
-                                        </td>
+                                        </td>                                                     
+                                    </tr>
+                                    <tr>
                                         <td>
                                             <div class="input-group">
                                                 <label class="col-form-label">19 :</label>&nbsp;
@@ -532,7 +536,7 @@
                                                 @endif   
                                             </select>
                                             </div>
-                                        </td>
+                                        </td>                      
                                         <td>
                                             <div class="input-group">
                                                 <label class="col-form-label">23 :</label>&nbsp;
@@ -546,7 +550,7 @@
                                                 @endif   
                                             </select>
                                             </div>
-                                        </td>
+                                       </td>                                                              
                                     </tr>
                                     <tr>
                                         <td>
@@ -618,7 +622,9 @@
                                                 @endif   
                                             </select>
                                             </div>
-                                        </td>
+                                        </td>                                                       
+                                    </tr>
+                                    <tr>
                                         <td>
                                             <div class="input-group">
                                                 <label class="col-form-label">29 :</label>&nbsp;
