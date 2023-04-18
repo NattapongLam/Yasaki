@@ -116,11 +116,10 @@
                                 <tr style="background-color:powderblue">
                                     <td>
                                         <label class="col-form-label">
-                                        {{$item->tras_listno}}/{{$item->tras_name}}
+                                        {{$item->tras_listno}}/{{$item->tras_name}} ({{$item->tras_unit}})
                                         </label>
                                         <input type="hidden" value="{{$item->id}}" name="tras_id[]">
                                     </td>
-                                    <td><label class="col-form-label">{{$item->tras_unit}}</label></td>
                                     <td>
                                         <div class="input-group">
                                             <label class="col-form-label">01 :</label>&nbsp;
@@ -162,7 +161,9 @@
                                             <label class="col-form-label">07 :</label>&nbsp;
                                             <input class="form-control" type="text" id="qty07"name="qty07[]" value="{{old('qty07',0)}}">
                                         </div>
-                                    </td>
+                                    </td>                                  
+                                </tr>
+                                <tr> 
                                     <td>
                                         <div class="input-group">
                                             <label class="col-form-label">08 :</label>&nbsp;
@@ -174,9 +175,7 @@
                                             <label class="col-form-label">09 :</label>&nbsp;
                                             <input class="form-control" type="text" id="qty09"name="qty09[]" value="{{old('qty09',0)}}">
                                         </div>
-                                    </td>
-                                </tr>
-                                <tr>                                   
+                                    </td>                                  
                                     <td>
                                         <div class="input-group">
                                             <label class="col-form-label">10 :</label>&nbsp;
@@ -212,7 +211,9 @@
                                             <label class="col-form-label">15 :</label>&nbsp;
                                             <input class="form-control" type="text" id="qty15"name="qty15[]" value="{{old('qty15',0)}}">
                                         </div>
-                                    </td>
+                                    </td>                                   
+                                </tr>
+                                <tr> 
                                     <td>
                                         <div class="input-group">
                                             <label class="col-form-label">16 :</label>&nbsp;
@@ -242,9 +243,7 @@
                                             <label class="col-form-label">20 :</label>&nbsp;
                                             <input class="form-control" type="text" id="qty20"name="qty20[]" value="{{old('qty20',0)}}">
                                         </div>
-                                    </td>
-                                </tr>
-                                <tr>                                                                   
+                                    </td>                                                                  
                                     <td>
                                         <div class="input-group">
                                             <label class="col-form-label">21 :</label>&nbsp;
@@ -262,7 +261,9 @@
                                             <label class="col-form-label">23 :</label>&nbsp;
                                             <input class="form-control" type="text" id="qty23"name="qty23[]" value="{{old('qty23',0)}}">
                                         </div>
-                                    </td>
+                                    </td>                                
+                                </tr>
+                                <tr>
                                     <td>
                                         <div class="input-group">
                                             <label class="col-form-label">24 :</label>&nbsp;

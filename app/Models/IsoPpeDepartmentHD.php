@@ -29,5 +29,6 @@ class IsoPpeDepartmentHD extends Model
         'safety_other',
         'personsave',
         'approvalsave',
+        'flag'
     ];
 }

@@ -101,14 +101,112 @@
                     <table id="tb_job" class="table table-bordered dt-responsive nowrap w-100 text-center">     
                         <thead>
                             <tr>
-                                <th class="text-center"></th>
-                                <th class="text-center">รหัสพนักงาน</th>
+                                <th class="text-center">#</th>     
+                                <th class="text-center">รหัสพนักงาน</th>                         
                                 <th class="text-center">ชื่อ - นามสกุล</th>
+                                <th class="text-center"></th>
                             </tr>
                         </thead>   
                         <tbody id="tb_productlist">
                         </tbody>       
                     </table>
+                </div>
+            </div><hr>
+            <div class="row">
+                <div class="col-12 col-md-2">
+                    <label for="safety_01" class="col-form-label">รองเท้าเซฟตี้</label>
+                    <select class="form-control" name="safety_01" id="safety_01">
+                        <option value="0">X</option>
+                        <option value="1">/</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-2">
+                    <label for="safety_02" class="col-form-label">ผ้าปิดจมูก</label>
+                    <select class="form-control" name="safety_02" id="safety_02">
+                        <option value="0">X</option>
+                        <option value="1">/</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-2">
+                    <label for="safety_03" class="col-form-label">ถุงมือหนัง</label>
+                    <select class="form-control" name="safety_03" id="safety_03">
+                        <option value="0">X</option>
+                        <option value="1">/</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-2">
+                    <label for="safety_04" class="col-form-label">หมวกกันฝุ่น</label>
+                    <select class="form-control" name="safety_04" id="safety_04">
+                        <option value="0">X</option>
+                        <option value="1">/</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-2">
+                    <label for="safety_05" class="col-form-label">เสื้อหน้าที่งาน(สะท้อนแสง)</label>
+                    <select class="form-control" name="safety_05" id="safety_05">
+                        <option value="0">X</option>
+                        <option value="1">/</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-2">
+                    <label for="safety_06" class="col-form-label">รองเท้าผ้าใบ</label>
+                    <select class="form-control" name="safety_06" id="safety_06">
+                        <option value="0">X</option>
+                        <option value="1">/</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-2">
+                    <label for="safety_07" class="col-form-label">ถุงมือผ้า</label>
+                    <select class="form-control" name="safety_07" id="safety_07">
+                        <option value="0">X</option>
+                        <option value="1">/</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-2">
+                    <label for="safety_08" class="col-form-label">ผ้ากันเปื้อน</label>
+                    <select class="form-control" name="safety_08" id="safety_08">
+                        <option value="0">X</option>
+                        <option value="1">/</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-2">
+                    <label for="safety_09" class="col-form-label">เสื้อแขนยาว</label>
+                    <select class="form-control" name="safety_09" id="safety_09">
+                        <option value="0">X</option>
+                        <option value="1">/</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-2">
+                    <label for="safety_10" class="col-form-label">แว่นตาเซฟตี้</label>
+                    <select class="form-control" name="safety_10" id="safety_10">
+                        <option value="0">X</option>
+                        <option value="1">/</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-2">
+                    <label for="safety_11" class="col-form-label">ถุงมือยาง</label>
+                    <select class="form-control" name="safety_11" id="safety_11">
+                        <option value="0">X</option>
+                        <option value="1">/</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-2">
+                    <label for="safety_12" class="col-form-label">หมวกเซฟตี้</label>
+                    <select class="form-control" name="safety_12" id="safety_12">
+                        <option value="0">X</option>
+                        <option value="1">/</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-2">
+                    <label for="safety_13" class="col-form-label">เอียปลั๊กอุดหู</label>
+                    <select class="form-control" name="safety_13" id="safety_13">
+                        <option value="0">X</option>
+                        <option value="1">/</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-10">
+                    <label for="safety_other" class="col-form-label">อื่นๆ</label>
+                    <input class="form-control" name="safety_other" id="safety_other">
                 </div>
             </div><hr>
             <div class="row">
@@ -206,75 +304,23 @@ addTolist = (id) => {
             dataType: "json",
             success: function(data) {
                 let currentItemId = $('.list_product_id').toArray();
-                if (currentItemId.map(item => item.value).includes(data.product.ms_product_id)) {
-
-                    toastr.error('มีสินค้านี้อยู่ในรายการแล้ว', 'Error', {
-                        "closeButton": true,
-                        "progressBar": true,
-                        "positionClass": "toast-bottom-right",
-                        "showDuration": 500,
-                        "hideDuration": 10,
-                        "timeOut": 5000,
-                        "extendedTimeOut": 1000,
-                        "showEasing": "swing",
-                        "hideEasing": "linear",
-                        "showMethod": "fadeIn",
-                        "hideMethod": "fadeOut"
-                    });
-
+                if (currentItemId.map(item => item.value).includes(data.emp.employee_fullname)) {
                 } else {
-                    $numbertd = $('#tb_productlist tr').length + 1;
-                        
-                    $.each(data.checkPR, function(key, value) {
-
-                    if(data.product.ms_product_code == value.ms_product_code){
-                    sumpr.push(parseFloat(value.pur_purchaserequest_dt_qty))
-                    }
-
-                    });
-                    $sumrequest = sumpr.map(Number).reduce((a, b) => a + b, 0);
-
+                    $numbertd = $('#tb_productlist tr').length + 1;                     
                     $('#tb_productlist').append(`
-                    <tr style="background-color:#F8F8FF" class="${data.product.ms_product_id}">                    
-                        <td>${$numbertd}</td>   
-                        <td><input type="hidden" class="list_product_id" name="product_id[]" value="${data.product.ms_product_id}">รหัส : ${data.product.ms_product_code}<br>ชื่อ : ${data.product.ms_product_name1}</td>
-                        <td><input type="number" class="form-control" name="product_qty[]" value="1"></td>
-                        <td> <select name="product_per[]" class="form-control" id="sel_per${data.product.ms_product_id}">
-                                        ${sel_per}</select></td>
-                        <td>${$sumrequest} ${data.product.ms_product_unit_name}</td>
-                        <td>${data.product.ms_product_unit_name}</td>
-                        <td><input type="date" class="form-control" name="duedate[]" value="{{ date('Y-m-d') }}"></td>
-                        <td>${parseFloat(data.product.ms_product_min).toFixed(2)}</td>
-                        <td>${parseFloat(data.product.ms_product_max).toFixed(2)}</td>
-                        <td>${parseFloat(data.product.stcqty).toFixed(2)}</td>
-                        <td> <select name="typescreen[]" class="form-control" id="sel_typescreen_${data.product.ms_product_id}">
-                            <option value="0">ไม่มีประเภทพิมพ์</option>
-                                        ${sel_typescreen}
-                                        </select></td>
-                        <td><button type="button" class="btn btn-danger btn-sm" onclick="removeTolist('${data.product.ms_product_id}')"><i class="fas fa-trash"></i></button></td>
+                    <tr style="background-color:#F8F8FF" class="uptofirst-class${data.emp.employee_code}">                    
+                        <td><input type="hidden"  name="emp_listno[]" value="${$numbertd}">${$numbertd}</td>   
+                        <td>${data.emp.employee_code}</td>
+                        <td><input type="hidden" class="list_product_id" name="emp_fullname[]" value="${data.emp.employee_fullname}">${data.emp.employee_fullname}</td>
+                        <td><button type="button" class="btn btn-danger btn-sm" onclick="removeTolist('${data.emp.employee_code}')"><i class="fas fa-trash"></i></button></td>
                     </tr>
                     `)
-
-                    toastr.success('เพิ่มสินค้าเรียบร้อย', 'Success', {
-                        "closeButton": true,
-                        "progressBar": true,
-                        "positionClass": "toast-bottom-right",
-                        "showDuration": 500,
-                        "hideDuration": 10,
-                        "timeOut": 5000,
-                        "extendedTimeOut": 1000,
-                        "showEasing": "swing",
-                        "hideEasing": "linear",
-                        "showMethod": "fadeIn",
-                        "hideMethod": "fadeOut"
-                    });
                 }
             }
         })
     }
-    removeTolist = (reftr) => {
-
-$('.' + reftr).remove()
-
-}
+    removeTolist = (e,classrow) => {
+            // remove row classrow 
+            $('.uptofirst-class'+classrow).remove();
+        }
 </script>

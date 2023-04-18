@@ -35,6 +35,7 @@ class CreateIsoPpeDepartmentHDSTable extends Migration
             $table->string('safety_other')->nullable();
             $table->string('personsave');
             $table->string('approvalsave')->nullable();
+            $table->boolean('flag');
             $table->timestamps();
         });
     }
