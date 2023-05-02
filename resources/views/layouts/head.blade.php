@@ -33,7 +33,7 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->               
-                    <a class="dropdown-item d-block" href="#">
+                    <a class="dropdown-item d-block" href="{{route('profiles.show',auth()->user()->id)}}">
                     <i class="bx bx-user font-size-16 align-middle me-1"></i>
                     <span key="t-profile">เปลี่ยนรหัสผ่าน</span></a>
                     <div class="dropdown-divider"></div>

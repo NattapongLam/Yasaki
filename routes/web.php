@@ -103,7 +103,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
-
+Route::resource('/profiles' , App\Http\Controllers\EmployeeController::class);
 Route::group([
     'prefix' => 'employees',
     'as' => 'employee.',
@@ -179,6 +179,7 @@ Route::group([
     Route::get('/mtnday', [MachineryReportController::class,'mtnday'])->name('mtnday.index');  
     Route::get('/mtnmonth', [MachineryReportController::class,'mtnmonth'])->name('mtnmonth.index');  
 });
+Route::get('/empmtnday', [MachineryReportController::class,'empmtnday'])->name('empmtnday.index'); 
 Route::post('/getDataMcListsub' , [MachineryReportController::class,'getDataMcListsub']);  
 
 Route::group([

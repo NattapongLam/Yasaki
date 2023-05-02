@@ -199,7 +199,8 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{route('machinerylist.list')}}" key="t-default">แจ้งซ่อมเครื่องจักร</a></li>    
-                        <li><a href="{{route('machineryreport.list')}}" key="t-default">รายการแจ้งซ่อมรอตรวจรับ</a></li>                    
+                        <li><a href="{{route('machineryreport.list')}}" key="t-default">รายการแจ้งซ่อมรอตรวจรับ</a></li>   
+                        <li><a href="{{route('empmtnday.index')}}" key="t-default">รายงานการซ่อม-รายวัน</a></li>                   
                     </ul>
                 </li>
                 <li>
