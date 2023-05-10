@@ -95,6 +95,7 @@
                             <ul class="sub-menu" aria-expanded="true">                      
                                 <li><a href="{{route('isopkg.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
                                 <li><a href="{{route('mcchkpkg.list')}}" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
+                                <li><a href="{{route('packingresult.list')}}" key="t-default">ผลผลิตประจำวัน (PKG)</a></li> 
                             </ul>
                         </li>
                         @endrole

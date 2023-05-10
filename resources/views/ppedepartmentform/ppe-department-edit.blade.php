@@ -1,5 +1,6 @@
 @extends('layouts.main')
 @section('content')
+<link href="https://cdn.datatables.net/fixedcolumns/4.2.2/css/fixedColumns.dataTables.min.css" rel="stylesheet" type="text/css" />
 <div class="row">
     @if (session('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -16,7 +17,7 @@
     @endif
     <div class="card">
         <div class="card-body">
-            <h3 class="card-title">แบบบันทึกการตรวจอุปกรณ์ป้องกันภัยส่วนบุคคล(PPE) (YSK3-FM-SMS-11)</h3>
+            <h3 class="card-title">แบบบันทึกการตรวจอุปกรณ์ป้องกันภัยส่วนบุคคล(PPE)</h3>
             <form method="POST" class="form-horizontal" action="{{ route('ppe-dep.update',$hd->id) }}" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
@@ -210,459 +211,453 @@
                 </div><hr>
                 <div class="row">
                     <div class="col-12">
-                        <div class="table-responsive">
-                            <table class="table table-bordered dt-responsive nowrap w-100 text-center">
+                        <div class="table-responsive-xxl">
+                        <div style="overflow-x:auto;">
+                            <table id="tb_ppe" class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">พนักงาน</th>
+                                        <th class="text-center">01</th>
+                                        <th class="text-center">02</th>
+                                        <th class="text-center">03</th>
+                                        <th class="text-center">04</th>
+                                        <th class="text-center">05</th>
+                                        <th class="text-center">06</th>
+                                        <th class="text-center">07</th>
+                                        <th class="text-center">08</th>
+                                        <th class="text-center">09</th>
+                                        <th class="text-center">10</th>
+                                        <th class="text-center">11</th>
+                                        <th class="text-center">12</th>
+                                        <th class="text-center">13</th>
+                                        <th class="text-center">14</th>
+                                        <th class="text-center">15</th>
+                                        <th class="text-center">16</th>
+                                        <th class="text-center">17</th>
+                                        <th class="text-center">18</th>
+                                        <th class="text-center">19</th>
+                                        <th class="text-center">20</th>
+                                        <th class="text-center">21</th>
+                                        <th class="text-center">22</th>
+                                        <th class="text-center">23</th>
+                                        <th class="text-center">24</th>
+                                        <th class="text-center">25</th>
+                                        <th class="text-center">26</th>
+                                        <th class="text-center">27</th>
+                                        <th class="text-center">28</th>
+                                        <th class="text-center">29</th>
+                                        <th class="text-center">30</th>
+                                        <th class="text-center">31</th>
+                                    </tr>
+                                </thead>
                                 <tbody>
                                     @foreach ($dt as $key => $item)
-                                    <tr style="background-color:powderblue">
-                                        <td colspan="2">
-                                            <label class="col-form-label">
+                                    <tr> 
+                                        <td style="width: 600px">
+                                            <label class="col-form-label" style="width: 200px">
                                             {{$item->emp_listno}}/{{$item->emp_fullname}}
                                             </label>
                                             <input type="hidden" value="{{$item->id}}" name="dt_id[]">
                                         </td>
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">01 :</label>&nbsp;
-                                            <select class="form-control" name="action1[]">
+                                            <select class="form-control" name="action1[]" style="width: 50px">
                                                 @if($item->action1 == true)
-                                                <option value="{{$item->action1}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action1}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action1}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action1}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">02 :</label>&nbsp;
-                                            <select class="form-control" name="action2[]">
+                                            <select class="form-control" name="action2[]" style="width: 50px">
                                                 @if($item->action2 == true)
-                                                <option value="{{$item->action2}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action2}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action2}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action2}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">03 :</label>&nbsp;
-                                            <select class="form-control" name="action3[]">
+                                            <select class="form-control" name="action3[]" style="width: 50px">
                                                 @if($item->action3 == true)
-                                                <option value="{{$item->action3}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action3}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action3}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action3}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>                                                                                                       
-                                    </tr>
-                                    <tr>
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">04 :</label>&nbsp;
-                                            <select class="form-control" name="action4[]">
+                                            <select class="form-control" name="action4[]" style="width: 50px">
                                                 @if($item->action4 == true)
-                                                <option value="{{$item->action4}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action4}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action4}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action4}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>     
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">05 :</label>&nbsp;
-                                            <select class="form-control" name="action5[]">
+                                            <select class="form-control" name="action5[]" style="width: 50px">
                                                 @if($item->action5 == true)
-                                                <option value="{{$item->action5}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action5}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action5}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action5}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>    
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">06 :</label>&nbsp;
-                                            <select class="form-control" name="action6[]">
+                                            <select class="form-control" name="action6[]" style="width: 50px">
                                                 @if($item->action6 == true)
-                                                <option value="{{$item->action6}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action6}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action6}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action6}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">07 :</label>&nbsp;
-                                            <select class="form-control" name="action7[]">
+                                            <select class="form-control" name="action7[]" style="width: 50px">
                                                 @if($item->action7 == true)
-                                                <option value="{{$item->action7}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action7}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action7}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action7}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">08 :</label>&nbsp;
-                                            <select class="form-control" name="action8[]">
+                                            <select class="form-control" name="action8[]" style="width: 50px">
                                                 @if($item->action8 == true)
-                                                <option value="{{$item->action8}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action8}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action8}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action8}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>                                                                    
-                                    </tr>
-                                    <tr>
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">09 :</label>&nbsp;
-                                            <select class="form-control" name="action9[]">
+                                            <select class="form-control" name="action9[]" style="width: 50px">
                                                 @if($item->action9 == true)
-                                                <option value="{{$item->action9}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action9}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action9}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action9}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">10 :</label>&nbsp;
-                                            <select class="form-control" name="action10[]">
+                                            <select class="form-control" name="action10[]" style="width: 50px">
                                                 @if($item->action10 == true)
-                                                <option value="{{$item->action10}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action10}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action10}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action10}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>          
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">11 :</label>&nbsp;
-                                            <select class="form-control" name="action11[]">
+                                            <select class="form-control" name="action11[]" style="width: 50px">
                                                 @if($item->action11 == true)
-                                                <option value="{{$item->action11}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action11}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action11}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action11}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">12 :</label>&nbsp;
-                                            <select class="form-control" name="action12[]">
+                                            <select class="form-control" name="action12[]" style="width: 50px">
                                                 @if($item->action12 == true)
-                                                <option value="{{$item->action12}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action12}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action12}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action12}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">13 :</label>&nbsp;
-                                            <select class="form-control" name="action13[]">
+                                            <select class="form-control" name="action13[]" style="width: 50px">
                                                 @if($item->action13 == true)
-                                                <option value="{{$item->action13}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action13}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action13}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action13}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
-                                        </td>                                       
-                                    </tr>
-                                    <tr>  
+                                        </td>                                                                       
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">14 :</label>&nbsp;
-                                            <select class="form-control" name="action14[]">
+                                            <select class="form-control" name="action14[]" style="width: 50px">
                                                 @if($item->action14 == true)
-                                                <option value="{{$item->action14}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action14}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action14}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action14}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">15 :</label>&nbsp;
-                                            <select class="form-control" name="action15[]">
+                                            <select class="form-control" name="action15[]" style="width: 50px">
                                                 @if($item->action15 == true)
-                                                <option value="{{$item->action15}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action15}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action15}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action15}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">16 :</label>&nbsp;
-                                            <select class="form-control" name="action16[]">
+                                            <select class="form-control" name="action16[]" style="width: 50px">
                                                 @if($item->action16 == true)
-                                                <option value="{{$item->action16}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action16}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action16}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action16}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>                                      
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">17 :</label>&nbsp;
-                                            <select class="form-control" name="action17[]">
+                                            <select class="form-control" name="action17[]" style="width: 50px">
                                                 @if($item->action17 == true)
-                                                <option value="{{$item->action17}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action17}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action17}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action17}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">18 :</label>&nbsp;
-                                            <select class="form-control" name="action18[]">
+                                            <select class="form-control" name="action18[]" style="width: 50px">
                                                 @if($item->action18 == true)
-                                                <option value="{{$item->action18}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action18}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action18}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action18}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>                                                     
-                                    </tr>
-                                    <tr>
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">19 :</label>&nbsp;
-                                            <select class="form-control" name="action19[]">
+                                            <select class="form-control" name="action19[]" style="width: 50px">
                                                 @if($item->action19 == true)
-                                                <option value="{{$item->action19}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action19}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action19}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action19}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">20 :</label>&nbsp;
-                                            <select class="form-control" name="action20[]">
+                                            <select class="form-control" name="action20[]" style="width: 50px">
                                                 @if($item->action20 == true)
-                                                <option value="{{$item->action20}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action20}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action20}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action20}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">21 :</label>&nbsp;
-                                            <select class="form-control" name="action21[]">
+                                            <select class="form-control" name="action21[]" style="width: 50px">
                                                 @if($item->action21 == true)
-                                                <option value="{{$item->action21}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action21}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action21}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action21}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">22 :</label>&nbsp;
-                                            <select class="form-control" name="action22[]">
+                                            <select class="form-control" name="action22[]" style="width: 50px">
                                                 @if($item->action22 == true)
-                                                <option value="{{$item->action22}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action22}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action22}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action22}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>                      
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">23 :</label>&nbsp;
-                                            <select class="form-control" name="action23[]">
+                                            <select class="form-control" name="action23[]" style="width: 50px">
                                                 @if($item->action23 == true)
-                                                <option value="{{$item->action23}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action23}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action23}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action23}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                        </td>                                                              
-                                    </tr>
-                                    <tr>
-                                        <td>
+                                       <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">24 :</label>&nbsp;
-                                            <select class="form-control" name="action24[]">
+                                            <select class="form-control" name="action24[]" style="width: 50px">
                                                 @if($item->action24 == true)
-                                                <option value="{{$item->action24}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action24}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action24}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action24}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">25 :</label>&nbsp;
-                                            <select class="form-control" name="action25[]">
+                                            <select class="form-control" name="action25[]" style="width: 50px">
                                                 @if($item->action25 == true)
-                                                <option value="{{$item->action25}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action25}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action25}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action25}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">26 :</label>&nbsp;
-                                            <select class="form-control" name="action26[]">
+                                            <select class="form-control" name="action26[]" style="width: 50px">
                                                 @if($item->action26 == true)
-                                                <option value="{{$item->action26}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action26}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action26}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action26}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">27 :</label>&nbsp;
-                                            <select class="form-control" name="action27[]">
+                                            <select class="form-control" name="action27[]" style="width: 50px">
                                                 @if($item->action27 == true)
-                                                <option value="{{$item->action27}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action27}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action27}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action27}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">28 :</label>&nbsp;
-                                            <select class="form-control" name="action28[]">
+                                            <select class="form-control" name="action28[]" style="width: 50px">
                                                 @if($item->action28 == true)
-                                                <option value="{{$item->action28}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action28}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action28}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action28}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>                                                       
-                                    </tr>
-                                    <tr>
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">29 :</label>&nbsp;
-                                            <select class="form-control" name="action29[]">
+                                            <select class="form-control" name="action29[]" style="width: 50px">
                                                 @if($item->action29 == true)
-                                                <option value="{{$item->action29}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action29}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action29}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action29}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">30 :</label>&nbsp;
-                                            <select class="form-control" name="action30[]">
+                                            <select class="form-control" name="action30[]" style="width: 50px">
                                                 @if($item->action30 == true)
-                                                <option value="{{$item->action30}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action30}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action30}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action30}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="input-group">
-                                                <label class="col-form-label">31 :</label>&nbsp;
-                                            <select class="form-control" name="action31[]">
+                                            <select class="form-control" name="action31[]" style="width: 50px">
                                                 @if($item->action31 == true)
-                                                <option value="{{$item->action31}}">ครบ</option>
-                                                <option value="0">ไม่ครบ</option>
+                                                <option value="{{$item->action31}}">/</option>
+                                                <option value="0">X</option>
                                                 @else
-                                                <option value="{{$item->action31}}">ไม่ครบ</option>
-                                                <option value="1">ครบ</option>
+                                                <option value="{{$item->action31}}">X</option>
+                                                <option value="1">/</option>
                                                 @endif   
                                             </select>
                                             </div>
@@ -671,6 +666,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                        </div>
                         </div>
                     </div>
                 </div><hr>
@@ -682,3 +678,40 @@
     </div>
 </div>
 @endsection
+@push('scriptjs')
+<script src="https://cdn.datatables.net/fixedcolumns/4.2.2/js/dataTables.fixedColumns.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#tb_ppe').DataTable({                   
+        "autoWidth": false,
+        "pageLength": 20,
+        "lengthMenu": [
+            [10, 25, 50, -1],
+            [10, 25, 50, "All"]
+        ],       
+        dom: 'Bfrtip',
+        width: '200%',
+        height: 'auto',
+        colHeaders: true,
+        rowHeaders: true,
+        colWidths: [1000, 
+        1000, 1000, 1000, 1000, 1000 ,1000, 1000, 1000, 1000, 1000,
+        1000, 1000, 1000, 1000, 1000 ,1000, 1000, 1000, 1000, 1000,
+        1000, 1000, 1000, 1000, 1000 ,1000, 1000, 1000, 1000, 1000,
+        1000],
+        manualColumnResize: true,
+        licenseKey: 'non-commercial-and-evaluation',
+        buttons: [
+            'copy','excel',
+        ],  
+        "order": [ 1, "asc" ],
+        scrollX:        true,
+        scrollCollapse: true,
+        paging:         true,
+        fixedColumns:   {
+            left: 1,
+        }
+    })
+});
+</script>
+@endpush

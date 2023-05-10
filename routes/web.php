@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\IsoHr\IsoHrHolder;
 use App\Http\Livewire\IsoAsb\IsoAsbHolder;
@@ -39,6 +40,7 @@ use App\Http\Controllers\EmployeeReportController;
 use App\Http\Livewire\Employee\RolePermissionPage;
 use App\Http\Livewire\LeaveDocuno\LeaveDocunoForm;
 use App\Http\Livewire\LeaveDocuno\LeaveDocunoList;
+use App\Http\Livewire\PackingResult\PackingResult;
 use App\Http\Livewire\ProductList\ProductListPage;
 use App\Http\Controllers\MachineryReportController;
 use App\Http\Livewire\LeaveDocuno\LeaveDocunoExcel;
@@ -497,6 +499,17 @@ Route::group([
     Route::get('/', IsoPkgMcChecksheet::class)->name('list');
     Route::get('/edit/{id}', IsoPkgMcChecksheetForm::class)->name('edit');
 });
+
+Route::group([
+    'prefix' => 'packingresults',
+    'as' => 'packingresult.',
+    'middleware' =>  ['auth','role:superadmin|PKG|admin|PTG']
+],function(){
+    Route::get('/', PackingResult::class)->name('list');
+});
+Route::resource('/pkgresult' , App\Http\Controllers\PackingResultController::class);
+Route::post('/getProduct' , [App\Http\Controllers\PackingResultController::class , 'getProduct']);
+Route::post('/getDetailDate' , [App\Http\Controllers\PackingResultController::class , 'getDetailDate']);
 // ISO PKG END//
 
 // ISO QCC //
@@ -639,3 +652,4 @@ Route::group([
 ],function(){
     Route::get('/', ProductListPage::class)->name('list');
 });
+

@@ -16,7 +16,7 @@
     @endif
 <div class="card">
     <div class="card-body">
-        <h3 class="card-title">แบบบันทึกการตรวจอุปกรณ์ป้องกันภัยส่วนบุคคล(PPE) (YSK3-FM-SMS-11)</h3>
+        <h3 class="card-title">แบบบันทึกการตรวจอุปกรณ์ป้องกันภัยส่วนบุคคล(PPE)</h3>
         <form method="POST" class="form-horizontal" action="{{ route('ppe-dep.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="row">
