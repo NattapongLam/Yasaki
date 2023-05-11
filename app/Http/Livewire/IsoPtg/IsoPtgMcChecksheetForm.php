@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\IsoPtg;
 
 use Livewire\Component;
+use App\Models\EmployeeList;
 use Illuminate\Support\Facades\DB;
 use App\Models\MachineChecksheetDt;
 use App\Models\MachineChecksheetHd;
@@ -20,6 +21,7 @@ class IsoPtgMcChecksheetForm extends Component
 
     public $chkdt =[];
     public $chkemp =[];
+    public $emp =[];
 
     public function mount($id = 0)
     {
@@ -37,13 +39,15 @@ class IsoPtgMcChecksheetForm extends Component
         if($this->idKey){
             $pic = DB::table('machine_checksheet_hds')->where('id',$this->idKey)->first();
             $pic = $pic->checksheetmc_hd_filename;
-            $this->chkdt = MachineChecksheetDt::where('checksheetmc_hd_docuno',$this->checksheetmc_hd_docuno)->get();
+            $this->chkdt = MachineChecksheetDt::where('checksheetmc_hd_docuno',$this->checksheetmc_hd_docuno)->orderBy('machinecheck_dt_listno','asc')->get();
             $this->chkemp = MachineChecksheetLg::where('checksheetmc_hd_docuno',$this->checksheetmc_hd_docuno)->get();
+            $this->emp = EmployeeList::where('department_name','ทำสี(PTG)')->get();
         }
         return view('livewire.iso-ptg.iso-ptg-mc-checksheet-form',[
             'pic' => $pic,
             'chkdt' => $this->chkdt,
-            'chkemp' => $this->chkemp
+            'chkemp' => $this->chkemp,
+            'emp' => $this->emp
         ])->extends('layouts.main');
     }
 }

@@ -29,7 +29,7 @@
                                     <td>{{$item->checksheetmc_hd_save}}</td>        
                                     <td>{{$item->checksheetmc_hd_note}}</td>  
                                     <td class="text-center">
-                                        <a href="{{route('mcchkpkg.edit',$item->id)}}"
+                                        <a href="{{route('mc_check.edit',$item->id)}}"
                                             class="btn btn-sm btn-info">
                                             <i class="fas fa-eye"></i>
                                         </a>                                                                             

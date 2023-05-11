@@ -684,7 +684,7 @@
 $(document).ready(function() {
     $('#tb_ppe').DataTable({                   
         "autoWidth": false,
-        "pageLength": 20,
+        "pageLength": 50,
         "lengthMenu": [
             [10, 25, 50, -1],
             [10, 25, 50, "All"]

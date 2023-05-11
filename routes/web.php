@@ -183,7 +183,6 @@ Route::group([
 });
 Route::get('/empmtnday', [MachineryReportController::class,'empmtnday'])->name('empmtnday.index'); 
 Route::post('/getDataMcListsub' , [MachineryReportController::class,'getDataMcListsub']);  
-
 Route::group([
     'prefix' => 'isomtns',
     'as' => 'isomtn.',
@@ -191,6 +190,7 @@ Route::group([
 ],function(){
     Route::get('/', IsoMtnHolder::class)->name('list');
 });
+Route::resource('/mc_check' , App\Http\Controllers\McChecksheetForm::class);
 // MTN END //
 
 // EMP //
