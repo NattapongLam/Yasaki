@@ -95,9 +95,9 @@
                                 @foreach ($dt as $item)
                                     <tr>
                                         <td>
+                                            <input type="hidden" name="dt_id[]" value="{{$item->id}}">
                                             <label class="col-form-label" style="width: 200px">
-                                                {{$item->machinecheck_dt_listno}}/{{$item->machinecheck_dt_name}}
-                                                <input type="hidden" name="dt_id[]" value="{{$item->id}}">
+                                                {{$item->machinecheck_dt_listno}}/{{$item->machinecheck_dt_name}}                                             
                                             </label>
                                         </td>
                                         <td>
@@ -553,7 +553,8 @@
         "lengthMenu": [
             [10, 25, 50, -1],
             [10, 25, 50, "All"]
-        ],       
+        ],
+        "order": [ 1, "asc" ],       
         dom: 'Bfrtip',
         width: '200%',
         height: 'auto',

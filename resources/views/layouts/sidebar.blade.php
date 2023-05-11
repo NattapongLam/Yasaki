@@ -156,6 +156,7 @@
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">MTN</a>
                             <ul class="sub-menu" aria-expanded="true">                      
                                 <li><a href="{{route('isomtn.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
+                                <li><a href="{{route('mcchkmtn.list')}}" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
                             </ul>
                         </li>    
                         @endrole  

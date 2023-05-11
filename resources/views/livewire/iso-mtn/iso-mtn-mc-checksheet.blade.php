@@ -5,7 +5,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-3">
-                            <h3 class="card-title">ตรวจสอบเครื่องจักรประจำวัน (MLD)</h3>                           
+                            <h3 class="card-title">ตรวจสอบเครื่องจักรประจำวัน (MTN)</h3>                           
                         </div>
                         <div class="col-3"></div>
                         <div class="col-3"></div>                

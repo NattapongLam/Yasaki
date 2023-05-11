@@ -70,10 +70,14 @@ class McChecksheetForm extends Controller
     public function edit($id)
     {
         $hd = MachineChecksheetHd::where('id',$id)->first();
-        $dt = MachineChecksheetDt::where('checksheetmc_hd_id',$id)->get();
+        $dt = MachineChecksheetDt::where('checksheetmc_hd_docuno',$hd->checksheetmc_hd_docuno)->get();
         $chkemp = DB::table('machine_checksheet_lgs')->where('checksheetmc_hd_docuno',$hd->checksheetmc_hd_docuno)->get();
-        $dep = DepartmentList::where('department_refcode',$hd->ms_machine_group_code)->first();
-        $emp = EmployeeList::where('department_name',$dep->department_name)->get();
+        $dep = DepartmentList::where('department_refcode',$hd->ms_machine_group_code)->first();  
+        if(Auth::user()->username == "A570126"){
+            $emp = EmployeeList::whereIn('department_name',['ทำสี(PTG)','แพ็คกิ้ง(PKG)'])->get();
+        }else{
+            $emp = EmployeeList::where('department_name',$dep->department_name)->get();
+        }
         return view('mcchecksheet.mc-checksheet-edit', compact('hd','dt','chkemp','emp'));
     }
 

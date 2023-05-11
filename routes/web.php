@@ -32,6 +32,7 @@ use App\Http\Livewire\IsoDlv\IsoDlvMcChecksheet;
 use App\Http\Livewire\IsoHtp\IsoHtpMcChecksheet;
 use App\Http\Livewire\IsoMch\IsoMchMcChecksheet;
 use App\Http\Livewire\IsoMld\IsoMldMcChecksheet;
+use App\Http\Livewire\IsoMtn\IsoMtnMcChecksheet;
 use App\Http\Livewire\IsoPkg\IsoPkgMcChecksheet;
 use App\Http\Livewire\IsoPtg\IsoPtgMcChecksheet;
 use App\Http\Livewire\IsoQcc\IsoQccMcChecksheet;
@@ -189,6 +190,13 @@ Route::group([
     'middleware' =>  ['auth','role:superadmin|MTN|admin']
 ],function(){
     Route::get('/', IsoMtnHolder::class)->name('list');
+});
+Route::group([
+    'prefix' => 'mcchkmtns',
+    'as' => 'mcchkmtn.',
+    'middleware' =>  ['auth','role:superadmin|DCT|admin']
+],function(){
+    Route::get('/', IsoMtnMcChecksheet::class)->name('list');
 });
 Route::resource('/mc_check' , App\Http\Controllers\McChecksheetForm::class);
 // MTN END //

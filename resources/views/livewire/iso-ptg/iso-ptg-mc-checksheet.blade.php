@@ -11,10 +11,11 @@
                         <div class="col-3"></div>                
                     </div><hr>                                                      
                     <div class="table-responsive">
-                        <table id="tb_job" class="table table-bordered dt-responsive nowrap w-100">
+                        <table id="tb_job" class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>ปี-เดือน</th>
+                                    <th>เดือน</th>
+                                    <th>ปี</th>
                                     <th>เลขที่</th>
                                     <th>เครื่องจักร</th>
                                     <th>ผู้ตรวจสอบ</th>                                  
@@ -25,7 +26,8 @@
                             <tbody>
                                 @foreach ($mcchk as $key => $item)
                                 <tr>
-                                    <td>{{$item->monthtype}}</td>  
+                                    <td>{{$item->monthcheck}}</td>  
+                                    <td>{{Str::limit($item->monthtype,4)}}</td> 
                                     <td>{{$item->checksheetmc_hd_docuno}}</td>     
                                     <td>{{$item->ms_machine_name}} ({{$item->ms_machine_name}})</td>        
                                     <td>{{$item->checksheetmc_hd_save}}</td>        
