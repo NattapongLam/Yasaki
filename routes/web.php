@@ -194,7 +194,7 @@ Route::group([
 Route::group([
     'prefix' => 'mcchkmtns',
     'as' => 'mcchkmtn.',
-    'middleware' =>  ['auth','role:superadmin|DCT|admin']
+    'middleware' =>  ['auth','role:superadmin|MTN|admin']
 ],function(){
     Route::get('/', IsoMtnMcChecksheet::class)->name('list');
 });
