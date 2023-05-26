@@ -14,7 +14,7 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">DCC</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                @role('superadmin|admin') 
+                                @role('superadmin|admin|HRM') 
                                 <li><a href="{{route('documentcontrolmasterlist.list')}}" key="t-default">Master List</a></li>   
                                 <li><a href="{{route('documentcontrolholderlist.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
                                 @endrole

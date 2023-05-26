@@ -17,6 +17,7 @@
 <div class="card">
     <div class="card-body">
         <h3 class="card-title">อัพเดทผลผลิตประจำวันแผนกแพ็คกิ้ง</h3>
+        <form>       
         <div class="row">
             <div class="col-12 col-md-3">
                 <label for="pkgresult_date" class="col-form-label">วันที่</label>
@@ -80,11 +81,42 @@
                 </tbody>
             </table>
         </div>
+    </form><hr>
+    <form>    
+    <div class="row">
+        <div class="col-12 col-md-2">
+            <button type="submit" class="btn btn-primary">เพิ่มรายการสินค้า</button>    
+        </div>
+        <div class="col-12 col-md-2">
+            <label for="pkgresult_leave" class="col-form-label">ประเภทแพ็ค</label>
+            <select name="pdtype" class="form-select">
+                <option value="กล่อง">กล่อง</option>
+                <option value="แพ็ค+สปริง">แพ็ค+สปริง</option>
+            </select>
+        </div>
+        <div class="col-12 col-md-6">
+            <label for="pkgresult_leave" class="col-form-label">สินค้า</label>
+            <select name="product_id" id="prepend-text-single-field" class="form-select"> 
+                @foreach ($pd as $item)
+                    <option value="{{$item->id}}">{{$item->Code}}/{{$item->Name1}} ({{$item->UnitName}} )</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="col-12 col-md-2">
+            <label for="pkgresult_leave" class="col-form-label">จำนวน</label>
+            <input type="number" class="form-control" value="{{old('',0)}}">
+        </div>       
+    </div>
+    </form>
     </div>
 </div>
 </div>
 @endsection
+@push('scriptjs')
 <script>
+$( '#prepend-text-single-field' ).select2( {
+    theme: "bootstrap-5"
+} );
   getdataDate = (id) =>{
     //console.log(id)
     $('#list_date').DataTable().destroy();
@@ -118,9 +150,16 @@
                 <td>${item.pkgresult_pdtype}</td>
                 <td>${item.pkgresult_pdcode}/${item.pkgresult_pdname}</td>
                 <td>${item.pkgresult_pdunit}</td>
+                <td>
+                    <input type="number" class="form-control text-center" id="pkgresult_pdqty${item.id}"  name="pkgresult_pdqty[]" value="${parseFloat(item.pkgresult_pdqty).toFixed(0)}">
+                </td>
+                <td>
+                    <input type="text" class="form-control text-center" id="pkgresult_note${item.id}"  name="pkgresult_note[]" value="${item.pkgresult_note}">
+                </td>
             </tr>`})
             $('#list_datedt').html(el_tr)
         }
     })
 }
 </script>
+@endpush
