@@ -212,7 +212,8 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{route('leavedocuno.list')}}" key="t-default">บันทึกการลา</a></li>      
-                        <li><a href="{{route('leavedocapproval.list')}}" key="t-default">อนุมัติการลา</a></li>                   
+                        <li><a href="{{route('leavedocapproval.list')}}" key="t-default">อนุมัติการลา</a></li>    
+                        <li><a href="{{route('ass-emp.index')}}" key="t-default">แบบประเมินประจำปี</a></li>                
                     </ul>
                 </li>
                 <li>
@@ -253,6 +254,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{route('productlist.list')}}" key="t-default">สินค้าสำเร็จรูป</a></li>    
+                        <li><a href="#" key="t-default">วัตถุดิบ</a></li> 
                     </ul>
                 </li>                                                       
                 <li class="menu-title" key="t-pages">Setting</li>

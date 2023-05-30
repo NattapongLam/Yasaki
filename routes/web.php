@@ -346,6 +346,7 @@ Route::group([
 Route::resource('/ppe-dep' , App\Http\Controllers\PpeDepartmentForm::class);
 Route::post('/getTypeDatalist' , [App\Http\Controllers\PpeDepartmentForm::class , 'getTypeDatalist']);
 Route::post('/getEmp' , [App\Http\Controllers\PpeDepartmentForm::class , 'getEmp']);
+Route::resource('/ass-emp' , App\Http\Controllers\AssessEmployee::class);
 // ISO DCC END //
 
 // ISO ICT //

@@ -154,7 +154,10 @@ class PpeDepartmentForm extends Controller
     public function edit($id)
     {
         $hd = IsoPpeDepartmentHD::where('id',$id)->first();
-        $dt = IsoPpeDepartmentDT::where('ppe_hd_id',$hd->id)->orderBy('emp_listno','ASC')->get();
+        $dt = IsoPpeDepartmentDT::where('ppe_hd_id',$hd->id)
+        ->orderBy('emp_listno','ASC')
+        ->where('flag',true)
+        ->get();
         return view('ppedepartmentform.ppe-department-edit', compact('hd','dt'));
     }
 
