@@ -244,7 +244,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{route('empreport.emptime.index')}}" key="t-default">รายงานตรวจสอบเวลา</a></li>  
-                        <li><a href="#" key="t-default">รายงานตรวจสอบการลา</a></li>     
+                        <li><a href="{{route('empreport.empleave.index')}}" key="t-default">รายงานตรวจสอบการลา</a></li>     
                     </ul>
                 </li>      
                 <li>

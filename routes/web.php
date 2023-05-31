@@ -269,6 +269,7 @@ Route::group([
     // 'middleware' =>  ['auth','role:superadmin|MTN']
 ],function(){
     Route::get('/emptime', [EmployeeReportController::class,'emptime'])->name('emptime.index');  
+    Route::get('/empleave', [EmployeeReportController::class,'empleave'])->name('empleave.index');  
 });
 // EMP  END//
 
