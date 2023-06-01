@@ -70,6 +70,7 @@ use App\Http\Livewire\LeaveApproval\LeaveApprovalListForm;
 use App\Http\Livewire\LeaveApproval\LeaveApprovalListPage;
 use App\Http\Livewire\MachineryReport\MachineryReportPage;
 use App\Http\Livewire\MachineSystem\MachineSystemListPage;
+use App\Http\Livewire\RawmaterialList\RawmaterialListPage;
 use App\Http\Livewire\MachineService\MachineServiceListPage;
 use App\Http\Livewire\TrasheDepartment\TrasheDepartmentForm;
 use App\Http\Livewire\TrasheDepartment\TrasheDepartmentList;
@@ -663,3 +664,11 @@ Route::group([
     Route::get('/', ProductListPage::class)->name('list');
 });
 
+Route::group([
+    'prefix' => 'rawlists',
+    'as' => 'rawlist.',
+    // 'middleware' =>  ['auth','role:superadmin|admin|SAL']
+],function(){
+    Route::get('/', RawmaterialListPage::class)->name('list');
+});
+Route::resource('/rm-rp' , App\Http\Controllers\RawmaterialController::class);

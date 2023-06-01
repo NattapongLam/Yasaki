@@ -254,7 +254,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{route('productlist.list')}}" key="t-default">สินค้าสำเร็จรูป</a></li>    
-                        <li><a href="#" key="t-default">วัตถุดิบ</a></li> 
+                        <li><a href="{{route('rawlist.list')}}" key="t-default">วัตถุดิบ</a></li> 
                     </ul>
                 </li>                                                       
                 <li class="menu-title" key="t-pages">Setting</li>
