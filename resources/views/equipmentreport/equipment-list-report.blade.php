@@ -25,9 +25,7 @@
                                     <td>{{$item->DocNo}}</td>
                                     <td>{{$item->PoDocNo}}</td>
                                     <td>{{\Carbon\Carbon::parse($item->DueDate)->format('d/m/Y')}}</td>
-                                    <td>{{number_format($item->Total,2)}}</td>
-                                    @endif   
-                                    @endauth                               
+                                    <td>{{number_format($item->Total,2)}}</td>                             
                                 </tr>
                             @endforeach
                         </tbody>
