@@ -25,13 +25,7 @@
                                     <td>{{$item->DocNo}}</td>
                                     <td>{{$item->PoDocNo}}</td>
                                     <td>{{\Carbon\Carbon::parse($item->DueDate)->format('d/m/Y')}}</td>
-                                    @auth
-                                    @if(auth()->user()->type == "Admin")
-                                    <td>{{number_format($item->Total,2)}}</td>
-                                    @else
-                                    <td>{{number_format(0,2)}}</td>
-                                    @endif   
-                                    @endauth                               
+                                    <td>{{number_format($item->Total,2)}}</td>                                                            
                                 </tr>
                             @endforeach
                         </tbody>
@@ -57,7 +51,7 @@
                                     <div class="avatar-md">
                                         <span class="avatar-title rounded-circle bg-light text-danger font-size-16">
                                             <button type="button" style="border:none;" onclick="previewAttach('{{'assets/images/product/'.$item->PicFileName1}}')">
-                                            <img src="assets/images/product/{{$item->PicFileName1}}" alt="" height="70">
+                                            <img src="assets/images/product/{{asset($item->PicFileName1)}}" alt="" height="70">
                                             </button>
                                         </span>
                                     </div>
@@ -69,21 +63,21 @@
                                         <div class="avatar-group-item">
                                             <a href="javascript: void(0);" class="d-inline-block">
                                                 <button type="button" style="border:none;" onclick="previewAttach('{{'assets/images/product/'.$item->PicFileName2}}')">
-                                                <img src="assets/images/product/{{$item->PicFileName2}}" alt="" class="rounded-circle avatar-xs">
+                                                <img src="assets/images/product/{{asset($item->PicFileName2)}}" alt="" class="rounded-circle avatar-xs">
                                                 </button>
                                             </a>
                                         </div>
                                         <div class="avatar-group-item">
                                             <a href="javascript: void(0);" class="d-inline-block">
                                                 <button type="button" style="border:none;" onclick="previewAttach('{{'assets/images/product/'.$item->PicFileName3}}')">
-                                                <img src="assets/images/product/{{$item->PicFileName3}}" alt="" class="rounded-circle avatar-xs">
+                                                <img src="assets/images/product/{{asset($item->PicFileName3)}}" alt="" class="rounded-circle avatar-xs">
                                                 </button>
                                             </a>
                                         </div>
                                         <div class="avatar-group-item">
                                             <a href="javascript: void(0);" class="d-inline-block">
                                                 <button type="button" style="border:none;" onclick="previewAttach('{{'assets/images/product/'.$item->PicFileName4}}')">
-                                                <img src="assets/images/product/{{$item->PicFileName4}}" alt="" class="rounded-circle avatar-xs">
+                                                <img src="assets/images/product/{{asset($item->PicFileName4)}}" alt="" class="rounded-circle avatar-xs">
                                                 </button>
                                             </a>
                                         </div>
@@ -133,7 +127,13 @@
                                     <td>{{\Carbon\Carbon::parse($item->DocDate)->format('d/m/Y')}}</td>
                                     <td>{{$item->DocNo}}</td>
                                     <td>{{$item->ApCode}}/{{$item->Name1}}</td>
+                                    @auth
+                                    @if(auth()->user()->type == "Admin" || auth()->user()->type == "PUR")
                                     <td>{{number_format($item->Price,2)}}</td>
+                                    @else
+                                    <td>{{number_format(0,2)}}</td>
+                                    @endif   
+                                    @endauth  
                                 </tr>
                             @endforeach
                         </tbody>

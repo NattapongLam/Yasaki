@@ -57,6 +57,7 @@ use App\Http\Livewire\IsoQcc\IsoQccMcChecksheetForm;
 use App\Http\Livewire\IsoStr\IsoStrMcChecksheetForm;
 use App\Http\Livewire\MachineryList\MachineryListEnd;
 use App\Http\Livewire\EmployeeList\EmployeeListReport;
+use App\Http\Livewire\EquipmentList\EquipmentListPage;
 use App\Http\Livewire\LeaveConfig\LeaveConfigListPage;
 use App\Http\Livewire\MachineryList\MachineryListEdit;
 use App\Http\Livewire\MachineryList\MachineryListForm;
@@ -672,3 +673,11 @@ Route::group([
     Route::get('/', RawmaterialListPage::class)->name('list');
 });
 Route::resource('/rm-rp' , App\Http\Controllers\RawmaterialController::class);
+Route::group([
+    'prefix' => 'malists',
+    'as' => 'malist.',
+    // 'middleware' =>  ['auth','role:superadmin|admin|SAL']
+],function(){
+    Route::get('/', EquipmentListPage::class)->name('list');
+});
+Route::resource('/ma-rp' , App\Http\Controllers\EquipmentController::class);
