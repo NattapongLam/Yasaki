@@ -58,7 +58,7 @@ class EquipmentController extends Controller
         ->where('ItemCode',$rm->Code)
         ->where('Total','>',0)
         ->get();
-        return view('equipmentreport.rawmaterial-list-report', compact('price','rm','pr'));
+        return view('equipmentreport.equipment-list-report', compact('price','rm','pr'));
     }
 
     /**
