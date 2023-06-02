@@ -51,7 +51,7 @@
                                     <div class="avatar-md">
                                         <span class="avatar-title rounded-circle bg-light text-danger font-size-16">
                                             <button type="button" style="border:none;" onclick="previewAttach('{{'assets/images/product/'.$item->PicFileName1}}')">
-                                            <img src="assets/images/product/{{asset($item->PicFileName1)}}" alt="" height="70">
+                                            <img src="/assets/images/product/{{$item->PicFileName1}}" alt="" height="70">
                                             </button>
                                         </span>
                                     </div>
@@ -63,21 +63,21 @@
                                         <div class="avatar-group-item">
                                             <a href="javascript: void(0);" class="d-inline-block">
                                                 <button type="button" style="border:none;" onclick="previewAttach('{{'assets/images/product/'.$item->PicFileName2}}')">
-                                                <img src="assets/images/product/{{asset($item->PicFileName2)}}" alt="" class="rounded-circle avatar-xs">
+                                                <img src="/assets/images/product/{{$item->PicFileName2}}" alt="" class="rounded-circle avatar-xs">
                                                 </button>
                                             </a>
                                         </div>
                                         <div class="avatar-group-item">
                                             <a href="javascript: void(0);" class="d-inline-block">
                                                 <button type="button" style="border:none;" onclick="previewAttach('{{'assets/images/product/'.$item->PicFileName3}}')">
-                                                <img src="assets/images/product/{{asset($item->PicFileName3)}}" alt="" class="rounded-circle avatar-xs">
+                                                <img src="/assets/images/product/{{$item->PicFileName3}}" alt="" class="rounded-circle avatar-xs">
                                                 </button>
                                             </a>
                                         </div>
                                         <div class="avatar-group-item">
                                             <a href="javascript: void(0);" class="d-inline-block">
                                                 <button type="button" style="border:none;" onclick="previewAttach('{{'assets/images/product/'.$item->PicFileName4}}')">
-                                                <img src="assets/images/product/{{asset($item->PicFileName4)}}" alt="" class="rounded-circle avatar-xs">
+                                                <img src="/assets/images/product/{{$item->PicFileName4}}" alt="" class="rounded-circle avatar-xs">
                                                 </button>
                                             </a>
                                         </div>
