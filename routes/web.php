@@ -681,3 +681,5 @@ Route::group([
     Route::get('/', EquipmentListPage::class)->name('list');
 });
 Route::resource('/ma-rp' , App\Http\Controllers\EquipmentController::class);
+Route::resource('/m-sale' , App\Http\Controllers\MainSaleController::class);
+Route::resource('/stock-sale' , App\Http\Controllers\StockSaleController::class);

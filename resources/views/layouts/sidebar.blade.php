@@ -195,6 +195,12 @@
                     </ul>
                 </li>
                 <li>
+                    <a href="{{route('m-sale.index')}}" class="has-arrow waves-effect">
+                        <i class="fas fa-sign-language"></i>
+                        <span key="t-layouts">ฝ่ายขาย</span>
+                    </a>
+                </li>
+                <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="dripicons-gear"></i>
                         <span key="t-dashboards">ฝ่ายซ่อมบำรุง</span>
