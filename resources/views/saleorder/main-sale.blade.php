@@ -53,7 +53,7 @@
                                         </div>
                                     </div>                                        
                                     <div class="flex-grow-1 overflow-hidden">                                               
-                                        <h5 class="text-truncate font-size-16"><a href="javascript: void(0);" class="text-white">แผนพบลูกค้า</a></h5>                                                                     
+                                        <h5 class="text-truncate font-size-16"><a href="{{route('sale-tip.create')}}" class="text-white">แผนพบลูกค้า</a></h5>                                                                     
                                     </div>
                                 </div>
                             </div>
