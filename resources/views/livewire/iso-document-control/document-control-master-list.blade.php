@@ -51,7 +51,7 @@
                                     <td class="text-center">{{$item->iso_docugroup_name}}</td>
                                     <td class="text-center">{{$item->iso_docutype_code}}</td>
                                     <td>
-                                        <a href="images/isodocuments/{{$item->iso_doculist_filename}}">{{$item->iso_doculist_code}}/{{$item->iso_doculist_name}}</a>
+                                        <a href="images/isodocuments/{{$item->iso_doculist_filename}}" target=”_blank”>{{$item->iso_doculist_code}}/{{$item->iso_doculist_name}}</a>
                                     </td>
                                     <td class="text-center">{{$item->emp_department_refcode}}</td>
                                     <td>{{$item->iso_docustatus_reamrk}}</td>

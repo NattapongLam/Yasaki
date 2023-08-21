@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Employee;
 use App\Models\User;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Illuminate\Support\Facades\DB;
 
 class EmployeeListPage extends Component
 {
@@ -13,7 +14,7 @@ class EmployeeListPage extends Component
     public $searchTerm;
     
     public function render()
-    {
+    {      
         $employees = User::query();
         if($this->searchTerm){
             $employees = $employees

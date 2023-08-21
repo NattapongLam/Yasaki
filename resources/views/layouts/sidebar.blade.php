@@ -20,7 +20,8 @@
                                 @endrole
                                 <li><a href="{{route('documentcontrolformmasterlist.list')}}" key="t-default">ฟอร์มแม่บทเอกสาร</a></li>  
                                 <li><a href="{{route('documentcontrolkpi.list')}}" key="t-default">KPI</a></li>  
-                                <li><a href="{{route('documentcontrolpol.list')}}" key="t-default">Policy</a></li>  
+                                <li><a href="{{route('documentcontrolpol.list')}}" key="t-default">นโยบาย</a></li>  
+                                <li><a href="#" key="t-default">แผนภูมิเต่า</a></li> 
                                 <li><a href="{{route('trashedep.list')}}" key="t-default">บันทึกการนำของเสียออกนอกแผนก</a></li>  
                                 <li><a href="{{route('ppedep.list')}}" key="t-default">แบบบันทึกการตรวจอุปกรณ์ป้องกันภัยส่วนบุคคล (PPE)</a></li>  
                             </ul>
@@ -220,6 +221,17 @@
                         <li><a href="{{route('leavedocuno.list')}}" key="t-default">บันทึกการลา</a></li>      
                         <li><a href="{{route('leavedocapproval.list')}}" key="t-default">อนุมัติการลา</a></li>    
                         <li><a href="{{route('ass-emp.index')}}" key="t-default">แบบประเมินประจำปี</a></li>                
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="fas fa-id-card"></i>
+                        <span key="t-dashboards">ฝ่ายสโตร์วัตถุดิบ</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="#" key="t-default">อนุมัติใบเบิก</a></li>      
+                        <li><a href="#" key="t-default">จ่ายวัตถุดิบ</a></li>    
+                        <li><a href="#" key="t-default">รับวัตถุดิบ</a></li>                
                     </ul>
                 </li>
                 <li>

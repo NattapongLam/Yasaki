@@ -16,7 +16,7 @@ class DocumentControlPolicyList extends Component
 
     public function render()
     {
-        $pollist = IsoPolicyLsit::query();
+        $pollist = IsoPolicyLsit::where('pol_type','นโยบาย');
         if($this->searchTerm){
             $pollist = $pollist
             ->where('pol_name','LIKE',"%{$this->searchTerm}%");
