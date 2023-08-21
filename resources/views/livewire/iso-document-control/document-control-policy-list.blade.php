@@ -44,7 +44,7 @@
                                 @foreach ($pollist as $item)
                                 <tr>
                                     <td>{{\Carbon\Carbon::parse($item->pol_date)->format('d/m/Y')}}</td>
-                                    <td><a href="images/isopolicy/{{asset($item->pol_file)}}" target=”_blank”>{{$item->pol_name}}</a>                                    
+                                    <td><a href="images/isopolicy/{{asset($item->pol_filename)}}" target=”_blank”>{{$item->pol_name}}</a>                                    
                                     </td>
                                     {{-- <td>                                        
                                         <a type="button" class="btn btn-sm btn-warning" href="{{route('policy.edit',$item->id)}}">
