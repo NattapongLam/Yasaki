@@ -12,6 +12,10 @@ class IsoPolicyLsit extends Model
         'pol_date',
         'pol_name',
         'pol_file',
-        'pol_status'
+        'pol_status',
+        'pol_type',
+        'pol_save',
+        'pol_filename',
+        'pol_listno'
       ];
 }

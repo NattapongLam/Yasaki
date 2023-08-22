@@ -77,12 +77,16 @@ use App\Http\Livewire\TrasheDepartment\TrasheDepartmentForm;
 use App\Http\Livewire\TrasheDepartment\TrasheDepartmentList;
 use App\Http\Livewire\IsoDocumentControl\DocumentControlKpiList;
 use App\Http\Livewire\IsoDocumentControl\DocumentControlTypeList;
+use App\Http\Livewire\IsoDocumentControl\DocumentControlAspecList;
 use App\Http\Livewire\IsoDocumentControl\DocumentControlGroupList;
 use App\Http\Livewire\LeaveDocunoApproval\LeaveDocunoApprovalList;
 use App\Http\Livewire\IsoDocumentControl\DocumentControlHolderList;
 use App\Http\Livewire\IsoDocumentControl\DocumentControlMasterList;
 use App\Http\Livewire\IsoDocumentControl\DocumentControlPolicyList;
+use App\Http\Livewire\IsoDocumentControl\DocumentControlTurtleList;
 use App\Http\Livewire\IsoDocumentControlIct\DocumentControlIctList;
+use App\Http\Livewire\IsoDocumentControl\DocumentControlRisk9001List;
+use App\Http\Livewire\IsoDocumentControl\DocumentControlRisk45001List;
 use App\Http\Livewire\IsoDocumentControl\IsoDocumentControlFormMaster;
 use App\Http\Livewire\IsoDocumentControlIct\DocumentControlIctPlanForm;
 use App\Http\Livewire\IsoDocumentControlIct\DocumentControlIctPlanList;
@@ -329,6 +333,34 @@ Route::group([
     //'middleware' =>  ['auth','role:superadmin|admin']
 ],function(){
     Route::get('/', DocumentControlPolicyList::class)->name('list');
+});
+Route::group([
+    'prefix' => 'documentcontrolturs',
+    'as' => 'documentcontroltur.',
+    //'middleware' =>  ['auth','role:superadmin|admin']
+],function(){
+    Route::get('/', DocumentControlTurtleList::class)->name('list');
+});
+Route::group([
+    'prefix' => 'documentcontrolr9001s',
+    'as' => 'documentcontrolr9001.',
+    //'middleware' =>  ['auth','role:superadmin|admin']
+],function(){
+    Route::get('/', DocumentControlRisk9001List::class)->name('list');
+});
+Route::group([
+    'prefix' => 'documentcontrolr45001s',
+    'as' => 'documentcontrolr45001.',
+    //'middleware' =>  ['auth','role:superadmin|admin']
+],function(){
+    Route::get('/', DocumentControlRisk45001List::class)->name('list');
+});
+Route::group([
+    'prefix' => 'documentcontrolasps',
+    'as' => 'documentcontrolasp.',
+    //'middleware' =>  ['auth','role:superadmin|admin']
+],function(){
+    Route::get('/', DocumentControlAspecList::class)->name('list');
 });
 Route::resource('/policy' , App\Http\Controllers\PolicyController::class);
 Route::group([

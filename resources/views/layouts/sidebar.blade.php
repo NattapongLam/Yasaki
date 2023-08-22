@@ -21,7 +21,13 @@
                                 <li><a href="{{route('documentcontrolformmasterlist.list')}}" key="t-default">ฟอร์มแม่บทเอกสาร</a></li>  
                                 <li><a href="{{route('documentcontrolkpi.list')}}" key="t-default">KPI</a></li>  
                                 <li><a href="{{route('documentcontrolpol.list')}}" key="t-default">นโยบาย</a></li>  
-                                <li><a href="#" key="t-default">แผนภูมิเต่า</a></li> 
+                                <li><a href="{{route('documentcontroltur.list')}}" key="t-default">แผนภูมิเต่า</a></li> 
+                                <li><a href="{{route('documentcontrolr9001.list')}}" key="t-default">ประเมินความเสี่ยงด้านคุณภาพ ISO 9001</a></li> 
+                                <li><a href="#" key="t-default">KPI - 9001 (คุณภาพ)</a></li> 
+                                <li><a href="{{route('documentcontrolasp.list')}}" key="t-default">ประเมิน Aspec ISO 14001</a></li> 
+                                <li><a href="#" key="t-default">KPI - 14001 (สิ่งแวดล้อม)</a></li> 
+                                <li><a href="{{route('documentcontrolr45001.list')}}" key="t-default">ประเมินความเสี่ยงด้านความปลอดภัย ISO 45001</a></li> 
+                                <li><a href="#" key="t-default">KPI - 45001 (ความปลอดภัย)</a></li> 
                                 <li><a href="{{route('trashedep.list')}}" key="t-default">บันทึกการนำของเสียออกนอกแผนก</a></li>  
                                 <li><a href="{{route('ppedep.list')}}" key="t-default">แบบบันทึกการตรวจอุปกรณ์ป้องกันภัยส่วนบุคคล (PPE)</a></li>  
                             </ul>
