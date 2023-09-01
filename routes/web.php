@@ -717,3 +717,6 @@ Route::resource('/m-sale' , App\Http\Controllers\MainSaleController::class);
 Route::resource('/stock-sale' , App\Http\Controllers\StockSaleController::class);
 Route::resource('/sale-tip' , App\Http\Controllers\SaleTipController::class);
 Route::post('/confirmDelTip' , [App\Http\Controllers\SaleTipController::class , 'confirmDelTip']);
+
+//QrCodeScan
+Route::get('/checksheetmc/{id}' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanChecksheetMc']);

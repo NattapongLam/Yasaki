@@ -143,6 +143,7 @@
         </div>
     </div>
 </div>
+</div>
 @endsection
 <script>
     previewAttach = (path) => {
