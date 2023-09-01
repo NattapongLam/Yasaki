@@ -22,6 +22,7 @@ class QrCodeScan extends Controller
     {        
         $hd = DB::table('iso_ppe_department_h_d_s')
         ->where('department_name',$id)
+        ->where('flag',1)
         ->orderby('updated_at','DESC')
         ->get();
         return view('qrcode.checksheet-ppe-scan',compact('hd'));

@@ -7,7 +7,7 @@
                 <h3 class="card-title">แบบบันทึกการตรวจอุปกรณ์ป้องกันภัยส่วนบุคคล (PPE)</h3>
             </div>
             <div class="card-body">
-                <table id="tb_job" class="table table-bordered">
+                <table id="tb_job" class="table table-bordered dt-responsive nowrap w-100 text-center">     
                     <thead>
                         <th>
                             <tr>
