@@ -57,5 +57,83 @@
                 </div>                
             </div>
         </div>
+    </div><hr>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-3">
+                            <h3 class="card-title">แผนภูมิเต่า && ความเสี่ยง</h3>                           
+                        </div>
+                        <div class="col-3"></div>
+                        <div class="col-3"></div>                
+                    </div><hr>                                                      
+                    <div class="table-responsive">
+                        <table id="tb_job" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th style="text-align: center">วันที่</th>
+                                    <th style="text-align: center">ประเภทเอกสาร</th>
+                                    <th style="text-align: center">เอกสาร</th>
+                                                                                                                
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($policy as $key => $item)
+                                <tr>                                     
+                                    <td style="text-align: center">{{\Carbon\Carbon::parse($item->pol_date)->format('d/m/Y')}}</td>        
+                                    <td>{{$item->pol_type}}</td>    
+                                    <td>
+                                        <a href="images/isopolicy/{{$item->pol_filename}}" target=”_blank”>
+                                        {{$item->pol_name}}
+                                        </a>
+                                    </td>                                       
+                                </tr>     
+                                @endforeach                                                        
+                           </tbody>
+                        </table>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div><hr>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-3">
+                            <h3 class="card-title">KPI</h3>                           
+                        </div>
+                        <div class="col-3"></div>
+                        <div class="col-3"></div>                
+                    </div><hr>                                                      
+                    <div class="table-responsive">
+                        <table id="tb_job" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th style="text-align: center">วันที่</th>
+                                    <th style="text-align: center">เอกสาร</th>
+                                                                                                                
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($kpi as $key => $item)
+                                <tr>                                     
+                                    <td style="text-align: center">{{\Carbon\Carbon::parse($item->kpi_date)->format('d/m/Y')}}</td>         
+                                    <td>
+                                        <a href="images/kpifiles/{{$item->kpi_filename}}" target=”_blank”>
+                                        {{$item->kpi_name}}
+                                        </a>
+                                    </td>                                       
+                                </tr>     
+                                @endforeach                                                        
+                           </tbody>
+                        </table>
+                    </div>
+                </div>                
+            </div>
+        </div>
     </div>
 </div>
