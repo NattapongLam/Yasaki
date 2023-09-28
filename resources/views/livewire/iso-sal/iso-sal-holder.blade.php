@@ -123,7 +123,7 @@
                                 <tr>                                     
                                     <td style="text-align: center">{{\Carbon\Carbon::parse($item->kpi_date)->format('d/m/Y')}}</td>         
                                     <td>
-                                        <a href="images/kpifiles/{{$item->kpi_file}}" target=”_blank”>
+                                        <a href="images/kpifiles/{{$item->kpi_filename}}" target=”_blank”>
                                         {{$item->kpi_name}}
                                         </a>
                                     </td>                                       
