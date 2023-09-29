@@ -17,7 +17,7 @@ class IsoDlvHolder extends Component
         ->where('emp_department_refcode','DLV')
         ->get();
         $this->policy = DB::table('iso_policy_lsits')
-        ->where('pol_name','like','%DLV')
+        ->where('pol_name','like','%DLV%')
         ->where('pol_status',true)
         ->get();
         $this->kpi = DB::table('iso_ict_monthkpis')

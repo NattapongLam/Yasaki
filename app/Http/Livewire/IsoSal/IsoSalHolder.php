@@ -17,7 +17,7 @@ class IsoSalHolder extends Component
         ->where('emp_department_refcode','SAL')
         ->get();
         $this->policy = DB::table('iso_policy_lsits')
-        ->where('pol_name','like','%SAL')
+        ->where('pol_name','like','%SAL%')
         ->where('pol_status',true)
         ->get();
         $this->kpi = DB::table('iso_ict_monthkpis')

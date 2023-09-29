@@ -17,7 +17,7 @@ class IsoClbHolder extends Component
         ->where('emp_department_refcode','CLB')
         ->get();
         $this->policy = DB::table('iso_policy_lsits')
-        ->where('pol_name','like','%CLB')
+        ->where('pol_name','like','%CLB%')
         ->where('pol_status',true)
         ->get();
         $this->kpi = DB::table('iso_ict_monthkpis')

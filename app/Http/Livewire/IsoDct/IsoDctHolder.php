@@ -17,7 +17,7 @@ class IsoDctHolder extends Component
         ->where('emp_department_refcode','DCT')
         ->get();
         $this->policy = DB::table('iso_policy_lsits')
-        ->where('pol_name','like','%DCT')
+        ->where('pol_name','like','%DCT%')
         ->where('pol_status',true)
         ->get();
         $this->kpi = DB::table('iso_ict_monthkpis')
