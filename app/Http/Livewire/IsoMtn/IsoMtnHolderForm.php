@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\IsoMtn;
 
 use Livewire\Component;
+use App\Models\IsoHolderList;
 
 class IsoMtnHolderForm extends Component
 {
