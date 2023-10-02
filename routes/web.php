@@ -721,3 +721,5 @@ Route::post('/confirmDelTip' , [App\Http\Controllers\SaleTipController::class , 
 //QrCodeScan
 Route::get('/checksheetmc/{id}' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanChecksheetMc']);
 Route::get('/checksheetppe/{id}' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanChecksheetPpe']);
+Route::get('/packingstandardbrake' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanPackingStandardBrake']);
+Route::get('/packingstandarddisk' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanPackingStandardDisk']);

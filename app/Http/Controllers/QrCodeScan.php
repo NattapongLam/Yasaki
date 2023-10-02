@@ -27,4 +27,18 @@ class QrCodeScan extends Controller
         ->get();
         return view('qrcode.checksheet-ppe-scan',compact('hd'));
     }
+    public function QrcodeScanPackingStandardBrake()
+    {
+        $hd = DB::table('iso_packingstandard')
+        ->where('bomtype_name','ผ้าเบรค')
+        ->get();
+        return view('qrcode.brake-packingstandard',compact('hd'));
+    }
+    public function QrcodeScanPackingStandardDisk()
+    {
+        $hd = DB::table('iso_packingstandard')
+        ->where('bomtype_name','ดิสเบรด')
+        ->get();
+        return view('qrcode.brake-packingstandard',compact('hd'));
+    }
 }
