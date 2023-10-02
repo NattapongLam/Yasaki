@@ -10,6 +10,7 @@ class IsoDctHolder extends Component
     public $holder = [];
     public $policy = [];
     public $kpi = [];
+    public $docs = [];
 
     public function render()
     {
@@ -22,6 +23,10 @@ class IsoDctHolder extends Component
         ->get();
         $this->kpi = DB::table('iso_ict_monthkpis')
         ->where('dep_name','DCT')
+        ->get();
+        $this->docs =DB::table('iso_master_lists')
+        ->where('iso_doculist_code','like','%DCT%')
+        ->where('iso_docustatus_name','<>','ยกเลิก')
         ->get();
         return view('livewire.iso-dct.iso-dct-holder')->extends('layouts.main');
     }
