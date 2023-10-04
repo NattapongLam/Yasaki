@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Response;
 
 class QrCodeScan extends Controller
 {
@@ -54,8 +55,14 @@ class QrCodeScan extends Controller
     }
     public function QrcodeScanQualityProcedure($id){
         $hd = DB::table('iso_holder_lists')
-        ->where('iso_docutype_code',$id)
+        ->leftjoin('iso_master_lists','iso_holder_lists.iso_doculist_code','=','iso_master_lists.iso_doculist_code')
+        ->where('iso_holder_lists.iso_doculist_code',$id)
         ->first();
-        return view('qrcode.quality-procedure',compact('hd'));
+        $file = 'images/isodocuments/'.$hd->iso_doculist_filename;
+        // return view('qrcode.quality-procedure',compact('hd'));
+        return Response::make(file_get_contents($file), 200, [
+            'content-type'=>'application/pdf',
+        ]);
+        return response()->file(public_path($file),['content-type'=>'application/pdf']);
     }
 }
