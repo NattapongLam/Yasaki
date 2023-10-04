@@ -4,7 +4,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header bg-transparent border-bottom text-uppercase">
-                <h3 class="card-title">ค่ามาตรฐานการบรรจุภัณฑ์ (ผ้าเบรค)</h3>
+                <h3 class="card-title">ค่ามาตรฐานการบรรจุภัณฑ์ (ดุมล้อ,แผงเบรค)</h3>
             </div>
             <div class="card-body">
                 <table id="tb_job" class="table table-bordered">

@@ -21,6 +21,11 @@
                     <tbody>
                         @foreach ($hd as $item)
                             <tr>
+                                <td class="text-center">
+                                    <button type="button" style="border:none;" onclick="previewAttach('{{'assets/images/product/'.$item->PicFileName1}}')">
+                                        <img src="assets/images/product/{{$item->PicFileName1}}" alt="" height="70">
+                                    </button>
+                                </td>
                                 <td>{{$item->bomhd_fgcode}}</td>
                                 <td>{{$item->bomhd_fgname}}</td>
                                 <td>{{$item->bompack_packcode}}</td>
@@ -36,6 +41,13 @@
 @endsection
 @push('scriptjs')
 <script>
-
+ previewAttach = (path) => {
+            Swal.fire({
+                imageUrl: `{{ asset('${path}') }}`,
+                imageHeight: 350,
+                imageWidth: 350,
+                imageClass: 'img-responsive rounded-circle',
+            })
+    }
 </script>
 @endpush

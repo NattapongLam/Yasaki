@@ -723,3 +723,5 @@ Route::get('/checksheetmc/{id}' , [App\Http\Controllers\QrCodeScan::class , 'Qrc
 Route::get('/checksheetppe/{id}' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanChecksheetPpe']);
 Route::get('/packingstandardbrake' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanPackingStandardBrake']);
 Route::get('/packingstandarddisk' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanPackingStandardDisk']);
+Route::get('/packingstandardhub' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanPackingStandardHub']);
+Route::get('/quality-procedure/{id}' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanQualityProcedure']);
