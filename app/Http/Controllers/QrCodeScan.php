@@ -59,7 +59,16 @@ class QrCodeScan extends Controller
         ->where('iso_holder_lists.iso_doculist_code',$id)
         ->first();
         $file = 'images/isodocuments/'.$hd->iso_doculist_filename;
-        // return view('qrcode.quality-procedure',compact('hd'));
+        return Response::make(file_get_contents($file), 200, [
+            'content-type'=>'application/pdf',
+        ]);
+        return response()->file(public_path($file),['content-type'=>'application/pdf']);
+    }
+    public function QrcodeScanQualityPolicy($id){
+        $hd = DB::table('iso_policy_lsits')
+        ->where('pol_name',$id)
+        ->first();
+        $file = 'images/isopolicy/'.$hd->pol_filename;
         return Response::make(file_get_contents($file), 200, [
             'content-type'=>'application/pdf',
         ]);

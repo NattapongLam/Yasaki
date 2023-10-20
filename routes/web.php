@@ -725,3 +725,4 @@ Route::get('/packingstandardbrake' , [App\Http\Controllers\QrCodeScan::class , '
 Route::get('/packingstandarddisk' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanPackingStandardDisk']);
 Route::get('/packingstandardhub' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanPackingStandardHub']);
 Route::get('/quality-procedure/{id}' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanQualityProcedure']);
+Route::get('/quality-policy/{id}' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanQualityPolicy']);
