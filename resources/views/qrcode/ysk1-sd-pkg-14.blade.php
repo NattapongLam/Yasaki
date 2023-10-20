@@ -4,7 +4,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header bg-transparent border-bottom text-uppercase">
-                <h3 class="card-title">มาตรฐานน้ำหนักสินค้าลงกล่อง YSK1-SD-PKG-20</h3>
+                <h3 class="card-title">มาตรฐานน้ำหนักสินค้าลงกล่อง YSK1-SD-PKG-20 R.00-20231020</h3>
             </div>
             <div class="card-body">
                 <table id="tb_job_p" class="table table-bordered">
