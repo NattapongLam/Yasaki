@@ -4,7 +4,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header bg-transparent border-bottom text-uppercase">
-                <h3 class="card-title">มาตรฐานน้ำหนักสินค้าลง YSK1-SD-PKG-14</h3>
+                <h3 class="card-title">มาตรฐานน้ำหนักสินค้าลงกล่อง YSK1-SD-PKG-20</h3>
             </div>
             <div class="card-body">
                 <table id="tb_job_p" class="table table-bordered">
@@ -14,9 +14,16 @@
                                 <th>ลำดับ</th>
                                 <th>รหัสสินค้า (BC)</th>
                                 <th>ชื่อสินค้า/ประเภทบรรจุ</th>
-                                <th>จำนวนบบรจุ (คู่/กล่อง)</th>
+                                <th>จำนวนบรรจุ (คู่/กล่อง)</th>
                                 <th>น้ำหนักรวม (Kg./กล่อง)</th>
                                 <th>ช่วงการยอมรับ (Kg)</th>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th colspan="2">สูตรการคิดต่อ 1 (น้ำหนักเฉลี่ย / จำนวนบรรจุ)</th>
+                                <th>อ้างอิงจากน้ำหนักเฉลี่ยชั่งจริง</th>
+                                <th>น้ำเฉลี่ยน + - น้ำหนักต่อ1</th>
                             </tr>
                         </th>
                     </thead>
