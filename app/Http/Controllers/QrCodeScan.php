@@ -74,4 +74,9 @@ class QrCodeScan extends Controller
         ]);
         return response()->file(public_path($file),['content-type'=>'application/pdf']);
     }
+    public function QrcodeScanPackingPkg14()
+    {
+        $hd = DB::table('vw_ysk1_sd_pkg_14')->get();
+        return view('qrcode.ysk1-sd-pkg-14',compact('hd'));
+    }
 }
