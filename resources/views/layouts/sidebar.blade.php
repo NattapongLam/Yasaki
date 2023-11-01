@@ -210,7 +210,7 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="dripicons-gear"></i>
-                        <span key="t-dashboards">ฝ่ายซ่อมบำรุง</span>
+                        <span key="t-dashboards">แผนกซ่อมบำรุง</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{route('machinerylist.list')}}" key="t-default">แจ้งซ่อมเครื่องจักร</a></li>    
@@ -221,27 +221,28 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="fas fa-id-card"></i>
-                        <span key="t-dashboards">ฝ่ายบุคคล</span>
+                        <span key="t-dashboards">แผนกบุคคล</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{route('leavedocuno.list')}}" key="t-default">บันทึกการลา</a></li>      
                         <li><a href="{{route('leavedocapproval.list')}}" key="t-default">อนุมัติการลา</a></li>    
-                        <li><a href="{{route('ass-emp.index')}}" key="t-default">แบบประเมินประจำปี</a></li>                
+                        <li><a href="{{route('ass-emp.index')}}" key="t-default">แบบประเมินประจำปี</a></li>   
+                        <li><a href="{{route('skill.index')}}" key="t-default">Skill Matrix</a></li>              
                     </ul>
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="fas fa-id-card"></i>
-                        <span key="t-dashboards">ฝ่ายสโตร์วัตถุดิบ</span>
+                        <span key="t-dashboards">แผนกขนส่งสินค้า</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="#" key="t-default">อนุมัติใบเบิก</a></li>      
-                        <li><a href="#" key="t-default">จ่ายวัตถุดิบ</a></li>    
-                        <li><a href="#" key="t-default">รับวัตถุดิบ</a></li>                
+                        <li><a href="{{route('billorder.index')}}" key="t-default">ตรวจสอบใบส่งสินค้า</a></li>      
+                        {{-- <li><a href="#" key="t-default">จ่ายวัตถุดิบ</a></li>    
+                        <li><a href="#" key="t-default">รับวัตถุดิบ</a></li>                 --}}
                     </ul>
                 </li>
                 <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                    <a href="{{route('project.index')}}" class="has-arrow waves-effect">
                         <i class="fas fa-paper-plane"></i>
                         <span key="t-dashboards">ระบบติดตามงาน</span>
                     </a>

@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\EmployeeList;
 use App\Models\DepartmentList;
 use App\Models\LeaveApprovalHd;
+use Illuminate\Support\Facades\DB;
 
 class EmployeeListForm extends Component
 {
@@ -91,12 +92,16 @@ class EmployeeListForm extends Component
     }
     public function save()
     {
+        $dep = DB::table('department_lists')->where('id',$this->department_id)->first();
         EmployeeList::where('id',$this->idKey)->update([
             'sickleave' => $this->sickleave,
             'businessleave' => $this->businessleave,
             'vacation' => $this->vacation,
             'employee_save' => auth()->user()->name,
-            'approval_id' => $this->approval_id
+            'approval_id' => $this->approval_id,
+            'department_id' => $dep->id,
+            'department_code' => $dep->department_code,
+            'department_name' => $dep->department_name
         ]);
         $this->resetInput();
         $this->dispatchBrowserEvent('swal',[

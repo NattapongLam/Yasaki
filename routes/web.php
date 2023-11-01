@@ -717,6 +717,9 @@ Route::resource('/m-sale' , App\Http\Controllers\MainSaleController::class);
 Route::resource('/stock-sale' , App\Http\Controllers\StockSaleController::class);
 Route::resource('/sale-tip' , App\Http\Controllers\SaleTipController::class);
 Route::post('/confirmDelTip' , [App\Http\Controllers\SaleTipController::class , 'confirmDelTip']);
+Route::resource('/project' , App\Http\Controllers\ProjectList::class);
+Route::resource('/billorder' , App\Http\Controllers\BillOrderList::class);
+Route::resource('/skill' , App\Http\Controllers\SkillMatrixList::class);
 
 //QrCodeScan
 Route::get('/checksheetmc/{id}' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanChecksheetMc']);
