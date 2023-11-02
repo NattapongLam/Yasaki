@@ -19,7 +19,7 @@ class IsoClbHolderForm extends Component
     public function edit($id)
     {
         $this->resetInput();
-        $doc = IsoHolderList::findOrFail($id);
+        $doc = IsoHolderList::where('emp_department_refcode','CLB')->findOrFail($id);
         $this->idKey = $doc->id;
         $this->iso_doculist_code = $doc->iso_doculist_code;
         $this->iso_doculist_name = $doc->iso_doculist_name;
