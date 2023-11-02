@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller;
 use App\Http\Livewire\IsoHr\IsoHrHolder;
 use App\Http\Livewire\IsoAsb\IsoAsbHolder;
 use App\Http\Livewire\IsoClb\IsoClbHolder;

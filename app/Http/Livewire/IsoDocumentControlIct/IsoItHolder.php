@@ -4,6 +4,7 @@ namespace App\Http\Livewire\IsoDocumentControlIct;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class IsoItHolder extends Component
 {
