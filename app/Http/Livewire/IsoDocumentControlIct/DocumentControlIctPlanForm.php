@@ -94,8 +94,8 @@ class DocumentControlIctPlanForm extends Component
                 'updated_at' => 1
             ]);
             if($this->idKey){
-                DB::table('iso_ict_plan_dts')->where('planhd_id',$plan->id)->delete();
-            }          
+                DB::table('iso_ict_plan_dts')->where('planhd_id',$this->idKey)->delete();
+            }               
             foreach($this->coms as $key => $value)
             {
                 $item = IsoIctPlanDt::Create([
