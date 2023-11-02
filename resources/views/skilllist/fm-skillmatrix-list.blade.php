@@ -44,20 +44,65 @@
         </div>
         <div class="card">
             <div class="card-body">
+                <h4 class="card-title mb-4">SKILL</h4>
                 <div class="row">
                 @foreach ($emp as $item)
                     <div class="col-12 col-md-4">
                         <div class="p-3">
                             <h5 class="font-size-14 mb-3">{{$item->skill_emp_listno}}.{{$item->skill_emp_name}}</h5>
                             <div class="progress">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: {{$item->skill_emp_qty}}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                @if ($item->skill_emp_qty == 25)
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: {{$item->skill_emp_qty}}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                     {{$item->skill_emp_qty}}%
                                 </div>
+                                @elseif($item->skill_emp_qty == 50)
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: {{$item->skill_emp_qty}}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    {{$item->skill_emp_qty}}%
+                                </div>
+                                @elseif($item->skill_emp_qty == 75) 
+                                <div class="progress-bar bg-info" role="progressbar" style="width: {{$item->skill_emp_qty}}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    {{$item->skill_emp_qty}}%
+                                </div>  
+                                @elseif($item->skill_emp_qty == 100)   
+                                <div class="progress-bar bg-success" role="progressbar" style="width: {{$item->skill_emp_qty}}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    {{$item->skill_emp_qty}}%
+                                </div>
+                                @endif
+                                
                             </div>
                         </div>
                     </div>               
                 @endforeach    
             </div>         
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title mb-4">ประวัติการฝึกอบรม</h4>
+                <div class="row">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>วันที่</th>
+                                <th>วิทยากร</th>
+                                <th>หัวข้อ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($tra as $item)
+                                <tr>
+                                    <td>
+                                        {{\Carbon\Carbon::parse($item->trainingemp_datestart)->format('d/m/Y')}}
+                                        - 
+                                        {{\Carbon\Carbon::parse($item->trainingemp_dateend)->format('d/m/Y')}}
+                                    </td>
+                                    <td>{{$item->trainingemp_person}}</td>
+                                    <td>{{$item->trainingemp_name}}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

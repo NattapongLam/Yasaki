@@ -57,7 +57,7 @@ class SkillMatrixList extends Controller
     public function show($id)
     {
         $hd = DB::table('employee_lists')->where('department_id',$id)->where('employee_status',true)->get();
-        $dep = DB::table('department_lists')->where('id',$id)->first();
+        $dep = DB::table('department_lists')->where('id',$id)->first();       
         return view('skilllist.fm-skillmatrix-emp',compact('hd','dep'));
     }
 
@@ -71,7 +71,8 @@ class SkillMatrixList extends Controller
     {
         $hd = DB::table('employee_lists')->where('employee_code',$id)->first();
         $emp = DB::table('skill_emp')->where('employee_code',$id)->get();
-        return view('skilllist.fm-skillmatrix-list',compact('emp','hd'));
+        $tra = DB::table('trainingemp')->where('trainingemp_empcode',$id)->get();
+        return view('skilllist.fm-skillmatrix-list',compact('emp','hd','tra'));
     }
 
     /**
