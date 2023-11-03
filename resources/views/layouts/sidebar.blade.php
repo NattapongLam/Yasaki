@@ -242,6 +242,15 @@
                     </ul>
                 </li>
                 <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="fas fa-id-card"></i>
+                        <span key="t-dashboards">แผนกจัดซื้อ</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="#" key="t-default">อนุมัติใบเสนอซื้อ</a></li>
+                    </ul>
+                </li>
+                <li>
                     <a href="{{route('project.index')}}" class="has-arrow waves-effect">
                         <i class="fas fa-paper-plane"></i>
                         <span key="t-dashboards">ระบบติดตามงาน</span>

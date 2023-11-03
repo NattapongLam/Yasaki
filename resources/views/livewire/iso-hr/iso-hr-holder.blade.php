@@ -44,8 +44,8 @@
                                     </td>   
                                     <td>{{$item->iso_docuholder_remark}}</td>        
                                     <td>
-                                        @livewire('iso-clb.iso-clb-holder-form')
-                                        <button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"data-bs-whatever="@mdo" wire:click="$emit('editClbHolder',{{$item->id}})">
+                                        @livewire('iso-hr.iso-hr-holder-form')
+                                        <button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"data-bs-whatever="@mdo" wire:click="$emit('editHrHolder',{{$item->id}})">
                                             <i class="fas fa-edit"></i>
                                         </button>
                                     </td>                                     
