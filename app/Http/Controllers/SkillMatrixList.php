@@ -70,9 +70,10 @@ class SkillMatrixList extends Controller
     public function edit($id)
     {
         $hd = DB::table('employee_lists')->where('employee_code',$id)->first();
-        $emp = DB::table('skill_emp')->where('employee_code',$id)->get();
+        $d = DB::table('skill_emp')->where('employee_code',$id)->orderBy('skill_emp_date','desc')->first();
+        $emp = DB::table('skill_emp')->where('employee_code',$id)->where('skill_emp_date',$d->skill_emp_date)->get();
         $tra = DB::table('trainingemp')->where('trainingemp_empcode',$id)->get();
-        return view('skilllist.fm-skillmatrix-list',compact('emp','hd','tra'));
+        return view('skilllist.fm-skillmatrix-list',compact('emp','hd','tra','d'));
     }
 
     /**

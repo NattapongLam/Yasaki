@@ -92,7 +92,7 @@
                     [10, 25, 50, -1],
                     [10, 25, 50, "All"]
                 ],
-                "order": [ 1, "desc" ],
+                "order": [ 0, "desc" ],
                 dom: 'Bfrtip',
                 buttons: [
                 'copy','excel',

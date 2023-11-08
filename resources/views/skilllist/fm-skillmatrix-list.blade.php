@@ -44,7 +44,7 @@
         </div>
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title mb-4">SKILL</h4>
+                <h4 class="card-title mb-4">SKILL UPDATE {{\Carbon\Carbon::parse($d->skill_emp_date)->format('d/m/Y')}}</h4>
                 <div class="row">
                 @foreach ($emp as $item)
                     <div class="col-12 col-md-4">

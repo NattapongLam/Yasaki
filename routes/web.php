@@ -721,7 +721,10 @@ Route::post('/confirmDelTip' , [App\Http\Controllers\SaleTipController::class , 
 Route::resource('/project' , App\Http\Controllers\ProjectList::class);
 Route::resource('/billorder' , App\Http\Controllers\BillOrderList::class);
 Route::resource('/skill' , App\Http\Controllers\SkillMatrixList::class);
-
+Route::resource('/stockrequest' , App\Http\Controllers\StockRequest::class);
+Route::post('/getDataPr' , [App\Http\Controllers\StockRequest::class,'getDataPr']);  
+Route::resource('/issuestock' , App\Http\Controllers\IssueStock::class);
+Route::get('/issuestock-list' , [App\Http\Controllers\IssueStock::class,'list']);  
 //QrCodeScan
 Route::get('/checksheetmc/{id}' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanChecksheetMc']);
 Route::get('/checksheetppe/{id}' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanChecksheetPpe']);

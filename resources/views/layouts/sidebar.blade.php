@@ -247,7 +247,18 @@
                         <span key="t-dashboards">แผนกจัดซื้อ</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="#" key="t-default">อนุมัติใบเสนอซื้อ</a></li>
+                        <li><a href="{{route('stockrequest.index')}}" key="t-default">อนุมัติใบเสนอซื้อ</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="fas fa-id-card"></i>
+                        <span key="t-dashboards">แผนกคลังสินค้า</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{route('issuestock.index')}}" key="t-default">อนุมัติใบเบิกสินค้า</a></li>
+                        <li><a href="{{route('issuestock.create')}}" key="t-default">คลังจ่ายสินค้า</a></li>
+                        <li><a href="{{url('/issuestock-list')}}" key="t-default">รับสินค้า</a></li>
                     </ul>
                 </li>
                 <li>
