@@ -79,7 +79,8 @@ class IssueStock extends Controller
     {
         $hd = DB::table('str_issuestock_hd')->where('str_issuestock_hd_docuno',$id)->first();
         $dt = DB::table('str_issuestock_dt')->where('str_issuestock_hd_id',$hd->str_issuestock_hd_id)->get();
-        return view('warehouses.fm-issuestock-edit',compact('hd','dt'));
+        $sta = DB::table('str_issuestock_status')->whereIN('str_issuestock_status_id',[1,2])->get();
+        return view('warehouses.fm-issuestock-edit',compact('hd','dt','sta'));
     }
 
     /**
@@ -91,7 +92,36 @@ class IssueStock extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $hd = DB::table('str_issuestock_hd')->where('str_issuestock_hd_id',$id)->first();      
+        try{
+            DB::beginTransaction();
+            if($hd->str_issuestock_status_id == 1)
+            {
+                $up = DB::table('str_issuestock_hd')
+                ->where('str_issuestock_hd_id',$id)
+                ->update([
+                    'checkedsave' => Auth::user()->name,
+                    'checkeddate' => Carbon::now()
+                ]);
+            }
+            elseif($hd->str_issuestock_status_id == 4)
+            {
+                $up = DB::table('str_issuestock_hd')
+                ->where('str_issuestock_hd_id',$id)
+                ->update([
+                    'approvelsave' => Auth::user()->name,
+                    'approveldate' => Carbon::now(),
+                    'approvelnote' => $request->approvelnote,
+                    'str_issuestock_status_id' => $request->str_issuestock_status_id
+                ]);
+            }
+            DB::commit();
+            return redirect()->route('issuestock.index')->with('success', 'เพิ่มข้อมูลสำเร็จ ' . Carbon::now());
+        }catch (Exception $e) {
+            DB::rollBack();
+            Log::error($e->getMessage());
+            return redirect()->route('issuestock.index')->with('error', 'เพิ่มข้อมูลไม่สำเร็จ ' . Carbon::now());
+        }
     }
 
     /**

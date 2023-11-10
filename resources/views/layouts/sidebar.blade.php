@@ -258,7 +258,7 @@
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{route('issuestock.index')}}" key="t-default">อนุมัติใบเบิกสินค้า</a></li>
                         <li><a href="{{route('issuestock.create')}}" key="t-default">คลังจ่ายสินค้า</a></li>
-                        <li><a href="{{url('/issuestock-list')}}" key="t-default">รับสินค้า</a></li>
+                        <li><a href="{{url('/issuestock-list')}}" key="t-default">ใบเบิกสินค้า</a></li>
                     </ul>
                 </li>
                 <li>

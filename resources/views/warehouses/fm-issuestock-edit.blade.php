@@ -15,6 +15,45 @@
         </div>
         @endif
     <div class="col-lg-12">
+        <form method="POST" class="form-horizontal" action="{{ route('issuestock.update',$hd->str_issuestock_hd_id) }}" enctype="multipart/form-data">
+        @csrf
+        @method('PUT')
+        @if ($hd->str_issuestock_status_id == 4)
+        @if(auth()->user()->username == "A653615" || auth()->user()->username == "A551528" || auth()->user()->username == "A439396")  
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12 col-md-2">
+                        <div class="form-group">
+                            <label for="str_issuestock_status_id" class="col-form-label">สถานะ</label>
+                            <select class="form-control" name="str_issuestock_status_id" id="str_issuestock_status_id">
+                                @foreach ($sta as $item)
+                                <option value="{{$item->str_issuestock_status_id}}">{{$item->str_issuestock_status_name}}</option>
+                                @endforeach
+                            </select>                           
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-10">
+                        <div class="form-group">
+                        <label for="approvelnote" class="col-form-label">หมายเหตุ</label>
+                        <input type="text" class="form-control" name="approvelnote" id="approvelnote">
+                        </div>
+                    </div>
+                </div><hr>
+                <button type="submit" class="btn btn-primary btn-md waves-effect waves-light">อนุมัติ</button> 
+            </div>
+        </div>
+        @endif 
+        @elseif($hd->str_issuestock_status_id == 1)
+        @if (auth()->user()->username == "A653615" || auth()->user()->username == "A490807")
+        <div class="card">
+            <div class="card-body">
+                <button type="submit" class="btn btn-primary btn-md waves-effect waves-light">จ่ายสินค้า</button> 
+            </div>
+        </div>
+        @endif       
+        @endif
+        </form>
         <div class="card">
             <div class="card-body">
                 <h5>รายละเอียด</h5>      
@@ -57,6 +96,7 @@
                     <table class="table mb-0 border-collapse">
                         <thead>
                             <tr>
+                                <th>#</th>
                                 <th>ลำดับ</th>
                                 <th>สินค้า</th>
                                 <th>จำนวน</th>
@@ -66,6 +106,11 @@
                         <tbody>
                             @foreach ($dt as $item)
                                 <tr>
+                                    @if ($hd->str_issuestock_status_id == 1 || $hd->str_issuestock_status_id == 4)
+                                    <td><input class="form-check-input" type="checkbox" value="checked" id="closeButton" readonly></td>
+                                    @else
+                                    <td><input class="form-check-input" type="checkbox" value="checked" id="closeButton" checked readonly></td>
+                                    @endif                                   
                                     <td>{{$item->str_issuestock_dt_listno}}</td>
                                     <td>{{$item->str_issuestock_dt_pdcode}}/{{$item->str_issuestock_dt_pdname}}</td>
                                     <td>{{number_format($item->str_issuestock_dt_pdqty,2)}}/{{$item->str_issuestock_dt_pdunit}}</td>
