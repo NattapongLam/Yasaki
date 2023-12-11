@@ -102,7 +102,9 @@
                             <ul class="sub-menu" aria-expanded="true">                      
                                 <li><a href="{{route('isopkg.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
                                 <li><a href="{{route('mcchkpkg.list')}}" key="t-default">ตรวจสอบเครื่องจักรประจำวัน</a></li> 
+                                <li><a href="#" key="t-default">แผนผลิตประจำวัน (PKG)</a></li> 
                                 <li><a href="{{route('packingresult.list')}}" key="t-default">ผลผลิตประจำวัน (PKG)</a></li> 
+                                 <li><a href="{{route('iso-pkg-05.index')}}" key="t-default">บันทึกน้ำหนักสินค้า</a></li> 
                             </ul>
                         </li>
                         @endrole
@@ -237,8 +239,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{route('billorder.index')}}" key="t-default">ตรวจสอบใบส่งสินค้า</a></li>      
-                        {{-- <li><a href="#" key="t-default">จ่ายวัตถุดิบ</a></li>    
-                        <li><a href="#" key="t-default">รับวัตถุดิบ</a></li>                 --}}
+                        <li><a href="{{route('stock-sale.create')}}" key="t-default">สต็อคสินค้า</a></li>   
                     </ul>
                 </li>
                 <li>

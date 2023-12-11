@@ -6,6 +6,19 @@
  <!-- Responsive datatable examples -->
  <link href="assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />     
 <div class="row">
+    @if (session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <i class="mdi mdi-check-all me-2"></i>
+        {{ session('success') }}
+        <button unit="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @elseif(session('error'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <i class="mdi mdi-block-helper me-2"></i>
+        {{ session('error') }}
+        <button unit="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
@@ -17,6 +30,7 @@
                                 <th>กำหนดส่ง</th>
                                 <th>วันที่ออกเอกสาร</th>
                                 <th>เลขที่ใบส่งสินค้า</th>
+                                <th>ลูกค้า</th>
                                 <th></th>
                             </tr>
                         </thead>     
@@ -26,6 +40,7 @@
                                     <td>{{\Carbon\Carbon::parse($item->DeliveryDate)->format('d/m/Y')}}</td>
                                     <td>{{\Carbon\Carbon::parse($item->DocDate)->format('d/m/Y')}}</td>
                                     <td>{{$item->DocNo}}</td>
+                                    <td>{{$item->ARNAME}}</td>
                                     <td>
                                         <a href="{{route('billorder.edit',$item->DocNo)}}"
                                             class="btn btn-sm btn-warning">

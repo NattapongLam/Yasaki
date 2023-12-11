@@ -1,14 +1,41 @@
 @extends('layouts.main')
 @section('content')
+<link href="https://cdn.datatables.net/fixedcolumns/4.2.2/css/fixedColumns.dataTables.min.css" rel="stylesheet" type="text/css" />
 <div class="row">
+    @if (session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <i class="mdi mdi-check-all me-2"></i>
+        {{ session('success') }}
+        <button unit="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @elseif(session('error'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <i class="mdi mdi-block-helper me-2"></i>
+        {{ session('error') }}
+        <button unit="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     <div class="col-12">
         <div class="card">
             <div class="card-header bg-transparent border-bottom text-uppercase">
                 <h3 class="card-title">สต็อคสินค้า</h3>
-                {{-- <form method="POST" class="form-horizontal" action="{{ route('stock-sale.store') }}" enctype="multipart/form-data">
+                <form method="POST" class="form-horizontal" action="{{ route('stock-sale.update',true) }}" enctype="multipart/form-data">
                     @csrf
-                    <button type="submit" class="btn btn-primary btn-lg waves-effect waves-light">อัพเดท</button>  
-                </form> --}}
+                    @method('PUT')
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <select class="form-control" id="types" name="types">
+                                <option value="">กรุณาเลือก</option>
+                                <option value="ผ้าเบรค">ผ้าเบรค</option>
+                                <option value="ดิสเบรค">ดิสเบรค</option>
+                                <option value="ดุมรวม">ดุมรวม</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <button type="submit" class="btn btn-primary btn-lg waves-effect waves-light">อัพเดท</button>  
+                        </div>
+                    </div>                
+                </form>
             </div>
             <div class="card-body">
                 <div class="row">
@@ -97,7 +124,7 @@
                                                     <th class="text-center">รหัสสินค้า</th>
                                                     <th class="text-center">ชื่อสินค้า</th>
                                                     <th class="text-center">จำนวน</th>
-                                                    
+                                                    <th class="text-center"></th>                                                    
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -110,7 +137,12 @@
                                                         </td>                                              
                                                         <td class="text-center">{{$item->Code}}</td>
                                                         <td class="text-center">{{$item->Name1}} ({{$item->Name2}})</td> 
-                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td>                                                       
+                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td>    
+                                                        <td class="text-center">
+                                                            <a href="{{route('stock-sale.show',$item->Code)}}" class="btn btn-sm btn-warning">
+                                                                <i class="fas fa-edit"></i>
+                                                            </a>
+                                                        </td>                                                     
                                                     </tr>
                                                 @endforeach
                                             </tbody>

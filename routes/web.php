@@ -725,6 +725,7 @@ Route::resource('/stockrequest' , App\Http\Controllers\StockRequest::class);
 Route::post('/getDataPr' , [App\Http\Controllers\StockRequest::class,'getDataPr']);  
 Route::resource('/issuestock' , App\Http\Controllers\IssueStock::class);
 Route::get('/issuestock-list' , [App\Http\Controllers\IssueStock::class,'list']);  
+Route::resource('/iso-pkg-05' , App\Http\Controllers\PackingWeightController::class);
 //QrCodeScan
 Route::get('/checksheetmc/{id}' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanChecksheetMc']);
 Route::get('/checksheetppe/{id}' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanChecksheetPpe']);
