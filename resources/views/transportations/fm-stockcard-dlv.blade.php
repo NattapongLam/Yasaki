@@ -158,7 +158,7 @@
                                                     <th class="text-center">รหัสสินค้า</th>
                                                     <th class="text-center">ชื่อสินค้า</th>
                                                     <th class="text-center">จำนวน</th>
-                                                    
+                                                    <th class="text-center"></th>   
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -171,7 +171,12 @@
                                                         </td>                                              
                                                         <td class="text-center">{{$item->Code}}</td>
                                                         <td class="text-center">{{$item->Name1}} ({{$item->Name2}})</td> 
-                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td>                                                       
+                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td>  
+                                                        <td class="text-center">
+                                                            <a href="{{route('stock-sale.show',$item->Code)}}" class="btn btn-sm btn-warning">
+                                                                <i class="fas fa-edit"></i>
+                                                            </a>
+                                                        </td>                                                     
                                                     </tr>
                                                 @endforeach
                                             </tbody>
@@ -187,7 +192,7 @@
                                                     <th class="text-center">รหัสสินค้า</th>
                                                     <th class="text-center">ชื่อสินค้า</th>
                                                     <th class="text-center">จำนวน</th>
-                                                    
+                                                    <th class="text-center"></th>  
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -200,7 +205,12 @@
                                                         </td>                                              
                                                         <td class="text-center">{{$item->Code}}</td>
                                                         <td class="text-center">{{$item->Name1}} ({{$item->Name2}})</td> 
-                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td>                                                       
+                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td>   
+                                                        <td class="text-center">
+                                                            <a href="{{route('stock-sale.show',$item->Code)}}" class="btn btn-sm btn-warning">
+                                                                <i class="fas fa-edit"></i>
+                                                            </a>
+                                                        </td>                                                    
                                                     </tr>
                                                 @endforeach
                                             </tbody>
@@ -216,7 +226,7 @@
                                                     <th class="text-center">รหัสสินค้า</th>
                                                     <th class="text-center">ชื่อสินค้า</th>
                                                     <th class="text-center">จำนวน</th>
-                                                    
+                                                    <th class="text-center"></th> 
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -229,7 +239,12 @@
                                                         </td>                                              
                                                         <td class="text-center">{{$item->Code}}</td>
                                                         <td class="text-center">{{$item->Name1}} ({{$item->Name2}})</td> 
-                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td>                                                       
+                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td> 
+                                                        <td class="text-center">
+                                                            <a href="{{route('stock-sale.show',$item->Code)}}" class="btn btn-sm btn-warning">
+                                                                <i class="fas fa-edit"></i>
+                                                            </a>
+                                                        </td>                                                      
                                                     </tr>
                                                 @endforeach
                                             </tbody>
@@ -245,7 +260,7 @@
                                                     <th class="text-center">รหัสสินค้า</th>
                                                     <th class="text-center">ชื่อสินค้า</th>
                                                     <th class="text-center">จำนวน</th>
-                                                    
+                                                    <th class="text-center"></th> 
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -258,7 +273,12 @@
                                                         </td>                                              
                                                         <td class="text-center">{{$item->Code}}</td>
                                                         <td class="text-center">{{$item->Name1}} ({{$item->Name2}})</td> 
-                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td>                                                       
+                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td>   
+                                                        <td class="text-center">
+                                                            <a href="{{route('stock-sale.show',$item->Code)}}" class="btn btn-sm btn-warning">
+                                                                <i class="fas fa-edit"></i>
+                                                            </a>
+                                                        </td>                                                    
                                                     </tr>
                                                 @endforeach
                                             </tbody>
@@ -274,7 +294,7 @@
                                                     <th class="text-center">รหัสสินค้า</th>
                                                     <th class="text-center">ชื่อสินค้า</th>
                                                     <th class="text-center">จำนวน</th>
-                                                    
+                                                    <th class="text-center"></th> 
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -287,7 +307,12 @@
                                                         </td>                                              
                                                         <td class="text-center">{{$item->Code}}</td>
                                                         <td class="text-center">{{$item->Name1}} ({{$item->Name2}})</td> 
-                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td>                                                       
+                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td>  
+                                                        <td class="text-center">
+                                                            <a href="{{route('stock-sale.show',$item->Code)}}" class="btn btn-sm btn-warning">
+                                                                <i class="fas fa-edit"></i>
+                                                            </a>
+                                                        </td>                                                     
                                                     </tr>
                                                 @endforeach
                                             </tbody>
@@ -303,7 +328,7 @@
                                                     <th class="text-center">รหัสสินค้า</th>
                                                     <th class="text-center">ชื่อสินค้า</th>
                                                     <th class="text-center">จำนวน</th>
-                                                    
+                                                    <th class="text-center"></th> 
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -316,7 +341,12 @@
                                                         </td>                                              
                                                         <td class="text-center">{{$item->Code}}</td>
                                                         <td class="text-center">{{$item->Name1}} ({{$item->Name2}})</td> 
-                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td>                                                       
+                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td>   
+                                                        <td class="text-center">
+                                                            <a href="{{route('stock-sale.show',$item->Code)}}" class="btn btn-sm btn-warning">
+                                                                <i class="fas fa-edit"></i>
+                                                            </a>
+                                                        </td>                                                    
                                                     </tr>
                                                 @endforeach
                                             </tbody>
@@ -332,7 +362,7 @@
                                                     <th class="text-center">รหัสสินค้า</th>
                                                     <th class="text-center">ชื่อสินค้า</th>
                                                     <th class="text-center">จำนวน</th>
-                                                    
+                                                    <th class="text-center"></th> 
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -345,7 +375,12 @@
                                                         </td>                                              
                                                         <td class="text-center">{{$item->Code}}</td>
                                                         <td class="text-center">{{$item->Name1}} ({{$item->Name2}})</td> 
-                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td>                                                       
+                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td>     
+                                                        <td class="text-center">
+                                                            <a href="{{route('stock-sale.show',$item->Code)}}" class="btn btn-sm btn-warning">
+                                                                <i class="fas fa-edit"></i>
+                                                            </a>
+                                                        </td>                                                  
                                                     </tr>
                                                 @endforeach
                                             </tbody>
@@ -361,7 +396,7 @@
                                                     <th class="text-center">รหัสสินค้า</th>
                                                     <th class="text-center">ชื่อสินค้า</th>
                                                     <th class="text-center">จำนวน</th>
-                                                    
+                                                    <th class="text-center"></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -374,7 +409,12 @@
                                                         </td>                                              
                                                         <td class="text-center">{{$item->Code}}</td>
                                                         <td class="text-center">{{$item->Name1}} ({{$item->Name2}})</td> 
-                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td>                                                       
+                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td>     
+                                                        <td class="text-center">
+                                                            <a href="{{route('stock-sale.show',$item->Code)}}" class="btn btn-sm btn-warning">
+                                                                <i class="fas fa-edit"></i>
+                                                            </a>
+                                                        </td>                                                  
                                                     </tr>
                                                 @endforeach
                                             </tbody>
@@ -390,7 +430,7 @@
                                                     <th class="text-center">รหัสสินค้า</th>
                                                     <th class="text-center">ชื่อสินค้า</th>
                                                     <th class="text-center">จำนวน</th>
-                                                    
+                                                    <th class="text-center"></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -403,7 +443,12 @@
                                                         </td>                                              
                                                         <td class="text-center">{{$item->Code}}</td>
                                                         <td class="text-center">{{$item->Name1}} ({{$item->Name2}})</td> 
-                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td>                                                       
+                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td>  
+                                                        <td class="text-center">
+                                                            <a href="{{route('stock-sale.show',$item->Code)}}" class="btn btn-sm btn-warning">
+                                                                <i class="fas fa-edit"></i>
+                                                            </a>
+                                                        </td>                                                     
                                                     </tr>
                                                 @endforeach
                                             </tbody>
@@ -419,7 +464,7 @@
                                                     <th class="text-center">รหัสสินค้า</th>
                                                     <th class="text-center">ชื่อสินค้า</th>
                                                     <th class="text-center">จำนวน</th>
-                                                    
+                                                    <th class="text-center"></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -432,7 +477,12 @@
                                                         </td>                                              
                                                         <td class="text-center">{{$item->Code}}</td>
                                                         <td class="text-center">{{$item->Name1}} ({{$item->Name2}})</td> 
-                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td>                                                       
+                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td> 
+                                                        <td class="text-center">
+                                                            <a href="{{route('stock-sale.show',$item->Code)}}" class="btn btn-sm btn-warning">
+                                                                <i class="fas fa-edit"></i>
+                                                            </a>
+                                                        </td>                                                      
                                                     </tr>
                                                 @endforeach
                                             </tbody>
@@ -448,7 +498,7 @@
                                                     <th class="text-center">รหัสสินค้า</th>
                                                     <th class="text-center">ชื่อสินค้า</th>
                                                     <th class="text-center">จำนวน</th>
-                                                    
+                                                    <th class="text-center"></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -461,7 +511,12 @@
                                                         </td>                                              
                                                         <td class="text-center">{{$item->Code}}</td>
                                                         <td class="text-center">{{$item->Name1}} ({{$item->Name2}})</td> 
-                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td>                                                       
+                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td>  
+                                                        <td class="text-center">
+                                                            <a href="{{route('stock-sale.show',$item->Code)}}" class="btn btn-sm btn-warning">
+                                                                <i class="fas fa-edit"></i>
+                                                            </a>
+                                                        </td>                                                     
                                                     </tr>
                                                 @endforeach
                                             </tbody>
@@ -477,7 +532,7 @@
                                                     <th class="text-center">รหัสสินค้า</th>
                                                     <th class="text-center">ชื่อสินค้า</th>
                                                     <th class="text-center">จำนวน</th>
-                                                    
+                                                    <th class="text-center"></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -490,7 +545,12 @@
                                                         </td>                                              
                                                         <td class="text-center">{{$item->Code}}</td>
                                                         <td class="text-center">{{$item->Name1}} ({{$item->Name2}})</td> 
-                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td>                                                       
+                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td> 
+                                                        <td class="text-center">
+                                                            <a href="{{route('stock-sale.show',$item->Code)}}" class="btn btn-sm btn-warning">
+                                                                <i class="fas fa-edit"></i>
+                                                            </a>
+                                                        </td>                                                      
                                                     </tr>
                                                 @endforeach
                                             </tbody>
@@ -506,7 +566,7 @@
                                                     <th class="text-center">รหัสสินค้า</th>
                                                     <th class="text-center">ชื่อสินค้า</th>
                                                     <th class="text-center">จำนวน</th>
-                                                    
+                                                    <th class="text-center"></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -519,7 +579,12 @@
                                                         </td>                                              
                                                         <td class="text-center">{{$item->Code}}</td>
                                                         <td class="text-center">{{$item->Name1}} ({{$item->Name2}})</td> 
-                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td>                                                       
+                                                        <td class="text-center">{{number_format($item->StockQty,2)}}</td>    
+                                                        <td class="text-center">
+                                                            <a href="{{route('stock-sale.show',$item->Code)}}" class="btn btn-sm btn-warning">
+                                                                <i class="fas fa-edit"></i>
+                                                            </a>
+                                                        </td>                                                   
                                                     </tr>
                                                 @endforeach
                                             </tbody>
