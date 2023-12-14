@@ -105,7 +105,8 @@ class BillOrderList extends Controller
                 'dlv_stocksub_flag' => -1,
                 'dlv_stocksub_qty' => $request->dt_qty[$key],
                 'dlv_stocksub_save' => Auth::user()->name,
-                'dlv_stocksub_date' => Carbon::now()
+                'dlv_stocksub_date' => Carbon::now(),
+                'dlv_stocksub_docuno' => $pd->DocNo
             ]);
         }
         DB::commit();

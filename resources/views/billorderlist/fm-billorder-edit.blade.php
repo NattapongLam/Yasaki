@@ -27,7 +27,7 @@
                                     <td>{{$item->ItemCode}}/{{$item->ItemName}}</td>
                                     <td>{{number_format($item->Qty,2)}}</td>
                                     <td>
-                                        <input class="form-control" type="number" name="dt_qty[]" value="{{old('dt_qty',0)}}">
+                                        <input class="form-control" type="number" name="dt_qty[]" value="{{old('dt_qty',number_format($item->Qty,0))}}">
                                         <input class="form-control" type="hidden" name="dt_id[]" value="{{$item->ROWORDER}}">
                                     </td>
                                 </tr>
