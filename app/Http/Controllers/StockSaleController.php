@@ -291,15 +291,19 @@ class StockSaleController extends Controller
     public function show($id)
     {
         $hd = DB::table('dlv_stock')->where('dlv_stock_code',$id)->first();
-        $dt = DB::table('dlv_stocksub')
-        ->where('dlv_stocksub_code',$id)
-        ->where('dlv_stocksub_date','>=',$hd->dlv_stock_date)
+        $dt = DB::table('vw_stock_stcv1')
+        ->where('product_code',$id)
+        ->where('date','>=',$hd->dlv_stock_date)
         ->get();
-        $sum = DB::table('dlv_stocksub')
-        ->where('dlv_stocksub_code',$id)
-        ->where('dlv_stocksub_date','>=',$hd->dlv_stock_date)
-        ->sum('dlv_stocksub_qty');
-        $total = $hd->dlv_stock_qty - $sum;
+        $insum = DB::table('vw_stock_stcv1')
+        ->where('product_code',$id)
+        ->where('date','>=',$hd->dlv_stock_date)
+        ->sum('instc');
+        $outsum = DB::table('vw_stock_stcv1')
+        ->where('product_code',$id)
+        ->where('date','>=',$hd->dlv_stock_date)
+        ->sum('outstc');
+        $total = $hd->dlv_stock_qty - ($insum - $outsum);
         return view('transportations.fm-stockcard-dlv-list',compact('hd','dt','total'));
     }
 

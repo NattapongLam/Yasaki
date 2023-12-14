@@ -25,20 +25,22 @@
                             <thead>
                                 <tr>
                                     <th>วันที่</th>
+                                    <th>จำนวนรับเข้า</th>
                                     <th>จำนวนจ่ายออก</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($dt as $item)
                                     <tr>
-                                        <td>{{$item->dlv_stocksub_date}}</td>
-                                        <td>{{number_format($item->dlv_stocksub_qty,2)}}</td>
+                                        <td>{{$item->date}}</td>
+                                        <td>{{number_format($item->instc,2)}}</td>
+                                        <td>{{number_format($item->outstc,2)}}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>ยอดคงเหลือ</th>
+                                    <th colspan="2">ยอดคงเหลือ</th>
                                     <td>{{number_format($total,2)}}</td>
                                 </tr>
                             </tfoot>
