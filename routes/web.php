@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\IsoHr\IsoHrHolder;
 use App\Http\Livewire\IsoAsb\IsoAsbHolder;
 use App\Http\Livewire\IsoClb\IsoClbHolder;
@@ -64,6 +64,8 @@ use App\Http\Livewire\MachineryList\MachineryListEdit;
 use App\Http\Livewire\MachineryList\MachineryListForm;
 use App\Http\Livewire\MachineryList\MachineryListPage;
 use App\Http\Livewire\PpeDepartment\PpeDepartmentList;
+use App\Http\Livewire\IsoDocumentControlIct\IsoFmIct05;
+use App\Http\Livewire\IsoDocumentControlIct\IsoFmIct06;
 use App\Http\Livewire\IsoDocumentControlIct\IsoItHolder;
 use App\Http\Livewire\MachineGroup\MachineGroupListPage;
 use App\Http\Livewire\IsoDocumentControlIct\IsoItkpiList;
@@ -435,6 +437,22 @@ Route::group([
     'middleware' =>  ['auth','role:superadmin|admin']
 ],function(){
     Route::get('/', IsoItkpiList::class)->name('list');
+});
+
+Route::group([
+    'prefix' => 'fmict06s',
+    'as' => 'fmict06.',
+    'middleware' =>  ['auth','role:superadmin|admin']
+],function(){
+    Route::get('/', IsoFmIct06::class)->name('list');
+});
+
+Route::group([
+    'prefix' => 'fmict05s',
+    'as' => 'fmict05.',
+    'middleware' =>  ['auth','role:superadmin|admin']
+],function(){
+    Route::get('/', IsoFmIct05::class)->name('list');
 });
 // ISO ICT END //
 

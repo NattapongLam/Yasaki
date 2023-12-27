@@ -40,8 +40,8 @@
                                 <li><a href="{{route('documentcontrolictplan.list')}}" key="t-default">แผนบำรุงรักษาICT02</a></li>
                                 <li><a href="#" key="t-default">ใบขอใช้บริการICT03</a></li>
                                 <li><a href="{{route('documentcontrolictcheck.list')}}" key="t-default">ใบเช็คการบำรุงรักษาICT04</a></li>
-                                <li><a href="#" key="t-default">ใบแก้ไขอุปกรณ์ICT05</a></li>
-                                <li><a href="#" key="t-default">ประวัติอุปกรณ์ICT06</a></li>
+                                <li><a href="{{route('fmict05.list')}}" key="t-default">ใบแก้ไขอุปกรณ์ICT05</a></li>
+                                <li><a href="{{route('fmict06.list')}}" key="t-default">ประวัติอุปกรณ์ICT06</a></li>
                                 <li><a href="{{route('documentcontrolictbackup.list')}}" key="t-default">LogBackupICT07</a></li>
                                 <li><a href="{{route('kpiit.list')}}" key="t-default">KPI-ICT</a></li>
                                 <li><a href="{{route('isoit.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
