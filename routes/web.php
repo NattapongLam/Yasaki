@@ -75,6 +75,7 @@ use App\Http\Livewire\LeaveApproval\LeaveApprovalListPage;
 use App\Http\Livewire\MachineryReport\MachineryReportPage;
 use App\Http\Livewire\MachineSystem\MachineSystemListPage;
 use App\Http\Livewire\RawmaterialList\RawmaterialListPage;
+use App\Http\Livewire\IsoDocumentControlIct\IsoFmIct03List;
 use App\Http\Livewire\MachineService\MachineServiceListPage;
 use App\Http\Livewire\TrasheDepartment\TrasheDepartmentForm;
 use App\Http\Livewire\TrasheDepartment\TrasheDepartmentList;
@@ -454,6 +455,14 @@ Route::group([
 ],function(){
     Route::get('/', IsoFmIct05::class)->name('list');
 });
+
+Route::group([
+    'prefix' => 'fmict03s',
+    'as' => 'fmict03.',
+    'middleware' =>  ['auth','role:superadmin|admin']
+],function(){
+    Route::get('/', IsoFmIct03List::class)->name('list');
+});
 // ISO ICT END //
 
 // ISO DCT //
@@ -744,6 +753,7 @@ Route::post('/getDataPr' , [App\Http\Controllers\StockRequest::class,'getDataPr'
 Route::resource('/issuestock' , App\Http\Controllers\IssueStock::class);
 Route::get('/issuestock-list' , [App\Http\Controllers\IssueStock::class,'list']);  
 Route::resource('/iso-pkg-05' , App\Http\Controllers\PackingWeightController::class);
+Route::resource('/ict-03' , App\Http\Controllers\DocuServicesController::class);
 //QrCodeScan
 Route::get('/checksheetmc/{id}' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanChecksheetMc']);
 Route::get('/checksheetppe/{id}' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanChecksheetPpe']);

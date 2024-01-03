@@ -38,7 +38,7 @@
                             <ul class="sub-menu" aria-expanded="true">
                                 <li><a href="{{route('documentcontrolictcomlist.list')}}" key="t-default">ทะเบียนอุปกรณ์ICT01</a></li>
                                 <li><a href="{{route('documentcontrolictplan.list')}}" key="t-default">แผนบำรุงรักษาICT02</a></li>
-                                <li><a href="#" key="t-default">ใบขอใช้บริการICT03</a></li>
+                                <li><a href="{{route('fmict03.list')}}" key="t-default">ใบขอใช้บริการICT03</a></li>
                                 <li><a href="{{route('documentcontrolictcheck.list')}}" key="t-default">ใบเช็คการบำรุงรักษาICT04</a></li>
                                 <li><a href="{{route('fmict05.list')}}" key="t-default">ใบแก้ไขอุปกรณ์ICT05</a></li>
                                 <li><a href="{{route('fmict06.list')}}" key="t-default">ประวัติอุปกรณ์ICT06</a></li>
