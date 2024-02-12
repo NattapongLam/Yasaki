@@ -762,5 +762,6 @@ Route::get('/packingstandarddisk' , [App\Http\Controllers\QrCodeScan::class , 'Q
 Route::get('/packingstandardhub' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanPackingStandardHub']);
 Route::get('/quality-procedure/{id}' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanQualityProcedure']);
 Route::get('/quality-policy/{id}' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanQualityPolicy']);
+Route::get('/quality-masterlist/{id}' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanQualityMasterList']);
 Route::get('/ysk1-sd-pkg-20' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanPackingPkg14']);
 Route::get('/product-fg-sue/{id}' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanProductSue']);

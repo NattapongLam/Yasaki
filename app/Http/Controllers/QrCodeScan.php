@@ -74,6 +74,17 @@ class QrCodeScan extends Controller
         ]);
         return response()->file(public_path($file),['content-type'=>'application/pdf']);
     }
+
+    public function QrcodeScanQualityMasterList($id){
+        $hd = DB::table('iso_master_lists')
+        ->where('iso_doculist_code',$id)
+        ->first();
+        $file = 'images/isodocuments/'.$hd->iso_doculist_filename;
+        return Response::make(file_get_contents($file), 200, [
+            'content-type'=>'application/pdf',
+        ]);
+        return response()->file(public_path($file),['content-type'=>'application/pdf']);
+    }
     public function QrcodeScanPackingPkg14()
     {
         $hd = DB::table('vw_ysk1_sd_pkg_14')->get();
