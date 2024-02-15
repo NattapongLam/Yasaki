@@ -25,8 +25,8 @@
                                     <th>ประเภท</th>
                                     <th>ชื่อเครื่อง</th>
                                     <th>แผนก</th>
-                                    <th>ผู้ใช้</th>
                                     <th>อาการเสีย</th>
+                                    <th>วันที่ปิดงาน</th>
                                     <th>แก้ไข</th>                               
                                 </tr>
                             </thead>
@@ -37,10 +37,10 @@
                                     <td>{{$item->serv_type}}</td>
                                     <td>{{$item->serv_com}}</td>
                                     <td>{{$item->serv_dep}}</td>
-                                    <td>{{$item->serv_user}}</td>
-                                    <td>{{$item->serv_case}}</td>
+                                    <td>{{$item->serv_remark}} ({{$item->serv_case}})</td>
+                                    <td>{{$item->closeit_date}}</td>
                                     <td>
-                                        <a type="button" class="btn btn-sm btn-warning">
+                                        <a type="button" class="btn btn-sm btn-warning" href="{{route('ict-03.edit',$item->id)}}">
                                             <i class="fas fa-edit"></i>
                                         </a>                                      
                                     </td>
