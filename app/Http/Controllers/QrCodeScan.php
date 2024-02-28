@@ -16,7 +16,10 @@ class QrCodeScan extends Controller
 {
     public function QrcodeScanChecksheetMc($id)
     {        
-        $hd = DB::table('machine_checksheet_hds')->where('ms_machine_code',$id)->get();
+        $hd = DB::table('machine_checksheet_hds')
+        ->where('ms_machine_code',$id)
+        ->orderBy('checksheetmc_hd_date','DESC')
+        ->get();
         return view('qrcode.checksheet-mc-scan',compact('hd'));
     }
     public function QrcodeScanChecksheetPpe($id)
