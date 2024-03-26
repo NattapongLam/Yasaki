@@ -20,11 +20,10 @@ class DocumentControlIctBackupList extends Component
 
     public function render()
     {
-        $ictbackup = IsoIctServerBackup::query();
+        $ictbackup = IsoIctServerBackup::where('year_name','2024');
         if($this->searchTerm){
             $ictbackup = $ictbackup
-            ->where('year_name','LIKE',"%{$this->searchTerm}%")
-            ->orWhere('month_id','LIKE',"%{$this->searchTerm}%");
+            ->where('year_name','LIKE',"%{$this->searchTerm}%");
         }
         $ictbackup = $ictbackup->paginate(12);
         return view('livewire.iso-document-control-ict.document-control-ict-backup-list',[

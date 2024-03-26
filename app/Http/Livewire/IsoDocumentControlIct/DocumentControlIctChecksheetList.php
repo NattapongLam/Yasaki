@@ -25,6 +25,7 @@ class DocumentControlIctChecksheetList extends Component
             $itchecklist = $itchecklist
             ->where('com_name','LIKE',"%{$this->searchTerm}%");
         }
+        $itchecklist = $itchecklist->orderBy('cit_date','DESC');
         $itchecklist = $itchecklist->paginate(20);
         return view('livewire.iso-document-control-ict.document-control-ict-checksheet-list',[
             'itchecklist' => $itchecklist
