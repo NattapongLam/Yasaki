@@ -4,10 +4,9 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-3">
-                            <h3 class="card-title">ทะเบียนผู้ถือครองเอกสาร</h3>
+                        <div class="col-6">
+                            <h3 class="card-title">บัญชีการแจกจ่ายและเรียกคืนเอกสาร YSK1-FM-DCC-04 R.02-20240506</h3>
                         </div>
-                        <div class="col-3"></div>
                         <div class="col-6">   
                             <div class="hstack gap-3">
                                 <input class="form-control float-right" type="text" placeholder="ค้นหา"
