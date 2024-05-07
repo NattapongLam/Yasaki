@@ -17,7 +17,7 @@ class DocumentControlHolderList extends Component
     
     public function render()
     {
-        $isohold = IsoHolderList::query();
+        $isohold = IsoHolderList::where('iso_docuholder_status','<>','ยกเลิก');
         if($this->searchTerm){
             $isohold = $isohold
             ->where('iso_docutype_code','LIKE',"%{$this->searchTerm}%")

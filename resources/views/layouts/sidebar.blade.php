@@ -16,7 +16,7 @@
                             <ul class="sub-menu" aria-expanded="true">
                                 @role('superadmin|admin|HRM') 
                                 <li><a href="{{route('documentcontrolmasterlist.list')}}" key="t-default">Master List</a></li>   
-                                <li><a href="{{route('documentcontrolholderlist.list')}}" key="t-default">ทะเบียนผู้ถือครอง</a></li> 
+                                <li><a href="{{route('documentcontrolholderlist.list')}}" key="t-default">บัญชีการแจกจ่ายและเรียกคืนเอกสาร</a></li> 
                                 @endrole
                                 <li><a href="{{route('documentcontrolformmasterlist.list')}}" key="t-default">ฟอร์มแม่บทเอกสาร</a></li>  
                                 <li><a href="{{route('documentcontrolkpi.list')}}" key="t-default">KPI</a></li>  
