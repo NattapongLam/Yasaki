@@ -523,14 +523,14 @@ Route::group([
 Route::group([
     'prefix' => 'isoptgs',
     'as' => 'isoptg.',
-    'middleware' =>  ['auth','role:superadmin|PTG|admin']
+    'middleware' =>  ['auth','role:superadmin|ASB|admin']
 ],function(){
     Route::get('/', IsoPtgHolder::class)->name('list');
 });
 Route::group([
     'prefix' => 'mcchkptgs',
     'as' => 'mcchkptg.',
-    'middleware' =>  ['auth','role:superadmin|PTG|admin']
+    'middleware' =>  ['auth','role:superadmin|ASB|admin']
 ],function(){
     Route::get('/', IsoPtgMcChecksheet::class)->name('list');
     Route::get('/edit/{id}', IsoPtgMcChecksheetForm::class)->name('edit');

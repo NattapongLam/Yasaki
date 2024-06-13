@@ -78,7 +78,7 @@
                             </ul>
                         </li>
                         @endrole
-                        @role('superadmin|admin|PTG')
+                        @role('superadmin|admin|ASB')
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">PTG</a>
                             <ul class="sub-menu" aria-expanded="true">                      
