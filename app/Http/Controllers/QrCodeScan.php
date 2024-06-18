@@ -98,4 +98,9 @@ class QrCodeScan extends Controller
         $hd = DB::table('SUE65_BCITEM')->where('Code',$id)->first();
         return view('qrcode.productfg-sue',compact('hd'));
     }
+    public function QrcodeYSK1FMPDT13()
+    {
+        $hd = DB::table('iso_pdt_fm13_hd')->where('iso_pdt_fm13_hd_flag',true)->get();
+        return view('qrcode.ysk1-fm-pdt-13',compact('hd'));
+    }
 }

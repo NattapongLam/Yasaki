@@ -123,7 +123,9 @@ class AssessEmployee extends Controller
      */
     public function show($id)
     {
-        //
+        $hd = DB::table('iso_pdt_fm13_hd')->where('iso_pdt_fm13_hd_id',$id)->first();
+        $dt = DB::table('iso_pdt_fm13_dt')->where('iso_pdt_fm13_hd_id',$id)->get();
+        return view('qrcode.ysk1-fm-pdt-13-form', compact('hd','dt'));
     }
 
     /**
