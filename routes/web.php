@@ -766,5 +766,6 @@ Route::get('/quality-masterlist/{id}' , [App\Http\Controllers\QrCodeScan::class 
 Route::get('/ysk1-sd-pkg-20' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanPackingPkg14']);
 Route::get('/product-fg-sue/{id}' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeScanProductSue']);
 Route::get('/ysk1-fm-pdt-13' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeYSK1FMPDT13']);
+Route::get('/ysk1-fm-pdt-12' , [App\Http\Controllers\QrCodeScan::class , 'QrcodeYSK1FMPDT12']);
 //Vendor
 Route::resource('/car' , App\Http\Controllers\DataCarReport::class);

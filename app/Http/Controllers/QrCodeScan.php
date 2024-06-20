@@ -103,4 +103,11 @@ class QrCodeScan extends Controller
         $hd = DB::table('iso_pdt_fm13_hd')->where('iso_pdt_fm13_hd_flag',true)->get();
         return view('qrcode.ysk1-fm-pdt-13',compact('hd'));
     }
+    public function QrcodeYSK1FMPDT12(){
+        $file = 'images/isodocuments/1.2 YSK1-FM-QMR-12 บันทึกการประชุมทบทวนฝ่ายบริหาร_67.pdf';
+        return Response::make(file_get_contents($file), 200, [
+            'content-type'=>'application/pdf',
+        ]);
+        return response()->file(public_path($file),['content-type'=>'application/pdf']);
+    }
 }
