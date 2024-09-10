@@ -69,7 +69,7 @@
                             </ul>
                         </li>
                         @endrole
-                        @role('superadmin|admin|MCH') 
+                        @role('superadmin|admin|MCH|MLD') 
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">MCH</a>
                             <ul class="sub-menu" aria-expanded="true">                      
@@ -78,7 +78,7 @@
                             </ul>
                         </li>
                         @endrole
-                        @role('superadmin|admin|ASB')
+                        @role('superadmin|admin|ASB|PTG')
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">PTG</a>
                             <ul class="sub-menu" aria-expanded="true">                      
@@ -96,7 +96,7 @@
                             </ul>
                         </li>
                         @endrole
-                        @role('superadmin|admin|PTG|PKG')
+                        @role('superadmin|admin|ASB|PKG')
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">PKG</a>
                             <ul class="sub-menu" aria-expanded="true">                      
