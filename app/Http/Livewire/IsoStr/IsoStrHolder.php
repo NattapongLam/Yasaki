@@ -16,11 +16,11 @@ class IsoStrHolder extends Component
         $this->holder = DB::table('vw_iso_holderperson')
         ->where('emp_department_refcode','STR')
         ->get();
-        $this->policy = DB::table('iso_policy_lsits')
+        $this->policy = DB::table('vw_iso_policy_lsits')
         ->where('pol_name','like','%STR%')
         ->where('pol_status',true)
         ->get();
-        $this->kpi = DB::table('iso_ict_monthkpis')
+        $this->kpi = DB::table('vw_iso_ict_monthkpis')
         ->where('dep_name','STR')
         ->get();
         return view('livewire.iso-str.iso-str-holder')->extends('layouts.main');

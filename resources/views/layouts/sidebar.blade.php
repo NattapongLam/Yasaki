@@ -49,7 +49,7 @@
                             </ul>                         
                         </li>
                         @endrole
-                        @role('superadmin|admin|DCT') 
+                        @role('superadmin|admin|DCT|HTP') 
                         <li>
                            
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">DCT</a>
@@ -60,7 +60,7 @@
                           
                         </li>
                         @endrole
-                        @role('superadmin|admin|HTP') 
+                        @role('superadmin|admin|DCT|HTP') 
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">HTP</a>
                             <ul class="sub-menu" aria-expanded="true">                      
@@ -126,7 +126,7 @@
                             </ul>
                         </li>
                         @endrole
-                        @role('superadmin|admin|DLV')
+                        @role('superadmin|admin|DLV|STR')
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">DLV</a>
                             <ul class="sub-menu" aria-expanded="true">                      
@@ -144,7 +144,7 @@
                             </ul>
                         </li>
                         @endrole
-                        @role('superadmin|admin|CLB')
+                        @role('superadmin|admin|CLB|QCC')
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">CLB</a>
                             <ul class="sub-menu" aria-expanded="true">                      
