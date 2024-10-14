@@ -117,7 +117,7 @@
                             </ul>
                         </li>
                         @endrole
-                        @role('superadmin|admin|MLD')
+                        @role('superadmin|admin|MLD|MCH')
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-vertical">MLD</a>
                             <ul class="sub-menu" aria-expanded="true">                      
