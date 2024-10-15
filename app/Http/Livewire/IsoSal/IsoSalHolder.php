@@ -23,6 +23,10 @@ class IsoSalHolder extends Component
         $this->kpi = DB::table('vw_iso_ict_monthkpis')
         ->where('dep_name','SAL')
         ->get();
+        $this->docs =DB::table('iso_master_lists')
+        ->where('iso_doculist_code','like','%SAL%')
+        ->where('iso_docustatus_name','<>','ยกเลิก')
+        ->get();
         return view('livewire.iso-sal.iso-sal-holder')->extends('layouts.main');
     }
 }
