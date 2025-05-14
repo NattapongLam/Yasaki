@@ -20,7 +20,7 @@ class DocumentControlIctBackupList extends Component
 
     public function render()
     {
-        $ictbackup = IsoIctServerBackup::where('year_name','2024');
+        $ictbackup = IsoIctServerBackup::where('year_name','2025');
         if($this->searchTerm){
             $ictbackup = $ictbackup
             ->where('year_name','LIKE',"%{$this->searchTerm}%");
